@@ -1,0 +1,10 @@
+﻿<UserControl
+    x:Class="XRSharpSamplesGallery.Menu.Menu3D_When_VR_AR"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:XRSharpSamplesGallery.Menu">
+    
+    <Grid>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <DefineSilverlight>true</DefineSilverlight>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="XRSharp" Version="0.1.0-*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\Menu3D_When_VR_AR.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\Menu2D_When_Desktop_Mobile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Other\Environment3D.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Calculator3D.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="App.xaml.cs" />
+    <Compile Include="MainPage.xaml.cs" />
+    <Compile Include="Menu\Menu3D_When_VR_AR.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Menu\Menu2D_When_Desktop_Mobile.xaml.cs" />
+    <Compile Include="Menu\MenuItems.cs" />
+    <Compile Include="Menu\MenuItemViewModel.cs" />
+    <Compile Include="Other\Environment3D.xaml.cs" />
+    <Compile Include="Samples\Calculator3D.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Other\Assets\room.glb" />
+    <Content Include="Other\Assets\room-license.txt" />    
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Examples\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Menu\Menu2D_When_Desktop_Mobile.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Menu\Menu3D_When_VR_AR.xaml" />
+  </ItemGroup>
+
+</Project>

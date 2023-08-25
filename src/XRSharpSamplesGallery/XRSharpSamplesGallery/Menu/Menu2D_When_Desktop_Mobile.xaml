@@ -1,0 +1,22 @@
+﻿
+<!-- This is the 2D navigation menu that we'll display when running on Desktop or Mobile -->
+
+<UserControl
+    x:Class="XRSharpSamplesGallery.Menu.Menu2D_When_Desktop_Mobile"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:menu="clr-namespace:XRSharpSamplesGallery.Menu">
+    <UserControl.Resources>
+        <!--<menu:MenuItems x:Name="MenuItems"/>-->
+    </UserControl.Resources>
+        
+    <Grid>
+
+        <Border Name="BackgroundOverlay" Background="#CCFFFFFF" IsHitTestVisible="False"/>
+
+        <!--<ListBox Name="MainMenu" ItemsSource="{StaticResource MenuItems}">
+            
+        </ListBox>-->
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,8 @@
+﻿<xr:UserControl3D x:Class="XRSharpSamplesGallery.Other.Environment3D"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:xr="http://xrsharp.io/xr"
+                  HideOnEnterAR="True">
+
+    <xr:GltfModel Source="#room" UnlitMaterials="True"/>
+</xr:UserControl3D>
