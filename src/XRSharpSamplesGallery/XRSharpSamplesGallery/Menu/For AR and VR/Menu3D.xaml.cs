@@ -12,9 +12,9 @@ using System.Windows.Navigation;
 
 namespace XRSharpSamplesGallery.Menu
 {
-    public partial class Menu2D_When_Desktop_Mobile : UserControl
+    public partial class Menu3D : UserControl
     {
-        public Menu2D_When_Desktop_Mobile()
+        public Menu3D()
         {
             this.InitializeComponent();
         }

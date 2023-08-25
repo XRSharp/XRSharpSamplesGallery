@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using XRSharpSamplesGallery.Samples;
 
 namespace XRSharpSamplesGallery
 {
@@ -12,6 +13,24 @@ namespace XRSharpSamplesGallery
         public MainPage()
         {
             InitializeComponent();
+
+            this.Loaded += MainPage_Loaded;
+        }
+
+        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            Menu2DInstance.SelectedPage = typeof(Welcome);
+        }
+
+        private void Menu2D_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Instantiate the content
+            Type type = Menu2DInstance.SelectedPage;
+            var content = Activator.CreateInstance(type);
+
+            // Show the content
+            MainContainer.Content = null;
+            MainContainer.Content = content;
         }
     }
 }

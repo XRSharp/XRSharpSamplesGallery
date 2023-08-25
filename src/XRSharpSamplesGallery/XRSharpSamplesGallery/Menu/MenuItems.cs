@@ -7,16 +7,13 @@ using XRSharpSamplesGallery.Samples;
 
 namespace XRSharpSamplesGallery.Menu
 {
-    internal class MenuItems
+    internal class MenuItems : List<MenuItem>
     {
-        public static List<MenuItemViewModel> Items;
-        static MenuItems()
+        public MenuItems()
         {
-            Items = new()
-            {
-                new(){ Title = "Calculator", PageToNavigateTo = typeof(Calculator3D) },
-                new(){ Title = "Charts", PageToNavigateTo = typeof(Calculator3D) },
-            };
+            this.Add(new() { Title = "Welcome", PageToNavigateTo = typeof(Welcome) });
+            this.Add(new() { Title = "Calculator", PageToNavigateTo = typeof(Calculator3D) });
+            this.Add(new() { Title = "Charts", PageToNavigateTo = typeof(Charts) });
         }
     }
 }

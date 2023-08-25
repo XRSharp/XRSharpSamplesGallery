@@ -8,7 +8,8 @@
           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
           xmlns:xr="http://xrsharp.io/xr"
-          mc:Ignorable="d">
+          mc:Ignorable="d"
+          CustomLayout="True">
 
     <Grid>
 
@@ -16,17 +17,14 @@
             <xr:Root3D.Assets>
                 <xr:AssetItem x:Key="room" Source="/XRSharpSamplesGallery;component/Other/Assets/room.glb"/>
             </xr:Root3D.Assets>
+
             <xr:Canvas3D>
                 <other:Environment3D xr:Canvas3D.X="0.5" xr:Canvas3D.Y="1.5" xr:Canvas3D.Z="-1"/>
-                <!--<examples:Calculator3D xr:Canvas3D.X="-0.08" xr:Canvas3D.Y="1.35" xr:Canvas3D.Z="-0.35"/>-->
-                <xr:StackPanel3D xr:Canvas3D.X="1.2" xr:Canvas3D.Y="1.5" xr:Canvas3D.Z="-2.2">
-                    <xr:Box SizeX="0.5" SizeY="0.5" SizeZ="0.5" Rotation="0 45 0" Color="#E2D1F9"/>
-                    <xr:TextBlock3D Text="Hello World!" Foreground="#317773" Scale="5 5 5"/>
-                </xr:StackPanel3D>
+                <xr:ContentControl3D x:Name="MainContainer" xr:Canvas3D.X="-0.08" xr:Canvas3D.Y="1.35" xr:Canvas3D.Z="-0.35"/>
             </xr:Canvas3D>
         </xr:Root3D>
 
-        <!--<menu:Menu2D_When_Desktop_Mobile />-->
+        <menu:Menu2D x:Name="Menu2DInstance" SelectionChanged="Menu2D_SelectionChanged" />
 
     </Grid>
 

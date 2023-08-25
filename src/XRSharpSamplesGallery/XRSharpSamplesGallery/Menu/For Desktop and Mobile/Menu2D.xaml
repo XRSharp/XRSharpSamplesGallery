@@ -1,0 +1,50 @@
+﻿
+<!-- This is the 2D navigation menu that we'll display when running on Desktop or Mobile -->
+
+<UserControl
+    x:Class="XRSharpSamplesGallery.Menu.Menu2D"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:menu="clr-namespace:XRSharpSamplesGallery.Menu">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <menu:MenuItems x:Name="MenuItems"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Menu2D_Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+        
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Background overlay -->
+        <Border
+            x:Name="BackgroundOverlayUnderTheMenu"
+            Background="White"
+            Opacity="0.8"
+            IsHitTestVisible="False"
+            Grid.Column="0"/>
+        <Image
+            x:Name="BackgroundOverlayForTheRest"
+            Source="ms-appx:/Menu/For Desktop and Mobile/MenuBackground.png"
+            IsHitTestVisible="False"
+            Stretch="Fill"
+            Opacity="0.8"
+            Grid.Column="1"/>
+
+        <!-- Menu -->
+        <ListBox
+            x:Name="MenuListBox"
+            ItemsSource="{StaticResource MenuItems}"
+            Style="{StaticResource Menu2D_ListBox_Style}"
+            SelectedValuePath="PageToNavigateTo"
+            SelectionChanged="MainMenu_SelectionChanged"
+            Grid.ColumnSpan="2">
+        </ListBox>
+
+    </Grid>
+</UserControl>

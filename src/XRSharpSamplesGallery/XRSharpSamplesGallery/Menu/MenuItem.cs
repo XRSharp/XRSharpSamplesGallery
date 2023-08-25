@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XRSharpSamplesGallery.Menu
 {
-    internal class MenuItemViewModel
+    internal class MenuItem
     {
         public string Title { get; set; }
 

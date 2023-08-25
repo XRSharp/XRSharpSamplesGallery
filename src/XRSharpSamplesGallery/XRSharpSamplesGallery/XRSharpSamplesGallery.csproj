@@ -17,11 +17,14 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Menu\Menu3D_When_VR_AR.xaml">
+    <Page Include="Menu\For Desktop and Mobile\Menu2D_Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\For AR and VR\Menu3D.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Menu\Menu2D_When_Desktop_Mobile.xaml">
+    <Page Include="Menu\For Desktop and Mobile\Menu2D.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Other\Environment3D.xaml">
@@ -30,23 +33,35 @@
     <Page Include="Samples\Calculator3D.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Charts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Welcome.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
     <Compile Include="App.xaml.cs" />
     <Compile Include="MainPage.xaml.cs" />
-    <Compile Include="Menu\Menu3D_When_VR_AR.xaml.cs">
+    <Compile Include="Menu\For AR and VR\Menu3D.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Menu\Menu2D_When_Desktop_Mobile.xaml.cs" />
+    <Compile Include="Menu\For Desktop and Mobile\Menu2D.xaml.cs" />
     <Compile Include="Menu\MenuItems.cs" />
-    <Compile Include="Menu\MenuItemViewModel.cs" />
+    <Compile Include="Menu\MenuItem.cs" />
     <Compile Include="Other\Environment3D.xaml.cs" />
     <Compile Include="Samples\Calculator3D.xaml.cs" />
+    <Compile Include="Samples\Charts.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Samples\Welcome.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Other\Assets\room.glb" />
+    <Content Include="Menu\For Desktop and Mobile\MenuBackground.png" />
     <Content Include="Other\Assets\room-license.txt" />    
   </ItemGroup>
 
@@ -60,6 +75,30 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Menu\Menu3D_When_VR_AR.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Menu\Menu2D_Styles.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Menu\For Desktop and Mobile\Menu2D.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Menu\For AR and VR\Menu3D.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Menu\For Desktop and Mobile\Menu2D_Styles.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\Welcome.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\Charts.xaml" />
   </ItemGroup>
 
 </Project>
