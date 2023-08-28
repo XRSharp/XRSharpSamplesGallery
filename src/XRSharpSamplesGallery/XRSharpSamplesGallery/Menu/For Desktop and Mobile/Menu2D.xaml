@@ -16,25 +16,15 @@
     </UserControl.Resources>
         
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="240"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
         <!-- Background overlay -->
-        <Border
-            x:Name="BackgroundOverlayUnderTheMenu"
-            Background="White"
-            Opacity="0.8"
-            IsHitTestVisible="False"
-            Grid.Column="0"/>
         <Image
-            x:Name="BackgroundOverlayForTheRest"
-            Source="ms-appx:/Menu/For Desktop and Mobile/MenuBackground.png"
+            x:Name="BackgroundOverlay"
+            Source="ms-appx:/Menu/For Desktop and Mobile/BackgroundOverlay.png"
             IsHitTestVisible="False"
             Stretch="Fill"
             Opacity="0.8"
-            Grid.Column="1"/>
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"/>
 
         <!-- Menu -->
         <ListBox
@@ -42,8 +32,7 @@
             ItemsSource="{StaticResource MenuItems}"
             Style="{StaticResource Menu2D_ListBox_Style}"
             SelectedValuePath="PageToNavigateTo"
-            SelectionChanged="MainMenu_SelectionChanged"
-            Grid.ColumnSpan="2">
+            SelectionChanged="MainMenu_SelectionChanged">
         </ListBox>
 
     </Grid>

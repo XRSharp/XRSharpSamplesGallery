@@ -61,7 +61,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Other\Assets\room.glb" />
-    <Content Include="Menu\For Desktop and Mobile\MenuBackground.png" />
+    <Content Include="Menu\For Desktop and Mobile\BackgroundOverlay.png" />
     <Content Include="Other\Assets\room-license.txt" />    
   </ItemGroup>
 
@@ -99,6 +99,10 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Samples\Charts.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Thumbnails\" />
   </ItemGroup>
 
 </Project>

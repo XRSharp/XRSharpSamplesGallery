@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style x:Key="Menu2D_ListBox_Style" TargetType="ListBox">
-        <Setter Property="Margin" Value="20" />
+        <Setter Property="Margin" Value="10" />
         <Setter Property="Width" Value="370" />
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Background" Value="{x:Null}" />
@@ -40,7 +40,7 @@
                     <Setter Property="Padding" Value="3" />
                     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                     <Setter Property="VerticalContentAlignment" Value="Stretch" />
-                    <Setter Property="Background" Value="#BBFFFFFF" />
+                    <Setter Property="Background" Value="#55FFFFFF" />
                     <Setter Property="BorderThickness" Value="2"/>
                     <Setter Property="TabNavigation" Value="Local" />
                     <Setter Property="Margin" Value="10" />
@@ -54,12 +54,12 @@
                                             <VisualState x:Name="Normal" />
                                             <VisualState x:Name="MouseOver">
                                                 <Storyboard>
-                                                    <DoubleAnimation Storyboard.TargetName="mouseOverIndicator" Storyboard.TargetProperty="Opacity" Duration="0" To=".75"/>
+                                                    <DoubleAnimation Storyboard.TargetName="mouseOverIndicator" Storyboard.TargetProperty="Opacity" Duration="0" To=".35"/>
                                                 </Storyboard>
                                             </VisualState>
                                             <VisualState x:Name="Disabled">
                                                 <Storyboard>
-                                                    <DoubleAnimation Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="Opacity" Duration="0" To=".75" />
+                                                    <DoubleAnimation Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="Opacity" Duration="0" To=".55" />
                                                 </Storyboard>
                                             </VisualState>
                                         </VisualStateGroup>
