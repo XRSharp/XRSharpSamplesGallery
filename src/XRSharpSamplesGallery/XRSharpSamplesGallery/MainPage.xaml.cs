@@ -31,6 +31,9 @@ namespace XRSharpSamplesGallery
             // Show the content
             MainContainer.Content = null;
             MainContainer.Content = content;
+
+            // Hide the menu if we are in mobile and the menu is on top of everything:
+            ResponsivePaneInstance.CollapseIfMobile();
         }
     }
 }

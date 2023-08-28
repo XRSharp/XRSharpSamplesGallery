@@ -30,6 +30,9 @@
     <Page Include="Other\Environment3D.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Other\ResponsivePane.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Calculator3D.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -52,6 +55,7 @@
     <Compile Include="Menu\MenuItems.cs" />
     <Compile Include="Menu\MenuItem.cs" />
     <Compile Include="Other\Environment3D.xaml.cs" />
+    <Compile Include="Other\ResponsivePane.xaml.cs" />
     <Compile Include="Other\SampleAttachedProperties.cs" />
     <Compile Include="Samples\Calculator3D.xaml.cs" />
     <Compile Include="Samples\Charts.xaml.cs">
@@ -63,6 +67,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Other\Assets\room.glb" />
     <Content Include="Menu\For Desktop and Mobile\BackgroundOverlay.png" />
+    <Content Include="Menu\MenuIcon.png" />
     <Content Include="Other\AppTitleBanner.png" />
     <Content Include="Other\Assets\room-license.txt" />
     <Content Include="Thumbnails\Calculator3D.jpg" />
@@ -103,6 +108,10 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Samples\Charts.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Other\ResponsivePane.xaml" />
   </ItemGroup>
 
 </Project>

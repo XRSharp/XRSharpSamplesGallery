@@ -24,7 +24,9 @@
             </xr:Canvas3D>
         </xr:Root3D>
 
-        <menu:Menu2D x:Name="Menu2DInstance" SelectionChanged="Menu2D_SelectionChanged" />
+        <other:ResponsivePane x:Name="ResponsivePaneInstance">
+            <menu:Menu2D x:Name="Menu2DInstance" SelectionChanged="Menu2D_SelectionChanged" />
+        </other:ResponsivePane>
 
     </Grid>
 
