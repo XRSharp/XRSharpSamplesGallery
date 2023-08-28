@@ -11,9 +11,9 @@ namespace XRSharpSamplesGallery.Menu
     {
         public MenuItems()
         {
-            this.Add(new() { Title = "Welcome", PageToNavigateTo = typeof(Welcome) });
-            this.Add(new() { Title = "Calculator", PageToNavigateTo = typeof(Calculator3D) });
-            this.Add(new() { Title = "Charts", PageToNavigateTo = typeof(Charts) });
+            this.Add(new() { Title = "Welcome", PageToNavigateTo = typeof(Welcome), ThumbnailUri = "/thumbnails/Welcome.jpg" });
+            this.Add(new() { Title = "Calculator 3D", PageToNavigateTo = typeof(Calculator3D), ThumbnailUri = "/thumbnails/Calculator3D.jpg" });
+            //this.Add(new() { Title = "Charts 3D", PageToNavigateTo = typeof(Charts) });
         }
     }
 }

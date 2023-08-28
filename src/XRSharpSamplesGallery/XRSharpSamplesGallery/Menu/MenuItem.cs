@@ -10,6 +10,8 @@ namespace XRSharpSamplesGallery.Menu
     {
         public string Title { get; set; }
 
+        public string ThumbnailUri { get; set; }
+
         public Type PageToNavigateTo { get; set; }
     }
 }

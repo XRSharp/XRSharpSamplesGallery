@@ -52,6 +52,7 @@
     <Compile Include="Menu\MenuItems.cs" />
     <Compile Include="Menu\MenuItem.cs" />
     <Compile Include="Other\Environment3D.xaml.cs" />
+    <Compile Include="Other\SampleAttachedProperties.cs" />
     <Compile Include="Samples\Calculator3D.xaml.cs" />
     <Compile Include="Samples\Charts.xaml.cs">
       <SubType>Code</SubType>
@@ -62,7 +63,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Other\Assets\room.glb" />
     <Content Include="Menu\For Desktop and Mobile\BackgroundOverlay.png" />
-    <Content Include="Other\Assets\room-license.txt" />    
+    <Content Include="Other\Assets\room-license.txt" />
+    <Content Include="Thumbnails\Calculator3D.jpg" />
+    <Content Include="Thumbnails\Welcome.jpg" />    
   </ItemGroup>
 
   <ItemGroup>
@@ -99,10 +102,6 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Samples\Charts.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Thumbnails\" />
   </ItemGroup>
 
 </Project>
