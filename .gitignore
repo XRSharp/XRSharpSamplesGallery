@@ -398,4 +398,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 # XR#
-//wwwroot/resources
+**/wwwroot/resources
