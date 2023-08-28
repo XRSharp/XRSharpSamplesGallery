@@ -63,6 +63,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Other\Assets\room.glb" />
     <Content Include="Menu\For Desktop and Mobile\BackgroundOverlay.png" />
+    <Content Include="Other\AppTitleBanner.png" />
     <Content Include="Other\Assets\room-license.txt" />
     <Content Include="Thumbnails\Calculator3D.jpg" />
     <Content Include="Thumbnails\Welcome.jpg" />    

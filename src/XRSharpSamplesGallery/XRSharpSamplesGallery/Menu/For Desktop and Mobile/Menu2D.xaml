@@ -26,13 +26,25 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"/>
 
+        <!-- Title banner -->
+        <Image
+            x:Name="AppTitleBanner"
+            Source="ms-appx:/Other/AppTitleBanner.png"
+            IsHitTestVisible="False"
+            Stretch="None"
+            Opacity="0.6"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="38,32,0,0"/>
+        
         <!-- Menu -->
         <ListBox
             x:Name="MenuListBox"
             ItemsSource="{StaticResource MenuItems}"
             Style="{StaticResource Menu2D_ListBox_Style}"
             SelectedValuePath="PageToNavigateTo"
-            SelectionChanged="MainMenu_SelectionChanged">
+            SelectionChanged="MainMenu_SelectionChanged"
+            Margin="30,100,0,0">
         </ListBox>
 
     </Grid>
