@@ -4,11 +4,9 @@
 <UserControl
     x:Class="XRSharpSamplesGallery.Menu.Menu2D"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:menu="clr-namespace:XRSharpSamplesGallery.Menu">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <UserControl.Resources>
-        <ResourceDictionary>
-            <menu:MenuItems x:Name="MenuItems"/>
+        <ResourceDictionary>            
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Menu2D_Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
@@ -40,10 +38,9 @@
         <!-- Menu -->
         <ListBox
             x:Name="MenuListBox"
-            ItemsSource="{StaticResource MenuItems}"
+            ItemsSource="{Binding MenuItems}"
+            SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}"
             Style="{StaticResource Menu2D_ListBox_Style}"
-            SelectedValuePath="PageToNavigateTo"
-            SelectionChanged="MainMenu_SelectionChanged"
             Margin="30,100,0,0">
         </ListBox>
 

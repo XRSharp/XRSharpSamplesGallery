@@ -10,6 +10,6 @@ namespace XRSharpSamplesGallery.Menu
 
         public Type PageToNavigateTo { get; set; }
 
-        public CameraOptions CameraOptions { get; set; }
+        public CameraOptions CameraOptions { get; set; } = new CameraOptions();
     }
 }

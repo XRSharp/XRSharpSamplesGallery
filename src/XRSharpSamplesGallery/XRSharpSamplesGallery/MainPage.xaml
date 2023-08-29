@@ -13,19 +13,20 @@
 
     <Grid>
 
-        <xr:Root3D Name="Root3DInstance" ColorManagement="True" CameraPosition="0 1.2 0" CameraRotation="-10 0 0">
+        <xr:Root3D Name="Root3DInstance" ColorManagement="True"
+                   CameraPosition="{Binding SelectedMenuItem.CameraOptions.Position}" CameraRotation="{Binding SelectedMenuItem.CameraOptions.Rotation}">
             <xr:Root3D.Assets>
                 <xr:AssetItem x:Key="room" Source="/XRSharpSamplesGallery;component/Other/Assets/room.glb"/>
             </xr:Root3D.Assets>
 
             <xr:Canvas3D>
                 <other:Environment3D xr:Canvas3D.X="0.5" xr:Canvas3D.Y="1.5" xr:Canvas3D.Z="-1"/>
-                <xr:ContentControl3D x:Name="MainContainer" xr:Canvas3D.X="-0.35" xr:Canvas3D.Y="0.77" xr:Canvas3D.Z="-0.75"/>  
+                <xr:ContentControl3D x:Name="MainContainer" Content="{Binding Content}" xr:Canvas3D.X="-0.35" xr:Canvas3D.Y="0.77" xr:Canvas3D.Z="-0.75"/>  
             </xr:Canvas3D>
         </xr:Root3D>
 
         <other:ResponsivePane x:Name="ResponsivePaneInstance">
-            <menu:Menu2D x:Name="Menu2DInstance" SelectionChanged="Menu2D_SelectionChanged" />
+            <menu:Menu2D/>
         </other:ResponsivePane>
 
     </Grid>

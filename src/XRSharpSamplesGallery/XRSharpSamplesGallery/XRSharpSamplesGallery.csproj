@@ -47,7 +47,7 @@
 
   <ItemGroup>
     <Compile Include="App.xaml.cs" />
-    <Compile Include="CameraOptions.cs" />
+    <Compile Include="Menu\CameraOptions.cs" />
     <Compile Include="MainPage.xaml.cs" />
     <Compile Include="Menu\For AR and VR\Menu3D.xaml.cs">
       <SubType>Code</SubType>
@@ -55,6 +55,7 @@
     <Compile Include="Menu\For Desktop and Mobile\Menu2D.xaml.cs" />
     <Compile Include="Menu\MenuItems.cs" />
     <Compile Include="Menu\MenuItem.cs" />
+    <Compile Include="Menu\MenuViewModel.cs" />
     <Compile Include="Other\Environment3D.xaml.cs" />
     <Compile Include="Other\ResponsivePane.xaml.cs" />
     <Compile Include="Other\SampleAttachedProperties.cs" />
