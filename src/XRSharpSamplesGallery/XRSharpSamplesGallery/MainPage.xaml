@@ -10,17 +10,17 @@
           xmlns:xr="http://xrsharp.io/xr"
           mc:Ignorable="d"
           CustomLayout="True">
-
+    
     <Grid>
 
-        <xr:Root3D Name="Root3DInstance" ColorManagement="True"
+        <xr:Root3D Name="Root3DInstance" ColorManagement="True" EnterVR="OnEnterVR" ExitVR="OnExitVR"
                    CameraPosition="{Binding SelectedMenuItem.CameraOptions.Position}" CameraRotation="{Binding SelectedMenuItem.CameraOptions.Rotation}">
             <xr:Root3D.Assets>
                 <xr:AssetItem x:Key="room" Source="/XRSharpSamplesGallery;component/Other/Assets/room.glb"/>
             </xr:Root3D.Assets>
 
             <xr:Canvas3D>
-                <other:Environment3D xr:Canvas3D.X="0.5" xr:Canvas3D.Y="1.5" xr:Canvas3D.Z="-1"/>
+                <other:Environment3D xr:Canvas3D.X="0.5" xr:Canvas3D.Y="1.5" xr:Canvas3D.Z="-1" HideOnEnterAR="True"/>
                 <xr:ContentControl3D x:Name="MainContainer" Content="{Binding Content}" xr:Canvas3D.X="-0.35" xr:Canvas3D.Y="0.77" xr:Canvas3D.Z="-0.75"/>  
             </xr:Canvas3D>
         </xr:Root3D>

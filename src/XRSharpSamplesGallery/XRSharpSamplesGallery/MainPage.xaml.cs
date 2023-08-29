@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Windows.Controls;
 using XRSharpSamplesGallery.Menu;
 
 namespace XRSharpSamplesGallery
@@ -18,6 +19,16 @@ namespace XRSharpSamplesGallery
         {
             // Hide the menu if we are in mobile and the menu is on top of everything:
             ResponsivePaneInstance.CollapseIfMobile();
+        }
+
+        private void OnEnterVR(object sender, EventArgs e)
+        {
+            ResponsivePaneInstance.Content = new Menu3D();
+        }
+
+        private void OnExitVR(object sender, EventArgs e)
+        {
+            ResponsivePaneInstance.Content = new Menu2D();
         }
     }
 }
