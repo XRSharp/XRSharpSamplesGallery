@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace XRSharpSamplesGallery.Menu
 {
@@ -13,5 +9,7 @@ namespace XRSharpSamplesGallery.Menu
         public string ThumbnailUri { get; set; }
 
         public Type PageToNavigateTo { get; set; }
+
+        public CameraOptions CameraOptions { get; set; }
     }
 }

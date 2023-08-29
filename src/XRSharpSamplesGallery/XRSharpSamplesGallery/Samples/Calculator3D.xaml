@@ -6,7 +6,7 @@
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              Name="Calculator"
              xr:Canvas3D.IsDraggable="True"
-             Rotation="-15 0 0">
+             Rotation="-45 0 0">
     <xr:Canvas3D.Resources>
         <Style TargetType="xr:RoundedBox">
             <Setter Property="Radius" Value="0.002"/>

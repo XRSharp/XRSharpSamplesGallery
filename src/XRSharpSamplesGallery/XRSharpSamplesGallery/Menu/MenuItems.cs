@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using XRSharp;
 using XRSharpSamplesGallery.Samples;
 
 namespace XRSharpSamplesGallery.Menu
@@ -21,7 +18,12 @@ namespace XRSharpSamplesGallery.Menu
             {
                 Title = "Calculator 3D",
                 PageToNavigateTo = typeof(Calculator3D),
-                ThumbnailUri = "/thumbnails/Calculator3D.jpg"
+                ThumbnailUri = "/thumbnails/Calculator3D.jpg",
+                CameraOptions = new CameraOptions
+                {
+                    Position = new Point3D(-0.32, 0.92, -0.66),
+                    Rotation = new Point3D(-21, -6, 0),
+                }
             });
             //this.Add(new() { Title = "Charts 3D", PageToNavigateTo = typeof(Charts) });
         }

@@ -11,7 +11,7 @@
             Foreground="#317773"
             Scale="3 3 3"
             xr:Canvas3D.X="0"
-            xr:Canvas3D.Y="-0.3"
-            xr:Canvas3D.Z="-0.4"/>
+            xr:Canvas3D.Y="0.1"
+            xr:Canvas3D.Z="0"/>
     </xr:Canvas3D>
 </xr:UserControl3D>

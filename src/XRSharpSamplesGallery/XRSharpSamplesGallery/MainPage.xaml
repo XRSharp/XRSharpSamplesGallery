@@ -13,14 +13,14 @@
 
     <Grid>
 
-        <xr:Root3D ColorManagement="True">
+        <xr:Root3D Name="Root3DInstance" ColorManagement="True" CameraPosition="0 1.2 0" CameraRotation="-10 0 0">
             <xr:Root3D.Assets>
                 <xr:AssetItem x:Key="room" Source="/XRSharpSamplesGallery;component/Other/Assets/room.glb"/>
             </xr:Root3D.Assets>
 
             <xr:Canvas3D>
                 <other:Environment3D xr:Canvas3D.X="0.5" xr:Canvas3D.Y="1.5" xr:Canvas3D.Z="-1"/>
-                <xr:ContentControl3D x:Name="MainContainer" xr:Canvas3D.X="-0.08" xr:Canvas3D.Y="1.35" xr:Canvas3D.Z="-0.35"/>
+                <xr:ContentControl3D x:Name="MainContainer" xr:Canvas3D.X="-0.35" xr:Canvas3D.Y="0.77" xr:Canvas3D.Z="-0.75"/>  
             </xr:Canvas3D>
         </xr:Root3D>
 
