@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using XRSharpSamplesGallery.Menu;
+using XRSharpSamplesGallery.Other;
 
 namespace XRSharpSamplesGallery
 {
@@ -18,8 +19,11 @@ namespace XRSharpSamplesGallery
 
         private void OnSelectionChanged(object sender, Menu.MenuItem menuItem)
         {
-            // Hide the menu if we are in mobile and the menu is on top of everything:
-            ResponsivePaneInstance.CollapseIfMobile();
+            // Hide the panel that shows the Source Code when navigating:
+            ViewSourcePane.Collapse();
+
+            // Hide the menu when navigating if we are on mobile:
+            MenuResponsivePane.CollapseIfMobile();
         }
 
         private void OnEnterVR(object sender, EventArgs e)

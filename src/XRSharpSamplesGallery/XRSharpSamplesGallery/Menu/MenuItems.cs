@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using XRSharp;
+using XRSharpSamplesGallery.Other;
 using XRSharpSamplesGallery.Samples;
 
 namespace XRSharpSamplesGallery.Menu
@@ -12,7 +13,12 @@ namespace XRSharpSamplesGallery.Menu
             {
                 Title = "Welcome",
                 PageToNavigateTo = typeof(Welcome),
-                ThumbnailUri = "/thumbnails/Welcome.jpg"
+                ThumbnailUri = "/thumbnails/Welcome.jpg",
+                ViewSourceFilesLocation = new[]
+                {
+                    new ViewSourceFileInfo() { TabHeader = "Welcome.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/README.md" },
+                    new ViewSourceFileInfo() { TabHeader = "Welcome.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/README.md" }
+                }
             });
             this.Add(new()
             {
@@ -23,6 +29,11 @@ namespace XRSharpSamplesGallery.Menu
                 {
                     Position = new Point3D(-0.32, 0.92, -0.66),
                     Rotation = new Point3D(-21, -6, 0),
+                },
+                ViewSourceFilesLocation = new[]
+                {
+                    new ViewSourceFileInfo() { TabHeader = "Calculator3D.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/README.md" },
+                    new ViewSourceFileInfo() { TabHeader = "Calculator3D.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/README.md" }
                 }
             });
             //this.Add(new() { Title = "Charts 3D", PageToNavigateTo = typeof(Charts) });

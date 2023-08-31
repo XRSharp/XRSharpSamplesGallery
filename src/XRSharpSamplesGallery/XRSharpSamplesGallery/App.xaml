@@ -5,7 +5,9 @@
     xmlns:local="clr-namespace:XRSharpSamplesGallery">
     <Application.Resources>
         <ResourceDictionary>
-            
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Other/FlatButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

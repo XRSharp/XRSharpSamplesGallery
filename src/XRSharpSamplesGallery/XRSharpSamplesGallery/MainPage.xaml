@@ -26,9 +26,11 @@
             </xr:Canvas3D>
         </xr:Root3D>
 
-        <other:ResponsivePane x:Name="ResponsivePaneInstance">
+        <other:ResponsivePane x:Name="MenuResponsivePane">
             <menu:Menu2D/>
         </other:ResponsivePane>
+
+        <other:ViewSourcePane x:Name="ViewSourcePane" SourcePaths="{Binding SelectedMenuItem.ViewSourceFilesLocation}"  FontSize="18" FontWeight="Bold" Padding="5" />
 
     </Grid>
 
