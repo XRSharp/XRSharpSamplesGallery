@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using XRSharpSamplesGallery.Menu;
 
@@ -23,12 +24,12 @@ namespace XRSharpSamplesGallery
 
         private void OnEnterVR(object sender, EventArgs e)
         {
-            ResponsivePaneInstance.Content = new Menu3D();
+            Menu3DInstance.Visibility = Visibility.Visible;
         }
 
         private void OnExitVR(object sender, EventArgs e)
         {
-            ResponsivePaneInstance.Content = new Menu2D();
+            Menu3DInstance.Visibility = Visibility.Collapsed;
         }
     }
 }

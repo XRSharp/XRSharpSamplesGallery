@@ -1,10 +1,95 @@
-﻿<UserControl
-    x:Class="XRSharpSamplesGallery.Menu.Menu3D"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:XRSharpSamplesGallery.Menu">
-    
-    <Grid>
+﻿<xr:UserControl3D x:Class="XRSharpSamplesGallery.Menu.Menu3D"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+                  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                  xmlns:menu="clr-namespace:XRSharpSamplesGallery.Menu"
+                  xmlns:xr="http://xrsharp.io/xr">
 
-    </Grid>
-</UserControl>
+    <!--<xr:HtmlEntity>
+        <menu:Menu2D/>
+    </xr:HtmlEntity>-->
+
+    <xr:Canvas3D>
+        <xr:HtmlEntity xr:Canvas3D.X="0"
+                       xr:Canvas3D.Y="0.2"
+                       xr:Canvas3D.Z="-0.1">
+            <Image Source="/Other/AppTitleBanner.png"/>
+        </xr:HtmlEntity>
+
+        <xr:ListBox3D ItemsSource="{Binding MenuItems}" SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}">
+            <xr:ListBox3D.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <xr:WrapPanel3D/>
+                </ItemsPanelTemplate>
+            </xr:ListBox3D.ItemsPanel>
+
+            <xr:ListBox3D.ItemTemplate>
+                <DataTemplate>
+                    <xr:Grid3D SizeX="0.15" SizeY="0.10">
+                        <!--<xr:Image3D SizeX="0.15"
+                                    SizeY="0.10"
+                                    Source="{Binding ThumbnailUri}"
+                                    Stretch="UniformToFill"/>-->
+                        <xr:TextBlock3D xr:Canvas3D.X="-0.06"
+                                        xr:Canvas3D.Y="-0.03"
+                                        xr:Canvas3D.Z="0.015"
+                                        Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=xr:ContentControl3D, Mode=FindAncestor}}"
+                                        Scale="0.08"
+                                        Text="{Binding Title}"/>
+                    </xr:Grid3D>
+                </DataTemplate>
+            </xr:ListBox3D.ItemTemplate>
+
+            <xr:ListBox3D.ItemContainerStyle>
+                <Style TargetType="xr:ListBoxItem3D">
+                    <Setter Property="Padding" Value="0.01"/>
+                    <Setter Property="Margin" Value="0.01"/>
+                    <Setter Property="Background" Value="#55FFFFFF"/>
+                    <Setter Property="Foreground" Value="#FF626262"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="xr:ListBoxItem3D">
+                                <xr:Grid3D>
+                                    <i:Interaction.Triggers>
+                                        <ei:DataTrigger Binding="{TemplateBinding IsSelected}" Value="True">
+                                            <ei:ChangePropertyAction PropertyName="Color" TargetObject="{Binding ElementName=BackgroundBox}">
+                                                <ei:ChangePropertyAction.Value>
+                                                    <SolidColorBrush Color="#fef7ff"/>
+                                                </ei:ChangePropertyAction.Value>
+                                            </ei:ChangePropertyAction>
+                                            <ei:ChangePropertyAction PropertyName="Foreground" TargetObject="{Binding ElementName=contentControl}">
+                                                <ei:ChangePropertyAction.Value>
+                                                    <SolidColorBrush Color="#FF1F7FD9"/>
+                                                </ei:ChangePropertyAction.Value>
+                                            </ei:ChangePropertyAction>
+                                        </ei:DataTrigger>
+                                        <ei:DataTrigger Binding="{TemplateBinding IsSelected}" Value="False">
+                                            <ei:ChangePropertyAction PropertyName="Color"
+                                                                     TargetObject="{Binding ElementName=BackgroundBox}"
+                                                                     Value="{TemplateBinding Background}"/>
+                                            <ei:ChangePropertyAction PropertyName="Foreground"
+                                                                     TargetObject="{Binding ElementName=contentControl}"
+                                                                     Value="{TemplateBinding Foreground}"/>
+                                        </ei:DataTrigger>
+                                    </i:Interaction.Triggers>
+                                    <xr:ContentControl3D Name="contentControl"
+                                                         Margin="{TemplateBinding Padding}"
+                                                         Content="{TemplateBinding Content}"
+                                                         ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                         Foreground="{TemplateBinding Foreground}"/>
+                                    <xr:RoundedBox Name="BackgroundBox"
+                                                   Radius="0.005"
+                                                   SizeX="{Binding ActualSizeX, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                                   SizeY="{Binding ActualSizeY, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                                   SizeZ="0.005"
+                                                   Color="{TemplateBinding Background}"/>
+                                </xr:Grid3D>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </xr:ListBox3D.ItemContainerStyle>
+        </xr:ListBox3D>
+    </xr:Canvas3D>
+</xr:UserControl3D>

@@ -16,11 +16,12 @@
         <xr:Root3D Name="Root3DInstance" ColorManagement="True" EnterVR="OnEnterVR" ExitVR="OnExitVR"
                    CameraPosition="{Binding SelectedMenuItem.CameraOptions.Position}" CameraRotation="{Binding SelectedMenuItem.CameraOptions.Rotation}">
             <xr:Root3D.Assets>
-                <xr:AssetItem x:Key="room" Source="/XRSharpSamplesGallery;component/Other/Assets/room.glb"/>
+                <xr:AssetItem x:Key="room" Source="/Other/Assets/room.glb"/>
             </xr:Root3D.Assets>
 
             <xr:Canvas3D>
                 <other:Environment3D xr:Canvas3D.X="0.5" xr:Canvas3D.Y="1.5" xr:Canvas3D.Z="-1" HideOnEnterAR="True"/>
+                <menu:Menu3D Name="Menu3DInstance" Visibility="Collapsed" xr:Canvas3D.X="-0.6" xr:Canvas3D.Y="1.0" xr:Canvas3D.Z="-0.5" Rotation="0 30 0"/>
                 <xr:ContentControl3D x:Name="MainContainer" Content="{Binding Content}" xr:Canvas3D.X="-0.35" xr:Canvas3D.Y="0.77" xr:Canvas3D.Z="-0.75"/>  
             </xr:Canvas3D>
         </xr:Root3D>
