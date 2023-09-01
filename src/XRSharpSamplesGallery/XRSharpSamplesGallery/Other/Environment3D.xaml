@@ -4,5 +4,5 @@
                   xmlns:xr="http://xrsharp.io/xr"
                   HideOnEnterAR="True">
 
-    <xr:GltfModel Source="#room" UnlitMaterials="True"/>
+    <xr:GltfModel Source="/Other/Assets/room.glb" UnlitMaterials="True"/>
 </xr:UserControl3D>

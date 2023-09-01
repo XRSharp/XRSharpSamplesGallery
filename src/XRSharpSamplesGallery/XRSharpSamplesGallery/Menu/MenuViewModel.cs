@@ -36,7 +36,6 @@ namespace XRSharpSamplesGallery.Menu
 
         public MenuViewModel()
         {
-            SelectedMenuItem = MenuItems[0];
         }
 
         private void CreateContent()

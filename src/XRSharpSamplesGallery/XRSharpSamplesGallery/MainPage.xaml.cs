@@ -15,6 +15,11 @@ namespace XRSharpSamplesGallery
             var menuViewModel = new MenuViewModel();
             menuViewModel.SelectionChanged += OnSelectionChanged;
             DataContext = menuViewModel;
+
+            Loaded += (s, e) =>
+            {
+                menuViewModel.SelectedMenuItem = menuViewModel.MenuItems[0];
+            };
         }
 
         private void OnSelectionChanged(object sender, Menu.MenuItem menuItem)
@@ -26,12 +31,12 @@ namespace XRSharpSamplesGallery
             MenuResponsivePane.CollapseIfMobile();
         }
 
-        private void OnEnterVR(object sender, EventArgs e)
+        private void OnEnterXR(object sender, EventArgs e)
         {
             Menu3DInstance.Visibility = Visibility.Visible;
         }
 
-        private void OnExitVR(object sender, EventArgs e)
+        private void OnExitXR(object sender, EventArgs e)
         {
             Menu3DInstance.Visibility = Visibility.Collapsed;
         }
