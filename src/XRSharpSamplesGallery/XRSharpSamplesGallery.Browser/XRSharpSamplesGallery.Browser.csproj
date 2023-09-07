@@ -5,7 +5,7 @@
     <NoXamlPreprocessor>True</NoXamlPreprocessor>
     <OpenSilverType>4</OpenSilverType>
     <PublishTrimmed>true</PublishTrimmed>
-	<PublishIISAssets>true</PublishIISAssets>
+	  <PublishIISAssets>true</PublishIISAssets>
     <!-- Uncomment to enable AOT compilation when publishing -->
     <!--<RunAOTCompilation>true</RunAOTCompilation>-->
   </PropertyGroup>
@@ -28,6 +28,19 @@
     <Content Update="web.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TrimmableAssembly Include="OpenSilver.Controls.Data.DataForm.Toolkit"/>
+    <TrimmableAssembly Include="OpenSilver.Controls.Data"/>
+    <TrimmableAssembly Include="OpenSilver.Controls.Data.Input"/>
+    <TrimmableAssembly Include="OpenSilver.Controls.DataVisualization.Toolkit"/>
+    <TrimmableAssembly Include="OpenSilver.Controls.Input"/>
+    <TrimmableAssembly Include="OpenSilver.Controls.Layout.Toolkit"/>
+    <TrimmableAssembly Include="OpenSilver.Controls.Navigation"/>
+    <TrimmableAssembly Include="OpenSilver.Expression.Effects"/>
+    <TrimmableAssembly Include="OpenSilver.Expression.Interactions"/>
+    <TrimmableAssembly Include="OpenSilver.Interactivity"/>
   </ItemGroup>
 
 </Project>

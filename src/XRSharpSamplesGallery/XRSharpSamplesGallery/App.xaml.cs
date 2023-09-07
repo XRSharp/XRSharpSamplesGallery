@@ -1,6 +1,5 @@
-﻿using System.Linq;
+﻿using System;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace XRSharpSamplesGallery
 {
@@ -12,6 +11,13 @@ namespace XRSharpSamplesGallery
 
             var mainPage = new MainPage();
             Window.Current.Content = mainPage;
+
+            UnhandledException += OnUnhandledException;
+        }
+
+        private void OnUnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
+        {
+            Console.WriteLine(e.ExceptionObject);
         }
     }
 }
