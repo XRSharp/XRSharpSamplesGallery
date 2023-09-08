@@ -6,93 +6,102 @@
                   xmlns:menu="clr-namespace:XRSharpSamplesGallery.Menu"
                   xmlns:xr="http://xrsharp.io/xr">
 
-    <!--<xr:HtmlEntity>
-        <menu:Menu2D/>
-    </xr:HtmlEntity>-->
-
     <xr:Canvas3D>
-        <!--<xr:HtmlEntity >
-            <Image Source="/Other/AppTitleBanner.png"/>
-        </xr:HtmlEntity>-->
-        <xr:Image3D xr:Canvas3D.Y="0.09"
-                    SizeX="0.15"
-                    SizeY="0.10"
-                    Source="/Other/AppTitleBanner.png"/>
 
-        <xr:ListBox3D ItemsSource="{Binding MenuItems}" SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}">
-            <xr:ListBox3D.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <xr:WrapPanel3D/>
-                </ItemsPanelTemplate>
-            </xr:ListBox3D.ItemsPanel>
+        <xr:GltfModel xr:Canvas3D.X="0"
+                      xr:Canvas3D.Y="0"
+                      xr:Canvas3D.Z="0"
+                      Rotation="0 -90 0"
+                      Scale="0.05"
+                      Source="/Other/Assets/picture-frame/scene.gltf"/>
 
-            <xr:ListBox3D.ItemTemplate>
-                <DataTemplate>
-                    <xr:Grid3D SizeX="0.15" SizeY="0.10">
-                        <xr:Image3D SizeX="0.15"
-                                    SizeY="0.10"
-                                    Source="{Binding ThumbnailUri}"
-                                    Stretch="UniformToFill"/>
-                        <xr:TextBlock3D xr:Canvas3D.X="-0.075"
-                                        xr:Canvas3D.Y="-0.07"
-                                        Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=xr:ContentControl3D, Mode=FindAncestor}}"
-                                        Scale="0.08"
-                                        Text="{Binding Title}"/>
-                    </xr:Grid3D>
-                </DataTemplate>
-            </xr:ListBox3D.ItemTemplate>
+        <xr:Canvas3D xr:Canvas3D.X="-0.058"
+                     xr:Canvas3D.Y="0.17"
+                     Rotation="-19 0 0">
+            <xr:Image3D xr:Canvas3D.X="-0.046"
+                        xr:Canvas3D.Y="0.066"
+                        xr:Canvas3D.Z="-0.008"
+                        SizeX="0.040"
+                        SizeY="0.016"
+                        Source="/Other/AppTitleBanner.png"/>
 
-            <xr:ListBox3D.ItemContainerStyle>
-                <Style TargetType="xr:ListBoxItem3D">
-                    <Setter Property="Padding" Value="0.003"/>
-                    <Setter Property="Margin" Value="0.006"/>
-                    <Setter Property="Background" Value="#FF909192"/>
-                    <Setter Property="Foreground" Value="#FF626262"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="xr:ListBoxItem3D">
-                                <xr:Grid3D>
-                                    <i:Interaction.Triggers>
-                                        <ei:DataTrigger Binding="{TemplateBinding IsSelected}" Value="True">
-                                            <ei:ChangePropertyAction PropertyName="Color" TargetObject="{Binding ElementName=BackgroundBox}">
-                                                <ei:ChangePropertyAction.Value>
-                                                    <SolidColorBrush Color="#FF1F7FD9"/>
-                                                </ei:ChangePropertyAction.Value>
-                                            </ei:ChangePropertyAction>
-                                            <ei:ChangePropertyAction PropertyName="Foreground" TargetObject="{Binding ElementName=contentControl}">
-                                                <ei:ChangePropertyAction.Value>
-                                                    <SolidColorBrush Color="#FF1F7FD9"/>
-                                                </ei:ChangePropertyAction.Value>
-                                            </ei:ChangePropertyAction>
-                                        </ei:DataTrigger>
-                                        <ei:DataTrigger Binding="{TemplateBinding IsSelected}" Value="False">
-                                            <ei:ChangePropertyAction PropertyName="Color"
-                                                                     TargetObject="{Binding ElementName=BackgroundBox}"
-                                                                     Value="{TemplateBinding Background}"/>
-                                            <ei:ChangePropertyAction PropertyName="Foreground"
-                                                                     TargetObject="{Binding ElementName=contentControl}"
-                                                                     Value="{TemplateBinding Foreground}"/>
-                                        </ei:DataTrigger>
-                                    </i:Interaction.Triggers>
-                                    <xr:ContentControl3D Name="contentControl"
-                                                         Margin="{TemplateBinding Padding}"
-                                                         Content="{TemplateBinding Content}"
-                                                         ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                         Foreground="{TemplateBinding Foreground}"/>
-                                    <xr:RoundedBox Name="BackgroundBox"
-                                                   xr:Canvas3D.Z="-0.003"
-                                                   Opacity="0.75"
-                                                   Radius="0.005"
-                                                   SizeX="{Binding ActualSizeX, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                                   SizeY="{Binding ActualSizeY, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                                   SizeZ="0.005"
-                                                   Color="{TemplateBinding Background}"/>
-                                </xr:Grid3D>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </xr:ListBox3D.ItemContainerStyle>
-        </xr:ListBox3D>
+            <xr:ListBox3D xr:Canvas3D.Z="-0.02"
+                          ItemsSource="{Binding MenuItems}"
+                          SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}">
+                <xr:ListBox3D.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <xr:WrapPanel3D/>
+                    </ItemsPanelTemplate>
+                </xr:ListBox3D.ItemsPanel>
+
+                <xr:ListBox3D.ItemTemplate>
+                    <DataTemplate>
+                        <xr:Grid3D SizeX="0.07" SizeY="0.05">
+                            <xr:Image3D SizeX="0.07"
+                                        SizeY="0.05"
+                                        Source="{Binding ThumbnailUri}"
+                                        Stretch="UniformToFill"/>
+                            <xr:TextBlock3D xr:Canvas3D.X="-0.037"
+                                            xr:Canvas3D.Y="-0.035"
+                                            Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=xr:ContentControl3D, Mode=FindAncestor}}"
+                                            Scale="0.04"
+                                            Text="{Binding Title}"/>
+                        </xr:Grid3D>
+                    </DataTemplate>
+                </xr:ListBox3D.ItemTemplate>
+
+                <xr:ListBox3D.ItemContainerStyle>
+                    <Style TargetType="xr:ListBoxItem3D">
+                        <Setter Property="Padding" Value="0.003"/>
+                        <Setter Property="Margin" Value="0.01"/>
+                        <Setter Property="Background" Value="#FF909192"/>
+                        <Setter Property="Foreground" Value="#FF626262"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="xr:ListBoxItem3D">
+                                    <xr:Grid3D>
+                                        <i:Interaction.Triggers>
+                                            <ei:DataTrigger Binding="{TemplateBinding IsSelected}" Value="True">
+                                                <ei:ChangePropertyAction PropertyName="Color" TargetObject="{Binding ElementName=BackgroundBox}">
+                                                    <ei:ChangePropertyAction.Value>
+                                                        <SolidColorBrush Color="#FF1F7FD9"/>
+                                                    </ei:ChangePropertyAction.Value>
+                                                </ei:ChangePropertyAction>
+                                                <ei:ChangePropertyAction PropertyName="Foreground" TargetObject="{Binding ElementName=contentControl}">
+                                                    <ei:ChangePropertyAction.Value>
+                                                        <SolidColorBrush Color="#FF1F7FD9"/>
+                                                    </ei:ChangePropertyAction.Value>
+                                                </ei:ChangePropertyAction>
+                                            </ei:DataTrigger>
+                                            <ei:DataTrigger Binding="{TemplateBinding IsSelected}" Value="False">
+                                                <ei:ChangePropertyAction PropertyName="Color"
+                                                                         TargetObject="{Binding ElementName=BackgroundBox}"
+                                                                         Value="{TemplateBinding Background}"/>
+                                                <ei:ChangePropertyAction PropertyName="Foreground"
+                                                                         TargetObject="{Binding ElementName=contentControl}"
+                                                                         Value="{TemplateBinding Foreground}"/>
+                                            </ei:DataTrigger>
+                                        </i:Interaction.Triggers>
+                                        <xr:ContentControl3D Name="contentControl"
+                                                             Margin="{TemplateBinding Padding}"
+                                                             Content="{TemplateBinding Content}"
+                                                             ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                             Foreground="{TemplateBinding Foreground}"/>
+                                        <xr:RoundedBox Name="BackgroundBox"
+                                                       xr:Canvas3D.Z="-0.002"
+                                                       Opacity="0.75"
+                                                       Radius="0.005"
+                                                       SizeX="{Binding ActualSizeX, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                                       SizeY="{Binding ActualSizeY, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                                       SizeZ="0.003"
+                                                       Color="{TemplateBinding Background}"/>
+                                    </xr:Grid3D>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </xr:ListBox3D.ItemContainerStyle>
+            </xr:ListBox3D>
+        </xr:Canvas3D>
     </xr:Canvas3D>
 </xr:UserControl3D>

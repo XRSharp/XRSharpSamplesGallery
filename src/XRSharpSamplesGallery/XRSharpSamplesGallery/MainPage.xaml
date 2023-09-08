@@ -17,9 +17,15 @@
                    CameraPosition="{Binding SelectedMenuItem.CameraOptions.Position}" CameraRotation="{Binding SelectedMenuItem.CameraOptions.Rotation}">
 
             <xr:Canvas3D>
-                <other:Environment3D xr:Canvas3D.X="0.5" xr:Canvas3D.Y="1.5" xr:Canvas3D.Z="-1"/>
-                <menu:Menu3D Name="Menu3DInstance" Visibility="Collapsed" xr:Canvas3D.X="-0.6" xr:Canvas3D.Y="1.0" xr:Canvas3D.Z="-0.5" Rotation="0 30 0"/>
-                <xr:ContentControl3D x:Name="MainContainer" Content="{Binding Content}" xr:Canvas3D.X="-0.35" xr:Canvas3D.Y="0.77" xr:Canvas3D.Z="-0.75"/>
+                <xr:HtmlPresenter>
+                    <a-entity light="type: ambient; color: #BBB"></a-entity>
+                    <a-entity light="type: directional; color: #FFF; intensity: 0.3" position="-0.5 1 1"></a-entity>
+                </xr:HtmlPresenter>
+                <other:Environment3D xr:Canvas3D.X="0.5" xr:Canvas3D.Y="1.5" xr:Canvas3D.Z="-0.8"/>
+                <menu:Menu3D Name="Menu3DInstance" Visibility="Collapsed" Rotation="0 30 0" xr:Canvas3D.IsDraggable="True"
+                             xr:Canvas3D.X="-0.45" xr:Canvas3D.Y="0.76" xr:Canvas3D.Z="-0.40"/>
+                <xr:ContentControl3D x:Name="MainContainer" Content="{Binding Content}"
+                                     xr:Canvas3D.X="-0.20" xr:Canvas3D.Y="0.76" xr:Canvas3D.Z="-0.60"/>
             </xr:Canvas3D>
         </xr:Root3D>
 
