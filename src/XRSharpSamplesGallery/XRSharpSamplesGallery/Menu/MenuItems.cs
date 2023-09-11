@@ -16,8 +16,8 @@ namespace XRSharpSamplesGallery.Menu
                 ThumbnailUri = "/thumbnails/Welcome.jpg",
                 ViewSourceFilesLocation = new[]
                 {
-                    new ViewSourceFileInfo() { TabHeader = "Welcome.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/README.md" },
-                    new ViewSourceFileInfo() { TabHeader = "Welcome.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/README.md" }
+                    new ViewSourceFileInfo() { TabHeader = "Welcome.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Welcome.xaml" },
+                    new ViewSourceFileInfo() { TabHeader = "Welcome.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Welcome.xaml.cs" }
                 }
             });
             this.Add(new()
@@ -32,8 +32,8 @@ namespace XRSharpSamplesGallery.Menu
                 },
                 ViewSourceFilesLocation = new[]
                 {
-                    new ViewSourceFileInfo() { TabHeader = "Calculator3D.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/README.md" },
-                    new ViewSourceFileInfo() { TabHeader = "Calculator3D.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/README.md" }
+                    new ViewSourceFileInfo() { TabHeader = "Calculator3D.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Calculator3D.xaml" },
+                    new ViewSourceFileInfo() { TabHeader = "Calculator3D.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Calculator3D.xaml.cs" }
                 }
             });
             //this.Add(new() { Title = "Charts 3D", PageToNavigateTo = typeof(Charts) });
