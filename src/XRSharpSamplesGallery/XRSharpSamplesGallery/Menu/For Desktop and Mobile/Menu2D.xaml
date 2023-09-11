@@ -36,13 +36,24 @@
             Margin="38,32,0,0"/>
         
         <!-- Menu -->
-        <ListBox
-            x:Name="MenuListBox"
-            ItemsSource="{Binding MenuItems}"
-            SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}"
-            Style="{StaticResource Menu2D_ListBox_Style}"
-            Margin="30,100,0,0">
-        </ListBox>
+        <StackPanel Orientation="Vertical">
+            
+            <ListBox
+                x:Name="MenuListBox"
+                ItemsSource="{Binding MenuItems}"
+                SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}"
+                Style="{StaticResource Menu2D_ListBox_Style}"
+                Margin="30,100,0,0">
+            </ListBox>
+
+            <TextBlock Text="More demos coming soon!"
+               TextWrapping="Wrap"
+               Margin="44,0,0,0"
+               FontSize="16"
+               FontWeight="Bold"
+               Foreground="#FF317773"/>
+            
+        </StackPanel>
 
     </Grid>
 </UserControl>
