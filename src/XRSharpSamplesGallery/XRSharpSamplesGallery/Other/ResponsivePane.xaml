@@ -6,7 +6,7 @@
     x:Name="ThisControl">
 
     <UserControl.Resources>
-        <Style TargetType="Button">
+        <Style x:Name="Button_Style" TargetType="Button">
             <Setter Property="Foreground" Value="#FFDDDDDD" />
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="BorderBrush" Value="#FF718597" />
@@ -60,6 +60,10 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <!-- Implicit style -->
+        <Style TargetType="Button" BasedOn="{StaticResource Button_Style}"/>
+        
     </UserControl.Resources>
 
     <Grid>

@@ -8,11 +8,11 @@
              xr:Canvas3D.IsDraggable="True"
              Rotation="-45 0 0">
     <xr:Canvas3D.Resources>
-        <Style TargetType="xr:RoundedBox">
+        <Style x:Key="RoundedBox_Style" TargetType="xr:RoundedBox">
             <Setter Property="Radius" Value="0.002"/>
             <Setter Property="xr:Material.Metalness" Value="0.3" />
         </Style>
-        <Style TargetType="xr:Button3D">
+        <Style x:Key="Button3D_Style" TargetType="xr:Button3D">
             <Setter Property="SizeX" Value="0.03"/>
             <Setter Property="SizeY" Value="0.03"/>
             <Setter Property="SizeZ" Value="0.01"/>
@@ -61,6 +61,11 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
+        <!-- Implicit styles -->
+        <Style TargetType="xr:RoundedBox" BasedOn="{StaticResource RoundedBox_Style}"/>
+        <Style TargetType="xr:Button3D" BasedOn="{StaticResource Button3D_Style}"/>
+
     </xr:Canvas3D.Resources>
 
     <xr:Canvas3D xr:Canvas3D.Y="0.208" xr:Canvas3D.Z="0.004" Rotation="15 0 0">
