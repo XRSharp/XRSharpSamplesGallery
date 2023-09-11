@@ -2,9 +2,9 @@
 
 namespace XRSharpSamplesGallery.Samples
 {
-    public partial class Charts : UserControl3D
+    public partial class Maps3D : UserControl3D
     {
-        public Charts()
+        public Maps3D()
         {
             InitializeComponent();
         }

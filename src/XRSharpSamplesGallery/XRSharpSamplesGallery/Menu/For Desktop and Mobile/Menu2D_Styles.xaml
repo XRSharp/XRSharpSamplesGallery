@@ -44,7 +44,7 @@
                                    VerticalAlignment="Bottom"
                                    TextWrapping="Wrap"
                                    Margin="0,0,0,-35"
-                                   FontSize="15"
+                                   FontSize="16"
                                    FontFamily="Fantasy"/>
                     </Grid>
                 </DataTemplate>
@@ -59,7 +59,7 @@
                     <Setter Property="Background" Value="#55FFFFFF" />
                     <Setter Property="BorderThickness" Value="2"/>
                     <Setter Property="TabNavigation" Value="Local" />
-                    <Setter Property="Margin" Value="10" />
+                    <Setter Property="Margin" Value="10,0,10,60" />
                     <Setter Property="Cursor" Value="Hand" />
                     <Setter Property="Template">
                         <Setter.Value>

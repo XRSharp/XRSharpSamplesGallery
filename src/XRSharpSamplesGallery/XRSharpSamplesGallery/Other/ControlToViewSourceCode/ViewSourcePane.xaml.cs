@@ -26,7 +26,7 @@ namespace XRSharpSamplesGallery.Other
 
         public void ViewSource(IEnumerable<ViewSourceFileInfo> sourcePaths)
         {
-            if (sourcePaths.Any())
+            if (sourcePaths != null && sourcePaths.Any())
             {
                 var tabControl = new TabControl()
                 {

@@ -46,14 +46,30 @@
     <Page Include="Other\ResponsivePane.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\Calculator3D.xaml">
+    <Page Include="Samples\Calculator3D\Calculator3D.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\Charts.xaml">
+    <Page Include="Samples\Charts3D\Charts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Samples\Welcome.xaml">
+    <Page Include="Samples\Maps3D\Maps3D.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\MultiUser\MultiUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\MVVM\MVVM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Physics\Physics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\Welcome\Welcome.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -75,25 +91,38 @@
     <Compile Include="Other\Environment3D.xaml.cs" />
     <Compile Include="Other\ResponsivePane.xaml.cs" />
     <Compile Include="Other\SampleAttachedProperties.cs" />
-    <Compile Include="Samples\Calculator3D.xaml.cs" />
-    <Compile Include="Samples\Charts.xaml.cs">
+    <Compile Include="Samples\Calculator3D\Calculator3D.xaml.cs" />
+    <Compile Include="Samples\Charts3D\Charts.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Samples\Welcome.xaml.cs" />
+    <Compile Include="Samples\Maps3D\Maps3D.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Samples\MultiUser\MultiUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Samples\MVVM\MVVM.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Samples\Physics\Physics.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Samples\Welcome\Welcome.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Other\Assets\room\room.glb" />
     <Content Include="Menu\For Desktop and Mobile\BackgroundOverlay.png" />
     <Content Include="Menu\MenuIcon.png" />
+    <Content Include="Menu\Thumbnails\UnderConstruction.jpg" />
     <Content Include="Other\AppTitleBanner.png" />
     <Content Include="Other\Assets\room\room-license.txt" />
     <Content Include="Other\Assets\picture-frame\license.txt" />
     <EmbeddedResource Include="Other\Assets\picture-frame\scene.bin" />
     <EmbeddedResource Include="Other\Assets\picture-frame\scene.gltf" />
     <Content Include="Other\ControlToViewSourceCode\CloseIcon.png" />
-    <Content Include="Thumbnails\Calculator3D.jpg" />
-    <Content Include="Thumbnails\Welcome.jpg" />    
+    <Content Include="Menu\Thumbnails\Calculator3D.jpg" />
+    <Content Include="Menu\Thumbnails\Welcome.jpg" />    
   </ItemGroup>
 
   <ItemGroup>
@@ -154,6 +183,22 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Other\2D Styles\TabControlStyle.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\Maps3D\Maps3D.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\MultiUser\MultiUser.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\MVVM\MVVM.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\Physics\Physics.xaml" />
   </ItemGroup>
 
 </Project>

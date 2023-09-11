@@ -1,0 +1,17 @@
+﻿<xr:UserControl3D
+    x:Class="XRSharpSamplesGallery.Samples.Charts3D"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:xr="http://xrsharp.io/xr"
+    xmlns:local="clr-namespace:XRSharpSamplesGallery.Samples">
+    
+    <xr:Canvas3D>
+        <xr:TextBlock3D
+            Text="Under-construction!"
+            Foreground="#317773"
+            Scale="3 3 3"
+            xr:Canvas3D.X="0"
+            xr:Canvas3D.Y="0.1"
+            xr:Canvas3D.Z="0"/>
+    </xr:Canvas3D>
+</xr:UserControl3D>
