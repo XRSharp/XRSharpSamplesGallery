@@ -36,7 +36,12 @@ namespace XRSharpSamplesGallery.Menu
                     new ViewSourceFileInfo() { TabHeader = "Calculator3D.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Calculator3D.xaml.cs" }
                 }
             });
-            //this.Add(new() { Title = "Charts 3D", PageToNavigateTo = typeof(Charts) });
+            this.Add(new()
+            {
+                Title = "Charts 3D",
+                PageToNavigateTo = typeof(Charts),
+                ThumbnailUri = "/Menu/Thumbnails/UnderContruction.jpg",
+            });
         }
     }
 }
