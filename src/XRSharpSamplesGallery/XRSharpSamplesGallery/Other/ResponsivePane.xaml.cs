@@ -18,7 +18,7 @@ namespace XRSharpSamplesGallery.Other
     {
         //This class contains all that we use to make the menu on the left disappear when the screen is too small.
 
-        const double MinimumResolutionForMenu = 560d;
+        const double MinimumResolutionForMenu = 750d;
 
         CurrentState _currentState;
 
