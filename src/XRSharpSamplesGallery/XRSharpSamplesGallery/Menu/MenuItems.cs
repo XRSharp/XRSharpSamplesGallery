@@ -13,7 +13,7 @@ namespace XRSharpSamplesGallery.Menu
             {
                 Title = "Welcome",
                 PageToNavigateTo = typeof(Welcome),
-                ThumbnailUri = "/thumbnails/Welcome.jpg",
+                ThumbnailUri = "/Menu/Thumbnails/Welcome.jpg",
                 ViewSourceFilesLocation = new[]
                 {
                     new ViewSourceFileInfo() { TabHeader = "Welcome.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Welcome.xaml" },
@@ -24,7 +24,7 @@ namespace XRSharpSamplesGallery.Menu
             {
                 Title = "Calculator 3D",
                 PageToNavigateTo = typeof(Calculator3D),
-                ThumbnailUri = "/thumbnails/Calculator3D.jpg",
+                ThumbnailUri = "/Menu/Thumbnails/Calculator3D.jpg",
                 CameraOptions = new CameraOptions
                 {
                     Position = new Point3D(-0.16, 0.91, -0.51),
