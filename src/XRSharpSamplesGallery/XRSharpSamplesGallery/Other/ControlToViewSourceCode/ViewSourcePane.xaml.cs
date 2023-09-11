@@ -28,7 +28,10 @@ namespace XRSharpSamplesGallery.Other
         {
             if (sourcePaths.Any())
             {
-                var tabControl = new TabControl();
+                var tabControl = new TabControl()
+                {
+                    Style = (Style)Application.Current.Resources["MaterialDesign_TabControl_Style"]
+                };
 
                 foreach (ViewSourceFileInfo viewSourceFileInfo in sourcePaths)
                 {
@@ -38,7 +41,8 @@ namespace XRSharpSamplesGallery.Other
                         Content = new ControlToViewSourceCode()
                         {
                             FilePathOnGitHub = viewSourceFileInfo.FilePathOnGitHub
-                        }
+                        },
+                        Style = (Style)Application.Current.Resources["MaterialDesign_TabItem_Style"]
                     };
 
                     tabControl.Items.Add(tabItem);

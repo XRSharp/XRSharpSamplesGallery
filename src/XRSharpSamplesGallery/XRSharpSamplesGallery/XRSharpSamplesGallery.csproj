@@ -27,7 +27,14 @@
     <Page Include="Menu\For Desktop and Mobile\Menu2D.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Other\FlatButtonStyle.xaml">
+    <Page Include="Other\2D Styles\TabControlStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Other\2D Styles\RoundedButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Other\2D Styles\FlatButtonStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Other\ControlToViewSourceCode\ViewSourcePane.xaml">
@@ -139,6 +146,14 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Other\ControlToViewSourceCode\FlatButtonStyle.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Other\2D Styles\RoundedButtonStyle.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Other\2D Styles\TabControlStyle.xaml" />
   </ItemGroup>
 
 </Project>
