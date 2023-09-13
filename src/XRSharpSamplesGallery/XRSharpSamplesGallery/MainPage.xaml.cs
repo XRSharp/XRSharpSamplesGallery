@@ -40,5 +40,12 @@ namespace XRSharpSamplesGallery
         {
             Menu3DInstance.Visibility = Visibility.Collapsed;
         }
+
+        private void OnAllNodesLoaded(object sender, EventArgs e)
+        {
+            LodingText.Visibility = Visibility.Collapsed;
+            MenuResponsivePane.Visibility = Visibility.Visible;
+            ViewSourcePane.Visibility = Visibility.Visible;
+        }
     }
 }

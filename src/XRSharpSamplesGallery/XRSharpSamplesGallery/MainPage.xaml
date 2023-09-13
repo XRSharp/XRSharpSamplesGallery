@@ -14,7 +14,8 @@
     <Grid>
 
         <xr:Root3D Name="Root3DInstance" ColorManagement="True" EnterXR="OnEnterXR" ExitXR="OnExitXR"
-                   CameraPosition="{Binding SelectedMenuItem.CameraOptions.Position}" CameraRotation="{Binding SelectedMenuItem.CameraOptions.Rotation}">
+                   CameraPosition="{Binding SelectedMenuItem.CameraOptions.Position}" CameraRotation="{Binding SelectedMenuItem.CameraOptions.Rotation}"
+                   IsLoadingScreenEnabled="False" AssetsTimeoutMs="5000" AllNodesLoaded="OnAllNodesLoaded">
 
             <xr:Canvas3D>
                 <xr:HtmlPresenter>
@@ -29,11 +30,15 @@
             </xr:Canvas3D>
         </xr:Root3D>
 
-        <other:ResponsivePane x:Name="MenuResponsivePane">
+        <TextBlock x:Name="LodingText" Text="Loading" FontSize="32"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Gray"/>
+
+        <other:ResponsivePane x:Name="MenuResponsivePane" Visibility="Collapsed">
             <menu:Menu2D/>
         </other:ResponsivePane>
 
-        <other:ViewSourcePane x:Name="ViewSourcePane" SourcePaths="{Binding SelectedMenuItem.ViewSourceFilesLocation}"  FontSize="18" FontWeight="Bold" Padding="5" />
+        <other:ViewSourcePane x:Name="ViewSourcePane" SourcePaths="{Binding SelectedMenuItem.ViewSourceFilesLocation}"
+                              FontSize="18" FontWeight="Bold" Padding="5" Visibility="Collapsed"/>
 
     </Grid>
 

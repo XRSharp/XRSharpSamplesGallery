@@ -91,7 +91,7 @@
     <xr:Button3D Name="B0" xr:Canvas3D.X="0.049" xr:Canvas3D.Y="0.075" SizeX="0.063" Background="#FF3C3C3C" Click="DigitBtn_Click" Content="0"/>
     <xr:Button3D Name="BPeriod" xr:Canvas3D.X="0.0975" xr:Canvas3D.Y="0.075" Background="#FF565656" Click="DigitBtn_Click" Content="."/>
     <xr:Button3D Name="BDevide" xr:Canvas3D.X="0.13" xr:Canvas3D.Y="0.1725" Background="#FF2C2C2C" Click="OperBtn_Click" Content="/"/>
-    <xr:Button3D Name="BMultiply" xr:Canvas3D.X="0.13" xr:Canvas3D.Y="0.14" Background="#FF2C2C2C" Click="OperBtn_Click" Content="*"/>
+    <xr:Button3D Name="BMultiply" xr:Canvas3D.X="0.13" xr:Canvas3D.Y="0.14" Background="#FF2C2C2C" Click="OperBtn_Click" Content="×"/>
     <xr:Button3D Name="BMinus" xr:Canvas3D.X="0.13" xr:Canvas3D.Y="0.1075" Background="#FF2C2C2C" Click="OperBtn_Click" Content="-"/>
     <xr:Button3D Name="BPlus" xr:Canvas3D.X="0.13" xr:Canvas3D.Y="0.075" Background="#FF2C2C2C" Click="OperBtn_Click" Content="+"/>
     <xr:Button3D Name="BEqual" xr:Canvas3D.X="0.0813" xr:Canvas3D.Y="0.0425" SizeX="0.1275" Background="#FF125166" Click="OperBtn_Click" Content="=" FontSize="30"/>
