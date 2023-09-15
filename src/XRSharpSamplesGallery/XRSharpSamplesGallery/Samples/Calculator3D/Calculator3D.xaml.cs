@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 using System.Windows;
 using XRSharp.Controls;
 
@@ -9,6 +11,7 @@ namespace XRSharpSamplesGallery.Samples
         public Calculator3D()
         {
             InitializeComponent();
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
             PaperBox = new TextBlock3D();
             Paper = new PaperTrail(PaperBox);
@@ -238,6 +241,7 @@ namespace XRSharpSamplesGallery.Samples
             catch (Exception e)
             {
                 d = 0;
+                Console.WriteLine(e);
                 //Paper.AddResult("Error");
                 //MessageBox.Show("Operation cannot be perfomed: " + e.ToString());
                 DisplayBox.Text = "Error";
