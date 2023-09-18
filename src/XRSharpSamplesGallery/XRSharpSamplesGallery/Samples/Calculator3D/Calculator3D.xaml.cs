@@ -26,7 +26,7 @@ namespace XRSharpSamplesGallery.Samples
         private enum Operation
         {
             None,
-            Devide,
+            Divide,
             Multiply,
             Subtract,
             Add,
@@ -93,15 +93,15 @@ namespace XRSharpSamplesGallery.Samples
                 EraseDisplay = true;
                 LastOper = Operation.None;
             }
-            else if (s == "BDevide")
+            else if (s == "BDivide")
             {
                 if (EraseDisplay)
                 {
-                    LastOper = Operation.Devide;
+                    LastOper = Operation.Divide;
                     return;
                 }
                 CalcResults();
-                LastOper = Operation.Devide;
+                LastOper = Operation.Divide;
                 LastValue = Display;
                 EraseDisplay = true;
             }
@@ -197,7 +197,7 @@ namespace XRSharpSamplesGallery.Samples
             {
                 switch (LastOper)
                 {
-                    case Operation.Devide:
+                    case Operation.Divide:
                         Paper.AddArguments(string.Format("{0}·{1}⁻¹", LastValue, Display));
                         d = (Convert.ToDouble(LastValue) / Convert.ToDouble(Display));
                         CheckResult(d);
