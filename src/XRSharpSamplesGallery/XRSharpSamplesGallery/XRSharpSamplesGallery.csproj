@@ -85,6 +85,7 @@
     <Compile Include="Menu\MenuItems.cs" />
     <Compile Include="Menu\MenuItem.cs" />
     <Compile Include="Menu\MenuViewModel.cs" />
+    <Compile Include="Other\CameraAnimation.cs" />
     <Compile Include="Other\ControlToViewSourceCode\ControlToViewSourceCode.cs" />
     <Compile Include="Other\ControlToViewSourceCode\ViewSourceFileInfo.cs" />
     <Compile Include="Other\ControlToViewSourceCode\ViewSourcePane.xaml.cs" />

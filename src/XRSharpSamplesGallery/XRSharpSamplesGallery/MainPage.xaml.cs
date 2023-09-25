@@ -8,6 +8,8 @@ namespace XRSharpSamplesGallery
 {
     public partial class MainPage : Page
     {
+        private readonly CameraAnimation _cameraAnimation;
+
         public MainPage()
         {
             InitializeComponent();
@@ -20,6 +22,8 @@ namespace XRSharpSamplesGallery
             {
                 menuViewModel.SelectedMenuItem = menuViewModel.MenuItems[0];
             };
+
+            _cameraAnimation = new CameraAnimation(Root3DInstance);
         }
 
         private void OnSelectionChanged(object sender, Menu.MenuItem menuItem)
@@ -29,6 +33,8 @@ namespace XRSharpSamplesGallery
 
             // Hide the menu when navigating if we are on mobile:
             MenuResponsivePane.CollapseIfMobile();
+
+            _cameraAnimation.Animate(menuItem.CameraOptions);
         }
 
         private void OnEnterXR(object sender, EventArgs e)

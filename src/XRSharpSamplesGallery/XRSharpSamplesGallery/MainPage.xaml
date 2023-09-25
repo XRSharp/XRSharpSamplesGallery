@@ -14,7 +14,6 @@
     <Grid>
 
         <xr:Root3D Name="Root3DInstance" ColorManagement="True" EnterXR="OnEnterXR" ExitXR="OnExitXR"
-                   CameraPosition="{Binding SelectedMenuItem.CameraOptions.Position}" CameraRotation="{Binding SelectedMenuItem.CameraOptions.Rotation}"
                    IsLoadingScreenEnabled="False" AssetsTimeoutMs="5000" AllNodesLoaded="OnAllNodesLoaded">
 
             <xr:Canvas3D>
