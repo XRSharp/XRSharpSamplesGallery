@@ -30,7 +30,7 @@
                           SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}">
                 <xr:ListBox3D.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <xr:WrapPanel3D/>
+                        <xr:WrapPanel3D Orientation="XY" RevertSecondDirection="True" SizeX="0.20" SizeY="0.2" SizeZ="0.1"/>
                     </ItemsPanelTemplate>
                 </xr:ListBox3D.ItemsPanel>
 
