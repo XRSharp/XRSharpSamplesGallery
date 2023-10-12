@@ -10,7 +10,7 @@
     <xr:Canvas3D.Resources>
         <Style x:Key="RoundedBox_Style" TargetType="xr:RoundedBox">
             <Setter Property="Radius" Value="0.002"/>
-            <Setter Property="xr:Material.Metalness" Value="0.3" />
+            <Setter Property="xr:StandardMaterial.Metalness" Value="0.3" />
         </Style>
         <Style x:Key="Button3D_Style" TargetType="xr:Button3D">
             <Setter Property="SizeX" Value="0.03"/>

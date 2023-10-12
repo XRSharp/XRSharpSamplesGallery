@@ -1,5 +1,5 @@
 ﻿using XRSharp;
-using XRSharp.AFrame.Components;
+using XRSharp.Components;
 using XRSharpSamplesGallery.Menu;
 
 namespace XRSharpSamplesGallery.Other

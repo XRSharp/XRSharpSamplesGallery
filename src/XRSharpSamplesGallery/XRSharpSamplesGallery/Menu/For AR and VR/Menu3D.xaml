@@ -64,12 +64,12 @@
                                             <ei:DataTrigger Binding="{TemplateBinding IsSelected}" Value="True">
                                                 <ei:ChangePropertyAction PropertyName="Color" TargetObject="{Binding ElementName=BackgroundBox}">
                                                     <ei:ChangePropertyAction.Value>
-                                                        <SolidColorBrush Color="#FF1F7FD9"/>
+                                                        <Color>#1F7FD9</Color>
                                                     </ei:ChangePropertyAction.Value>
                                                 </ei:ChangePropertyAction>
                                                 <ei:ChangePropertyAction PropertyName="Foreground" TargetObject="{Binding ElementName=contentControl}">
                                                     <ei:ChangePropertyAction.Value>
-                                                        <SolidColorBrush Color="#FF1F7FD9"/>
+                                                        <Color>#1F7FD9</Color>
                                                     </ei:ChangePropertyAction.Value>
                                                 </ei:ChangePropertyAction>
                                             </ei:DataTrigger>
