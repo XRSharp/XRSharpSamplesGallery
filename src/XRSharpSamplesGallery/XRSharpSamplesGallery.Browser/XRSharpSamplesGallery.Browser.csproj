@@ -3,9 +3,9 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <NoXamlPreprocessor>True</NoXamlPreprocessor>
-    <OpenSilverType>4</OpenSilverType>
+    <OpenSilverType>5</OpenSilverType>
     <PublishTrimmed>true</PublishTrimmed>
-	<PublishIISAssets>true</PublishIISAssets>
+	  <PublishIISAssets>true</PublishIISAssets>
     <!-- Uncomment to enable AOT compilation when publishing -->
     <!--<RunAOTCompilation>true</RunAOTCompilation>-->
   </PropertyGroup>
@@ -13,7 +13,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.*" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.*" PrivateAssets="all" />
-    <PackageReference Include="XRSharp" Version="0.1.3-preview-2023-10-12-130741-5c240c57" />
+    <PackageReference Include="XRSharp" Version="0.1.4-preview-2023-10-18-142253-651c40a7" />
   </ItemGroup>
 
   <PropertyGroup>
