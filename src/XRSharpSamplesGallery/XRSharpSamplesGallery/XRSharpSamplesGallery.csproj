@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XRSharp" Version="0.1.4-preview-2023-10-18-142253-651c40a7" />
+    <PackageReference Include="XRSharp" Version="0.1.4-preview-2023-10-19-125736-bc45053e" />
   </ItemGroup>
 
   <ItemGroup>

@@ -27,8 +27,9 @@ namespace XRSharpSamplesGallery.Menu
                 ThumbnailUri = "/Menu/Thumbnails/Calculator3D.jpg",
                 CameraOptions = new CameraOptions
                 {
-                    Position = new Point3D(-0.16, 0.91, -0.51),
-                    Rotation = new Point3D(-21, -6, 0),
+                    Position = new Point3D(-0.147, 0.91, -0.51),
+                    Rotation = new Point3D(-18.435, -3.619, -1.205),
+                    TargetPoint = new Point3D(-0.135, 0.85, -0.69),
                 },
                 ViewSourceFilesLocation = new[]
                 {

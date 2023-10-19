@@ -13,7 +13,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.*" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.*" PrivateAssets="all" />
-    <PackageReference Include="XRSharp" Version="0.1.4-preview-2023-10-18-142253-651c40a7" />
+    <PackageReference Include="XRSharp" Version="0.1.4-preview-2023-10-19-125736-bc45053e" />
   </ItemGroup>
 
   <PropertyGroup>

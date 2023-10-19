@@ -7,9 +7,10 @@ namespace XRSharpSamplesGallery.Other
 {
     public class CameraAnimation
     {
-        private const string CameraPath = "object3D.el.sceneEl.camera.el.object3D";
+        private const string CameraPath = "object3D.el.sceneEl.camera";
         private const AnimationEasing Easing = AnimationEasing.easeInOutCubic;
         private const int DurationMs = 1500;
+        private bool _orbitControlsEnabled;
         private readonly Root3D _root3D;
 
         private readonly Animation _animateCameraPositionX = new() { Property = $"{CameraPath}.position.x", Enabled = false, Easing = Easing, DurationMs = DurationMs };
@@ -32,6 +33,7 @@ namespace XRSharpSamplesGallery.Other
             components.Add(_animateCameraRotationZ);
 
             _animateCameraPositionX.Completed += OnAnimationCompleted;
+            _orbitControlsEnabled = OrbitControls.GetEnabled(_root3D);
         }
 
         internal void Animate(CameraOptions cameraOptions)
@@ -39,14 +41,38 @@ namespace XRSharpSamplesGallery.Other
             if (_root3D.Content.JsElement == null)
                 return;
 
-            DisableLookControls();
-
             var position = cameraOptions.Position;
             var rotation = cameraOptions.Rotation;
 
-            _animateCameraPositionX.To = $"{position.X.ToInvariantString()}";
-            _animateCameraPositionY.To = $"{position.Y.ToInvariantString()}";
-            _animateCameraPositionZ.To = $"{position.Z.ToInvariantString()}";
+            if (_orbitControlsEnabled)
+            {
+                OrbitControls.SetEnabled(_root3D, false);
+                OrbitControls.SetTarget(_root3D, cameraOptions.TargetPoint);
+            }
+            else
+            {
+                DisableLookControls();
+            }
+
+            var state = Interop.ExecuteJavaScriptGetResult<string>($@"
+var camera = {_root3D.Content.JsElement}.sceneEl.camera;
+function round(num) {{ return Math.round((num + Number.EPSILON) * 1000) / 1000; }}
+var p = camera.el.object3D.worldToLocal(new THREE.Vector3({position.X.ToInvariantString()}, {position.Y.ToInvariantString()}, {position.Z.ToInvariantString()}));
+round(camera.position.x) + '|' + round(camera.position.y) + '|' + round(camera.position.z) + '|'
+  + round(camera.rotation.x) + '|' + round(camera.rotation.y) + '|' + round(camera.rotation.z) + '|'
+  + round(p.x) + '|' + round(p.y) + '|' + round(p.z);")
+                .Split('|');
+
+            _animateCameraPositionX.From = state[0];
+            _animateCameraPositionY.From = state[1];
+            _animateCameraPositionZ.From = state[2];
+            _animateCameraRotationX.From = state[3];
+            _animateCameraRotationY.From = state[4];
+            _animateCameraRotationZ.From = state[5];
+
+            _animateCameraPositionX.To = state[6];
+            _animateCameraPositionY.To = state[7];
+            _animateCameraPositionZ.To = state[8];
             _animateCameraRotationX.To = $"{rotation.X.ToRadiansInvariantString()}";
             _animateCameraRotationY.To = $"{rotation.Y.ToRadiansInvariantString()}";
             _animateCameraRotationZ.To = $"{rotation.Z.ToRadiansInvariantString()}";
@@ -61,7 +87,14 @@ namespace XRSharpSamplesGallery.Other
 
         private void OnAnimationCompleted(object sender, EventArgs e)
         {
-            EnableLookControls();
+            if (_orbitControlsEnabled)
+            {
+                OrbitControls.SetEnabled(_root3D, true);
+            }
+            else
+            {
+                EnableLookControls();
+            }
         }
 
         private void DisableLookControls()

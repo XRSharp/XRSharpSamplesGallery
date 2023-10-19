@@ -13,7 +13,8 @@
     <Grid>
 
         <xr:Root3D Name="Root3DInstance" xr:Renderer.ColorManagement="True" EnterXR="OnEnterXR" ExitXR="OnExitXR"
-                   IsLoadingScreenEnabled="False" AssetsTimeoutMs="5000" AllNodesLoaded="OnAllNodesLoaded">
+                   IsLoadingScreenEnabled="False" AssetsTimeoutMs="5000" AllNodesLoaded="OnAllNodesLoaded"
+                   xr:OrbitControls.Enabled="True" xr:OrbitControls.Target="0.1 1.1 -0.6" xr:OrbitControls.DisplayTarget="False">
             <xr:Root3D.Lights>
                 <xr:AmbientLight Color="#BBB"/>
                 <xr:DirectionalLight Intensity="0.4" xr:Canvas3D.X="-0.5" xr:Canvas3D.Y="1" xr:Canvas3D.Z="1"/>
