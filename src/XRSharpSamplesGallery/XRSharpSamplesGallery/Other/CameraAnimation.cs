@@ -1,4 +1,5 @@
-﻿using XRSharp;
+﻿using System;
+using XRSharp;
 using XRSharp.Components;
 using XRSharpSamplesGallery.Menu;
 
@@ -6,10 +7,10 @@ namespace XRSharpSamplesGallery.Other
 {
     public class CameraAnimation
     {
-        private const string CameraPath = "object3D.el.sceneEl.camera";
+        private const string CameraPath = "object3D.el.sceneEl.camera.el.object3D";
         private const AnimationEasing Easing = AnimationEasing.easeInOutCubic;
-        private const int DurationMs = 1000;
-        private Point3D _cameraPosition = new CameraOptions().Position;
+        private const int DurationMs = 1500;
+        private readonly Root3D _root3D;
 
         private readonly Animation _animateCameraPositionX = new() { Property = $"{CameraPath}.position.x", Enabled = false, Easing = Easing, DurationMs = DurationMs };
         private readonly Animation _animateCameraPositionY = new() { Property = $"{CameraPath}.position.y", Enabled = false, Easing = Easing, DurationMs = DurationMs };
@@ -20,7 +21,7 @@ namespace XRSharpSamplesGallery.Other
 
         public CameraAnimation(Root3D root3D)
         {
-            root3D.CameraPosition = _cameraPosition;
+            _root3D = root3D;
 
             var components = root3D.Content.Components;
             components.Add(_animateCameraPositionX);
@@ -29,16 +30,23 @@ namespace XRSharpSamplesGallery.Other
             components.Add(_animateCameraRotationX);
             components.Add(_animateCameraRotationY);
             components.Add(_animateCameraRotationZ);
+
+            _animateCameraPositionX.Completed += OnAnimationCompleted;
         }
 
         internal void Animate(CameraOptions cameraOptions)
         {
+            if (_root3D.Content.JsElement == null)
+                return;
+
+            DisableLookControls();
+
             var position = cameraOptions.Position;
             var rotation = cameraOptions.Rotation;
 
-            _animateCameraPositionX.To = $"{(position.X - _cameraPosition.X).ToInvariantString()}";
-            _animateCameraPositionY.To = $"{(position.Y - _cameraPosition.Y).ToInvariantString()}";
-            _animateCameraPositionZ.To = $"{(position.Z - _cameraPosition.Z).ToInvariantString()}";
+            _animateCameraPositionX.To = $"{position.X.ToInvariantString()}";
+            _animateCameraPositionY.To = $"{position.Y.ToInvariantString()}";
+            _animateCameraPositionZ.To = $"{position.Z.ToInvariantString()}";
             _animateCameraRotationX.To = $"{rotation.X.ToRadiansInvariantString()}";
             _animateCameraRotationY.To = $"{rotation.Y.ToRadiansInvariantString()}";
             _animateCameraRotationZ.To = $"{rotation.Z.ToRadiansInvariantString()}";
@@ -49,7 +57,33 @@ namespace XRSharpSamplesGallery.Other
             _animateCameraRotationX.Play();
             _animateCameraRotationY.Play();
             _animateCameraRotationZ.Play();
-            _cameraPosition = position;
+        }
+
+        private void OnAnimationCompleted(object sender, EventArgs e)
+        {
+            EnableLookControls();
+        }
+
+        private void DisableLookControls()
+        {
+            Interop.ExecuteJavaScriptVoid($@"
+var lookControls = {_root3D.Content.JsElement}.sceneEl.camera.el.components['look-controls'];
+if (lookControls && lookControls.data.enabled) {{
+  lookControls.magicWindowTrackingEnabled = false;
+  lookControls.pause();
+}}");
+        }
+
+        private void EnableLookControls()
+        {
+            Interop.ExecuteJavaScriptVoid($@"
+var lookControls = {_root3D.Content.JsElement}.sceneEl.camera.el.components['look-controls'];
+if (lookControls && lookControls.data.enabled) {{
+  lookControls.setupMouseControls();
+  lookControls.pitchObject.rotation.x = lookControls.el.object3D.rotation.x;
+  lookControls.yawObject.rotation.y = lookControls.el.object3D.rotation.y;
+  lookControls.play();
+}}");
         }
     }
 }

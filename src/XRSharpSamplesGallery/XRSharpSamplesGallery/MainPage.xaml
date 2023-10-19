@@ -16,7 +16,7 @@
                    IsLoadingScreenEnabled="False" AssetsTimeoutMs="5000" AllNodesLoaded="OnAllNodesLoaded">
             <xr:Root3D.Lights>
                 <xr:AmbientLight Color="#BBB"/>
-                <xr:DirectionalLight Intensity="0.3" xr:Canvas3D.X="-0.5" xr:Canvas3D.Y="1" xr:Canvas3D.Z="1"/>
+                <xr:DirectionalLight Intensity="0.4" xr:Canvas3D.X="-0.5" xr:Canvas3D.Y="1" xr:Canvas3D.Z="1"/>
             </xr:Root3D.Lights>
             <xr:Canvas3D>
                 <other:Environment3D xr:Canvas3D.X="0.5" xr:Canvas3D.Y="1.5" xr:Canvas3D.Z="-0.8"/>
