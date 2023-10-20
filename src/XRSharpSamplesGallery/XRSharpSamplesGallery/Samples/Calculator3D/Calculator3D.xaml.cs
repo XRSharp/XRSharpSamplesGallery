@@ -6,7 +6,7 @@ using XRSharp.Controls;
 
 namespace XRSharpSamplesGallery.Samples
 {
-    public partial class Calculator3D : Canvas3D
+    public partial class Calculator3D : UserControl3D
     {
         public Calculator3D()
         {
