@@ -18,9 +18,14 @@ namespace XRSharpSamplesGallery
             menuViewModel.SelectionChanged += OnSelectionChanged;
             DataContext = menuViewModel;
 
-            Loaded += (s, e) =>
+            Root3DInstance.AllNodesLoaded += (s, e) =>
             {
                 menuViewModel.SelectedMenuItem = menuViewModel.MenuItems[0];
+
+                if (Root3DInstance.IsHeadsetConnected && !Root3DInstance.IsMobile)
+                {
+                    ViewSourcePane.ButtonViewSource.HorizontalAlignment = HorizontalAlignment.Right;
+                }
             };
 
             _cameraAnimation = new CameraAnimation(Root3DInstance);
