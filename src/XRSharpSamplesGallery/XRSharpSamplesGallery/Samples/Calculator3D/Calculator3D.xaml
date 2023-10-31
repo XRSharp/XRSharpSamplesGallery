@@ -27,10 +27,14 @@
                         <xr:Grid3D>
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="MouseEnter">
-                                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=FocusedBox}" PropertyName="Opacity" Value="0.1"/>
+                                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=BackgroundBox}" PropertyName="Color">
+                                        <ei:ChangePropertyAction.Value>
+                                            <Color>#3A3A50</Color>
+                                        </ei:ChangePropertyAction.Value>
+                                    </ei:ChangePropertyAction>
                                 </i:EventTrigger>
                                 <i:EventTrigger EventName="MouseLeave">
-                                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=FocusedBox}" PropertyName="Opacity" Value="0"/>
+                                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=BackgroundBox}" PropertyName="Color" Value="{TemplateBinding Background}"/>
                                 </i:EventTrigger>
                                 <ei:DataTrigger Binding="{TemplateBinding IsPressed}" Value="True">
                                     <ei:ChangePropertyAction PropertyName="Scale" Value="1 1 0.2"/>
@@ -45,13 +49,6 @@
                                            x:Name="BackgroundBox"
                                            Radius="0.002"
                                            Color="{TemplateBinding Background}"/>
-                            <xr:RoundedBox SizeX="{TemplateBinding SizeX}"
-                                           SizeY="{TemplateBinding SizeY}"
-                                           SizeZ="{TemplateBinding SizeZ}"
-                                           x:Name="FocusedBox"
-                                           Radius="0.002"
-                                           Opacity="0"
-                                           Color="Blue"/>
                             <xr:TextBlock3D SizeX="0.25"
                                             Text="{TemplateBinding Content}"
                                             Margin="{TemplateBinding Padding}"

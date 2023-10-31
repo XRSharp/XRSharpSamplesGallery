@@ -20,8 +20,8 @@ namespace XRSharpSamplesGallery.Samples
             EraseDisplay = true;
         }
 
-        private TextBlock3D PaperBox;
-        private PaperTrail Paper;
+        private readonly TextBlock3D PaperBox;
+        private readonly PaperTrail Paper;
 
         private enum Operation
         {
@@ -72,6 +72,7 @@ namespace XRSharpSamplesGallery.Samples
             ProcessKey(ids[0]);
 
         }
+
         private void ProcessKey(char c)
         {
             if (EraseDisplay)
@@ -81,9 +82,9 @@ namespace XRSharpSamplesGallery.Samples
             }
             AddToDisplay(c);
         }
+
         private void ProcessOperation(string s)
         {
-            double d = 0.0;
             if (s == "BPM")
             {
                 LastOper = Operation.Negate;
@@ -249,7 +250,8 @@ namespace XRSharpSamplesGallery.Samples
 
             return d;
         }
-        private void CheckResult(double d)
+
+        private static void CheckResult(double d)
         {
             if (double.IsNaN(d)) // || Double.IsNegativeInfinity(d) || Double.IsPositiveInfinity(d))
                 throw new Exception("Illegal value");
@@ -312,7 +314,7 @@ namespace XRSharpSamplesGallery.Samples
         {
             string args;
 
-            private TextBlock3D PaperBox;
+            private readonly TextBlock3D PaperBox;
 
             public PaperTrail()
             {
