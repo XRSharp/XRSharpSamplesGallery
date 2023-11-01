@@ -13,6 +13,7 @@
                       xr:Canvas3D.Z="0"
                       Rotation="0 -90 0"
                       Scale="0.05"
+                      ReceiveShadows="False"
                       Source="/Other/Assets/picture-frame/scene.gltf"/>
 
         <xr:Canvas3D xr:Canvas3D.X="-0.058"

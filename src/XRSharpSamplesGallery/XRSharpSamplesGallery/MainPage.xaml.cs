@@ -9,24 +9,15 @@ namespace XRSharpSamplesGallery
     public partial class MainPage : Page
     {
         private readonly CameraAnimation _cameraAnimation;
+        private readonly MenuViewModel _menuViewModel;
 
         public MainPage()
         {
             InitializeComponent();
 
-            var menuViewModel = new MenuViewModel();
-            menuViewModel.SelectionChanged += OnSelectionChanged;
-            DataContext = menuViewModel;
-
-            Root3DInstance.AllNodesLoaded += (s, e) =>
-            {
-                menuViewModel.SelectedMenuItem = menuViewModel.MenuItems[0];
-
-                if (Root3DInstance.IsHeadsetConnected && !Root3DInstance.IsMobile)
-                {
-                    ViewSourcePane.ButtonViewSource.HorizontalAlignment = HorizontalAlignment.Right;
-                }
-            };
+            _menuViewModel = new MenuViewModel();
+            _menuViewModel.SelectionChanged += OnSelectionChanged;
+            DataContext = _menuViewModel;
 
             _cameraAnimation = new CameraAnimation(Root3DInstance);
         }
@@ -57,6 +48,13 @@ namespace XRSharpSamplesGallery
             LodingText.Visibility = Visibility.Collapsed;
             MenuResponsivePane.Visibility = Visibility.Visible;
             ViewSourcePane.Visibility = Visibility.Visible;
+
+            _menuViewModel.SelectedMenuItem = _menuViewModel.MenuItems[0];
+
+            if (Root3DInstance.IsHeadsetConnected && !Root3DInstance.IsMobile)
+            {
+                ViewSourcePane.ButtonViewSource.HorizontalAlignment = HorizontalAlignment.Right;
+            }
         }
     }
 }

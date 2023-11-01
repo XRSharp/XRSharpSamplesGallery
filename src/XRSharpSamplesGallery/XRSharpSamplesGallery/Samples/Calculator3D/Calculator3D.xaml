@@ -48,6 +48,8 @@
                                            SizeZ="{TemplateBinding SizeZ}"
                                            x:Name="BackgroundBox"
                                            Radius="0.002"
+                                           CastShadows="False"
+                                           ReceiveShadows="False"
                                            Color="{TemplateBinding Background}"/>
                             <xr:TextBlock3D SizeX="0.25"
                                             Text="{TemplateBinding Content}"
@@ -68,7 +70,7 @@
 
     <xr:Canvas3D>
         <xr:Canvas3D xr:Canvas3D.Y="0.208" xr:Canvas3D.Z="0.004" Rotation="15 0 0">
-            <xr:RoundedBox Color="#FF222222" xr:Canvas3D.X="0.065" SizeX="0.163" SizeY="0.041" SizeZ="0.008"/>
+            <xr:RoundedBox Color="#FF222222" xr:Canvas3D.X="0.065" SizeX="0.163" SizeY="0.041" SizeZ="0.008" ReceiveShadows="False"/>
             <xr:TextBlock3D x:Name="DisplayBox" Margin="0.005" SizeX="0.3" AlignmentX="End"
                             FontSize="32" Foreground="#FFBBBBBB" Text="23.5"/>
         </xr:Canvas3D>
@@ -93,7 +95,7 @@
         <xr:Button3D Name="BSqrt" xr:Canvas3D.Y="0.1075" Background="#FF565656" Click="OperBtn_Click" Content="√"/>
         <xr:Button3D Name="BOneOver" xr:Canvas3D.Y="0.075" Background="#FF565656" Click="OperBtn_Click" Content="1/x"/>
         <xr:Button3D Name="BPM" xr:Canvas3D.Y="0.0425" Background="#FF565656" Click="OperBtn_Click" Content="+/-"/>
-        <xr:RoundedBox Color="#FF161616" SizeX="0.165" SizeY="0.165" SizeZ="0.0055"
+        <xr:RoundedBox Color="#FF161616" SizeX="0.165" SizeY="0.165" SizeZ="0.0055" ReceiveShadows="False"
                        xr:Canvas3D.X="0.065" xr:Canvas3D.Y="0.107" xr:Canvas3D.Z="-0.0025"/>
     </xr:Canvas3D>
 </xr:UserControl3D>
