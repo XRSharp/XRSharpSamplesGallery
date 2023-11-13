@@ -12,15 +12,15 @@
     
     <Grid>
 
-        <xr:Root3D Name="Root3DInstance" xr:Renderer.ColorManagement="True" xr:Renderer.ShadowType="PCFSoft" EnterXR="OnEnterXR" ExitXR="OnExitXR"
+        <xr:Root3D Name="Root3DInstance" xr:Renderer.ColorManagement="True" EnterXR="OnEnterXR" ExitXR="OnExitXR"
                    IsLoadingScreenEnabled="False" AssetsTimeoutMs="5000" AllNodesLoaded="OnAllNodesLoaded" IsStatsEnabled="False" 
                    xr:OrbitControls.Enabled="True" xr:OrbitControls.Target="0.1 1.1 -0.6" xr:OrbitControls.DisplayTarget="False">
             <xr:Root3D.Lights>
                 <xr:AmbientLight Intensity="0.9"/>
-                <xr:DirectionalLight Intensity="0.4" CastShadows="True" ShadowMapWidth="256" ShadowMapHeight="256" ShadowCameraFar="10" xr:Canvas3D.Y="3"/>
+                <xr:DirectionalLight Name="MainDirectionalLight" Intensity="0.4" ShadowMapWidth="256" ShadowMapHeight="256" ShadowCameraFar="10" xr:Canvas3D.Y="3"/>
             </xr:Root3D.Lights>
             <xr:Canvas3D>
-                <other:Environment3D xr:Canvas3D.X="0.5" xr:Canvas3D.Y="1.5" xr:Canvas3D.Z="-0.8"/>
+                <other:Environment3D Name="EnvironmentInstance" xr:Canvas3D.X="0.5" xr:Canvas3D.Y="1.5" xr:Canvas3D.Z="-0.8"/>
                 <menu:Menu3D Name="Menu3DInstance" Visibility="Collapsed" Rotation="0 30 0" xr:Canvas3D.IsDraggable="True"
                              xr:Canvas3D.X="-0.45" xr:Canvas3D.Y="0.76" xr:Canvas3D.Z="-0.40"/>
                 <xr:ContentControl3D x:Name="MainContainer" Content="{Binding Content}"

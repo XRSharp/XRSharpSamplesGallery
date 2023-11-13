@@ -46,6 +46,9 @@
     <Page Include="Other\ResponsivePane.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Other\TableShadowPlane.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Calculator3D\Calculator3D.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -92,6 +95,7 @@
     <Compile Include="Other\Environment3D.xaml.cs" />
     <Compile Include="Other\ResponsivePane.xaml.cs" />
     <Compile Include="Other\SampleAttachedProperties.cs" />
+    <Compile Include="Other\TableShadowPlane.xaml.cs" />
     <Compile Include="Samples\Calculator3D\Calculator3D.xaml.cs" />
     <Compile Include="Samples\Charts3D\Charts.xaml.cs">
       <SubType>Code</SubType>

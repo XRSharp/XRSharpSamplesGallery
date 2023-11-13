@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using XRSharp;
+using XRSharp.Core;
+using XRSharp.Shadows;
 using XRSharpSamplesGallery.Menu;
 using XRSharpSamplesGallery.Other;
 
@@ -54,6 +57,30 @@ namespace XRSharpSamplesGallery
             if (Root3DInstance.IsHeadsetConnected && !Root3DInstance.IsMobile)
             {
                 ViewSourcePane.ButtonViewSource.HorizontalAlignment = HorizontalAlignment.Right;
+            }
+
+            ConfigureShadows();
+        }
+
+        private void ConfigureShadows()
+        {
+            if (Root3DInstance.IsHeadsetConnected || Root3DInstance.IsMobile)
+            {
+                Renderer.SetShadowType(Root3DInstance, ShadowType.PCFSoft);
+                MainDirectionalLight.CastShadows = true;
+            }
+            else
+            {
+                Renderer.SetShadowType(Root3DInstance, ShadowType.Progressive);
+                ProgressiveShadows.SetLightPosition(Root3DInstance, new Point3D(0.5, 2, -1));
+                ProgressiveShadows.SetAmbient(Root3DInstance, 0.9);
+                ProgressiveShadows.SetPlane(Root3DInstance, new TableShadowPlane());
+                //ProgressiveShadows.SetShowDebugHelpers(Root3DInstance, true);
+                //((Panel3D)Root3DInstance.Content).Children.Add(ProgressiveShadows.GetPlane(Root3DInstance));
+
+                EnvironmentInstance.RoomModel.ModelLoaded += (_, __) => ProgressiveShadows.Update(Root3DInstance);
+                _menuViewModel.SelectionChanged += (_, __) => ProgressiveShadows.Clear(Root3DInstance);
+                _cameraAnimation.AnimationCompleted += (_, __) => ProgressiveShadows.Update(Root3DInstance);
             }
         }
     }

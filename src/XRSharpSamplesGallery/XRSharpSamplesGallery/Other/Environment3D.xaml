@@ -4,7 +4,7 @@
                   xmlns:xr="http://xrsharp.io/xr"
                   HideOnEnterAR="True">
 
-    <xr:GltfModel Source="/Other/Assets/room/room.glb" CastShadows="False" ReceiveShadows="False">
+    <xr:GltfModel Name="RoomModel" Source="/Other/Assets/room/room.glb" CastShadows="False" ReceiveShadows="False">
         <xr:ModelPart Name="DiningTable_DiningTable_0" CastShadows="False" ReceiveShadows="True"/>
     </xr:GltfModel>
 </xr:UserControl3D>
