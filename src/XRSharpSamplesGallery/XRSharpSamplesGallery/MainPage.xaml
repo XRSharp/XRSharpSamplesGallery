@@ -15,23 +15,9 @@
         <xr:Root3D Name="Root3DInstance" xr:Renderer.ColorManagement="True" xr:Renderer.ShadowType="PCFSoft" EnterXR="OnEnterXR" ExitXR="OnExitXR"
                    IsLoadingScreenEnabled="False" AssetsTimeoutMs="5000" AllNodesLoaded="OnAllNodesLoaded" IsStatsEnabled="False" 
                    xr:OrbitControls.Enabled="True" xr:OrbitControls.Target="0.1 1.1 -0.6" xr:OrbitControls.DisplayTarget="False">
-            <xr:Root3D.Resources>
-                <Style x:Key="ShadowLightStyle" TargetType="xr:ShadowLight">
-                    <sdk:Setter Property="CastShadows" Value="True"/>
-                    <sdk:Setter Property="ShadowCameraVisible" Value="False"/>
-                    <sdk:Setter Property="ShadowCameraFar" Value="10"/>
-                    <sdk:Setter Property="ShadowMapWidth" Value="256"/>
-                    <sdk:Setter Property="ShadowMapHeight" Value="256"/>
-                </Style>
-            </xr:Root3D.Resources>
             <xr:Root3D.Lights>
-                <xr:AmbientLight Color="#BBB"/>
-                <xr:SpotLight Style="{StaticResource ShadowLightStyle}" Intensity="0.4" Penumbra="0.2" Angle="110" Rotation="-90 0 0"
-                              xr:Canvas3D.X="0.5" xr:Canvas3D.Y="2.3" xr:Canvas3D.Z="-0.8"/>
-                <xr:DirectionalLight Style="{StaticResource ShadowLightStyle}" Intensity="0.3"
-                                     xr:Canvas3D.X="-1" xr:Canvas3D.Y="2" xr:Canvas3D.Z="-4"/>
-                <xr:DirectionalLight Style="{StaticResource ShadowLightStyle}" Intensity="0.4" ShadowMapWidth="128" ShadowMapHeight="128"
-                                     xr:Canvas3D.X="0" xr:Canvas3D.Y="2" xr:Canvas3D.Z="3"/>
+                <xr:AmbientLight Intensity="0.9"/>
+                <xr:DirectionalLight Intensity="0.4" CastShadows="True" ShadowMapWidth="256" ShadowMapHeight="256" ShadowCameraFar="10" xr:Canvas3D.Y="3"/>
             </xr:Root3D.Lights>
             <xr:Canvas3D>
                 <other:Environment3D xr:Canvas3D.X="0.5" xr:Canvas3D.Y="1.5" xr:Canvas3D.Z="-0.8"/>
