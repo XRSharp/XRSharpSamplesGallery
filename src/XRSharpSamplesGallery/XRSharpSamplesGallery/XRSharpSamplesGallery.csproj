@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <EnableDefaultItems>false</EnableDefaultItems>
     <DefineSilverlight>true</DefineSilverlight>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XRSharp" Version="0.1.4-preview-2023-11-14-085348-e9dfe62c" />
+    <PackageReference Include="XRSharp" Version="0.1.5-preview-2023-12-01-142631-09e72790" />
   </ItemGroup>
 
   <ItemGroup>
