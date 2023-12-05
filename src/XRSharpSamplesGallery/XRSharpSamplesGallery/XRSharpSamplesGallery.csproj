@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XRSharp" Version="0.1.5-preview-2023-12-01-142631-09e72790" />
+    <PackageReference Include="XRSharp" Version="0.1.5-preview-2023-12-05-073912-e07345c3" />
+    <PackageReference Include="XRSharp.CommunityToolkit" Version="0.1.5-preview-2023-12-02-082655-1de675ae" />
   </ItemGroup>
 
   <ItemGroup>
@@ -121,6 +122,8 @@
     <Content Include="Menu\MenuIcon.png" />
     <Content Include="Menu\Thumbnails\UnderConstruction.jpg" />
     <Content Include="Other\AppTitleBanner.png" />
+    <None Include="Other\Assets\avatar-head\license.txt" />
+    <EmbeddedResource Include="Other\Assets\avatar-head\scene.glb" />
     <Content Include="Other\Assets\room\room-license.txt" />
     <Content Include="Other\Assets\picture-frame\license.txt" />
     <EmbeddedResource Include="Other\Assets\picture-frame\scene.bin" />

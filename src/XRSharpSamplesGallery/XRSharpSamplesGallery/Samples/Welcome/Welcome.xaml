@@ -8,7 +8,7 @@
     <xr:Canvas3D>
         <xr:TextBlock3D
             Text="Welcome!"
-            Foreground="#317773"
+            Foreground="#79b6b3"
             Scale="3 3 3"
             xr:Canvas3D.X="0"
             xr:Canvas3D.Y="0.1"

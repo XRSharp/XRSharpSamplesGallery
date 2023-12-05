@@ -16,13 +16,16 @@
                    IsLoadingScreenEnabled="False" AssetsTimeoutMs="5000" AllNodesLoaded="OnAllNodesLoaded" IsStatsEnabled="False"
                    xr:Renderer.ShadowType="Progressive" xr:ProgressiveShadows.LightPosition="0.5 2 -1" xr:ProgressiveShadows.Ambient="0.9"
                    xr:OrbitControls.Enabled="True" xr:OrbitControls.Target="0.1 1.1 -0.6" xr:OrbitControls.DisplayTarget="False">
+
             <xr:Root3D.Lights>
                 <xr:AmbientLight Intensity="0.9"/>
                 <xr:DirectionalLight Name="MainDirectionalLight" Intensity="0.4" ShadowMapWidth="256" ShadowMapHeight="256" ShadowCameraFar="10" xr:Canvas3D.Y="3"/>
             </xr:Root3D.Lights>
+
             <xr:ProgressiveShadows.Plane>
                 <other:TableShadowPlane/>
             </xr:ProgressiveShadows.Plane>
+            
             <xr:Canvas3D>
                 <other:Environment3D Name="EnvironmentInstance" xr:Canvas3D.X="0.5" xr:Canvas3D.Y="1.5" xr:Canvas3D.Z="-0.8"/>
                 <menu:Menu3D Name="Menu3DInstance" Visibility="Collapsed" Rotation="0 30 0" xr:Canvas3D.IsDraggable="True"

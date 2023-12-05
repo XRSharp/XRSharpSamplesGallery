@@ -81,17 +81,17 @@ namespace XRSharpSamplesGallery.Menu
             //        new ViewSourceFileInfo() { TabHeader = "CalcuPhysicslator3D.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Physics/Physics.xaml.cs" }
             //    }
             //});
-            //this.Add(new()
-            //{
-            //    Title = "Multi-User",
-            //    PageToNavigateTo = typeof(MultiUser),
-            //    ThumbnailUri = "/Menu/Thumbnails/UnderConstruction.jpg",
-            //    ViewSourceFilesLocation = new[]
-            //    {
-            //        new ViewSourceFileInfo() { TabHeader = "MultiUser.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/MultiUser/MultiUser.xaml" },
-            //        new ViewSourceFileInfo() { TabHeader = "MultiUser.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/MultiUser/MultiUser.xaml.cs" }
-            //    }
-            //});
+            this.Add(new()
+            {
+                Title = "Multi-User",
+                PageToNavigateTo = typeof(MultiUser),
+                ThumbnailUri = "/Menu/Thumbnails/UnderConstruction.jpg",
+                ViewSourceFilesLocation = new[]
+                {
+                    new ViewSourceFileInfo() { TabHeader = "MultiUser.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/MultiUser/MultiUser.xaml" },
+                    new ViewSourceFileInfo() { TabHeader = "MultiUser.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/MultiUser/MultiUser.xaml.cs" }
+                }
+            });
         }
     }
 }
