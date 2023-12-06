@@ -7,7 +7,11 @@
 
     <xr:UserControl3D.Resources>
         <xrt:NetworkedScene x:Key="networked"
+                            Adapter="easyrtc"
+                            AppName="XRSharpSamplesGallery"
+                            Audio="True"
                             Debug="True"
+                            Room="MultiUserExample"
                             ServerURL="https://networked-easyrtc.glitch.me/">
             <xrt:NetworkedScene.Avatar>
                 <xr:Canvas3D>
