@@ -11,6 +11,7 @@
                             AppName="XRSharpSamplesGallery"
                             Audio="True"
                             Debug="True"
+                            HandTrackingEnabled="True"
                             Room="MultiUserExample"
                             ServerURL="https://networked-easyrtc.glitch.me/">
             <xrt:NetworkedScene.Avatar>

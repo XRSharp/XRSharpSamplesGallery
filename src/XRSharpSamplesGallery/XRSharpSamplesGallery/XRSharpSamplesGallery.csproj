@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XRSharp" Version="0.1.5-preview-2023-12-05-073912-e07345c3" />
-    <PackageReference Include="XRSharp.CommunityToolkit" Version="0.1.5-preview-2023-12-06-131615-f0a0c1af" />
+    <PackageReference Include="XRSharp" Version="0.1.5-preview-2023-12-13-121631-dec82b27" />
+    <PackageReference Include="XRSharp.CommunityToolkit" Version="0.1.5-preview-2023-12-13-141041-47eb6488" />
   </ItemGroup>
 
   <ItemGroup>
