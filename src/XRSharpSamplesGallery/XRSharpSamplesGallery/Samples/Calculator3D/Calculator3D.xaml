@@ -2,17 +2,11 @@
                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                   xmlns:xr="http://xrsharp.io/xr"
-                  xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
-                  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
                   Name="Calculator"
                   xr:Canvas3D.IsDraggable="True"
                   Rotation="-45 0 0">
     
     <xr:UserControl3D.Resources>
-        <Style x:Key="RoundedBox_Style" TargetType="xr:RoundedBox">
-            <Setter Property="Radius" Value="0.002"/>
-            <Setter Property="xr:StandardMaterial.Metalness" Value="0.3" />
-        </Style>
         <Style x:Key="Button3D_Style" TargetType="xr:Button3D">
             <Setter Property="SizeX" Value="0.03"/>
             <Setter Property="SizeY" Value="0.03"/>
@@ -25,37 +19,44 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="xr:Button3D">
                         <xr:Grid3D>
-                            <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="MouseEnter">
-                                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=BackgroundBox}" PropertyName="Color">
-                                        <ei:ChangePropertyAction.Value>
-                                            <Color>#3A3A50</Color>
-                                        </ei:ChangePropertyAction.Value>
-                                    </ei:ChangePropertyAction>
-                                </i:EventTrigger>
-                                <i:EventTrigger EventName="MouseLeave">
-                                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=BackgroundBox}" PropertyName="Color" Value="{TemplateBinding Background}"/>
-                                </i:EventTrigger>
-                                <ei:DataTrigger Binding="{TemplateBinding IsPressed}" Value="True">
-                                    <ei:ChangePropertyAction PropertyName="Scale" Value="1 1 0.2"/>
-                                </ei:DataTrigger>
-                                <ei:DataTrigger Binding="{TemplateBinding IsPressed}" Value="False">
-                                    <ei:ChangePropertyAction PropertyName="Scale" Value="1"/>
-                                </ei:DataTrigger>
-                            </i:Interaction.Triggers>
+                            <xr:VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualState Name="Normal"/>
+                                    <VisualState Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="BackgroundBox" Storyboard.TargetProperty="Color"
+                                                            To="#3A3A50" Duration="00:00:00.2"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Scale">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="1 1 0.2"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </xr:VisualStateManager.VisualStateGroups>
                             <xr:RoundedBox SizeX="{TemplateBinding SizeX}"
                                            SizeY="{TemplateBinding SizeY}"
                                            SizeZ="{TemplateBinding SizeZ}"
-                                           x:Name="BackgroundBox"
+                                           Name="BackgroundBox"       
                                            Radius="0.002"
-                                           CastShadows="False"
                                            ReceiveShadows="False"
+                                           CastShadows="False"
                                            Color="{TemplateBinding Background}"/>
-                            <xr:TextBlock3D SizeX="0.25"
-                                            Text="{TemplateBinding Content}"
-                                            Margin="{TemplateBinding Padding}"
-                                            xr:Canvas3D.X="-0.004"
-                                            xr:Canvas3D.Z="0.005"/>
+                            <xr:Viewbox3D SizeX="0.025"
+                                          SizeY="0.01"
+                                          SizeZ="0.001"
+                                          Margin="0 0 0 0 0 -0.001"
+                                          AlignmentX="Center"
+                                          AlignmentY="Center"
+                                          AlignmentZ="End">
+                                <xr:Text3D FontSize="0.01"
+                                           Thickness="0.001"
+                                           Color="White"
+                                           Text="{TemplateBinding Content}"/>
+                            </xr:Viewbox3D>
                         </xr:Grid3D>
                     </ControlTemplate>
                 </Setter.Value>
@@ -63,17 +64,16 @@
         </Style>
         
         <!-- Implicit styles -->
-        <Style TargetType="xr:RoundedBox" BasedOn="{StaticResource RoundedBox_Style}"/>
         <Style TargetType="xr:Button3D" BasedOn="{StaticResource Button3D_Style}"/>
-
     </xr:UserControl3D.Resources>
 
     <xr:Canvas3D>
-        <xr:Canvas3D xr:Canvas3D.Y="0.208" xr:Canvas3D.Z="0.004" Rotation="15 0 0">
-            <xr:RoundedBox Color="#FF222222" xr:Canvas3D.X="0.065" SizeX="0.163" SizeY="0.041" SizeZ="0.008" ReceiveShadows="False"/>
-            <xr:TextBlock3D x:Name="DisplayBox" Margin="0.005" SizeX="0.3" AlignmentX="End"
-                            FontSize="32" Foreground="#FFBBBBBB" Text="23.5"/>
-        </xr:Canvas3D>
+        <xr:Grid3D xr:Canvas3D.X="0.065" xr:Canvas3D.Y="0.208" xr:Canvas3D.Z="0.004" Rotation="15 0 0">
+            <xr:RoundedBox Color="#FF222222" SizeX="0.163" SizeY="0.041" SizeZ="0.008"
+                           Radius="0.002" xr:StandardMaterial.Metalness="0.3" ReceiveShadows="False"/>
+            <xr:Text3D Name="DisplayBox" Color="#FFBBBBBB" FontSize="0.012" Thickness="0.0005"
+                       Margin="0 0 0 0.01 0 -0.0002" AlignmentX="End" AlignmentZ="End"/>
+        </xr:Grid3D>
         <xr:Button3D Name="BC" xr:Canvas3D.Y="0.1725" Background="#FF125166" Click="OperBtn_Click" Content="C"/>
         <xr:Button3D Name="BCE" xr:Canvas3D.Y="0.14" Background="#FF2C2C2C" Click="OperBtn_Click" Content="CE"/>
         <xr:Button3D Name="B7" xr:Canvas3D.X="0.0325" xr:Canvas3D.Y="0.1725" Click="DigitBtn_Click" Content="7"/>
