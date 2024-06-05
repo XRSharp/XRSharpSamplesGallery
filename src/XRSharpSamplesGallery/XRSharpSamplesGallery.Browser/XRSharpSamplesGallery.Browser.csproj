@@ -5,14 +5,14 @@
     <NoXamlPreprocessor>True</NoXamlPreprocessor>
     <OpenSilverType>6</OpenSilverType>
     <PublishTrimmed>true</PublishTrimmed>
-	<PublishIISAssets>true</PublishIISAssets>
-	<WasmEnableSIMD>false</WasmEnableSIMD>
+	  <PublishIISAssets>true</PublishIISAssets>
+	  <WasmEnableSIMD>false</WasmEnableSIMD>
     <!-- Uncomment to enable AOT compilation when publishing -->
     <!--<RunAOTCompilation>true</RunAOTCompilation>-->
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XRSharp" Version="0.1.6-preview-2024-05-17-122100-9104b1bd" />
+    <PackageReference Include="XRSharp" Version="0.1.6-preview-2024-06-03-124659-4a2db51c" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" PrivateAssets="all" />
   </ItemGroup>
