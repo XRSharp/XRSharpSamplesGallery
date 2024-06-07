@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using XRSharp;
 
 namespace XRSharpSamplesGallery
 {
@@ -136,6 +139,35 @@ namespace XRSharpSamplesGallery
                 // https://doc.opensilver.net/documentation/general/javascript-interop-and-libraries.html
                 // and
                 // https://doc.opensilver.net/documentation/in-depth-topics/call-javascript-from-csharp.html
+            }
+        }
+
+        public static Visibility GetDesignTimeVisibility(DependencyObject obj)
+        {
+            return (Visibility)obj.GetValue(DesignTimeVisibilityProperty);
+        }
+
+        public static void SetDesignTimeVisibility(DependencyObject obj, Visibility value)
+        {
+            obj.SetValue(DesignTimeVisibilityProperty, value);
+        }
+
+        public static readonly DependencyProperty DesignTimeVisibilityProperty =
+            DependencyProperty.RegisterAttached(
+                name: "DesignTimeVisibility",
+                propertyType: typeof(Visibility),
+                ownerType: typeof(SampleAttachedProperties),
+                defaultMetadata: new PropertyMetadata(defaultValue: Visibility.Visible, DesignTimeVisibility_Changed));
+
+        private static void DesignTimeVisibility_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (DesignerProperties.GetIsInDesignMode(d))
+            {
+                UIElement elmt = d as UIElement;
+                if (elmt != null && e.NewValue is Visibility)
+                {
+                    elmt.Visibility = (Visibility)e.NewValue;
+                }
             }
         }
     }

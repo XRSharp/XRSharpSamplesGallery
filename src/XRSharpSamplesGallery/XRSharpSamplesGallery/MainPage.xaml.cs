@@ -18,6 +18,8 @@ namespace XRSharpSamplesGallery
         {
             InitializeComponent();
 
+            LodingText.Visibility = Visibility.Visible;
+
             _menuViewModel = new MenuViewModel();
             _menuViewModel.SelectionChanged += OnSelectionChanged;
             DataContext = _menuViewModel;

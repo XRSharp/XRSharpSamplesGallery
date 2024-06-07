@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:XRSharpSamplesGallery.Other"
+                    xmlns:xr="http://xrsharp.io/xr">
+
+	<Style x:Key="DefaultHeaderedContentControl3DStyle" TargetType="local:HeaderedContentControl3D">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="local:HeaderedContentControl3D">
+					<xr:StackPanel3D Orientation="YAxis">
+						<xr:ContentPresenter3D
+							Content="{TemplateBinding Content}"
+							ContentTemplate="{TemplateBinding ContentTemplate}"
+                            Margin="{TemplateBinding Padding}"/>
+                        <xr:ContentPresenter3D
+							Content="{TemplateBinding Header}"
+							ContentTemplate="{TemplateBinding HeaderTemplate}"
+							Margin="{TemplateBinding Padding}"/>
+                    </xr:StackPanel3D>
+                </ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style BasedOn="{StaticResource DefaultHeaderedContentControl3DStyle}" TargetType="local:HeaderedContentControl3D"/>
+
+</ResourceDictionary>

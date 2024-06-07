@@ -28,11 +28,11 @@
                 <menu:Menu3D Name="Menu3DInstance" Visibility="Collapsed" Rotation="0 30 0" xr:Canvas3D.IsDraggable="True"
                              xr:Canvas3D.X="-0.45" xr:Canvas3D.Y="0.76" xr:Canvas3D.Z="-0.40"/>
                 <xr:ContentControl3D x:Name="MainContainer" Content="{Binding Content}"
-                                     xr:Canvas3D.X="-0.20" xr:Canvas3D.Y="0.76" xr:Canvas3D.Z="-0.60"/>
+                                     xr:Canvas3D.X="-0.20" xr:Canvas3D.Y="0.7647" xr:Canvas3D.Z="-0.60"/>
             </xr:Canvas3D>
         </xr:Root3D>
 
-        <TextBlock x:Name="LodingText" Text="Loading" FontSize="32"
+        <TextBlock x:Name="LodingText" Text="Loading" FontSize="32" Visibility="Collapsed"
                    HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Gray"/>
 
         <other:ResponsivePane x:Name="MenuResponsivePane" Visibility="Collapsed">

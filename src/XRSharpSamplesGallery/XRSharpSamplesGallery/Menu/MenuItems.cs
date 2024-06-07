@@ -37,6 +37,23 @@ namespace XRSharpSamplesGallery.Menu
                     new ViewSourceFileInfo() { TabHeader = "Calculator3D.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Calculator3D/Calculator3D.xaml.cs" }
                 }
             });
+            this.Add(new()
+            {
+                Title = "Primitives",
+                PageToNavigateTo = typeof(Primitives),
+                ThumbnailUri = "/Menu/Thumbnails/Primitives.jpg",
+                //CameraOptions = new CameraOptions
+                //{
+                //    Position = new Point3D(-0.3, 1.3, 0.3),
+                //    Rotation = new Point3D(-9.462, 0, 0),
+                //    TargetPoint = new Point3D(0, 0.9, -0.6),
+                //},
+                ViewSourceFilesLocation = new[]
+                {
+                    new ViewSourceFileInfo() { TabHeader = "Primitives.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Primitives/Primitives.xaml" },
+                    new ViewSourceFileInfo() { TabHeader = "Primitives.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Primitives/Primitives.xaml.cs" }
+                }
+            });
             //this.Add(new()
             //{
             //    Title = "MVVM",

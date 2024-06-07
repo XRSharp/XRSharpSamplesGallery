@@ -72,6 +72,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Primives\Primitives.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Welcome\Welcome.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -93,6 +97,7 @@
     <Compile Include="Other\ControlToViewSourceCode\ViewSourceFileInfo.cs" />
     <Compile Include="Other\ControlToViewSourceCode\ViewSourcePane.xaml.cs" />
     <Compile Include="Other\Environment3D.xaml.cs" />
+    <Compile Include="Other\HeaderedContentControl3D.cs" />
     <Compile Include="Other\ResponsivePane.xaml.cs" />
     <Compile Include="Other\SampleAttachedProperties.cs" />
     <Compile Include="Other\TableShadowPlane.xaml.cs" />
@@ -112,13 +117,20 @@
     <Compile Include="Samples\Physics\Physics.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Samples\Primives\Primitives.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Samples\Welcome\Welcome.xaml.cs" />
+    <Page Include="Themes\generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Other\Assets\room\room.glb" />
     <Content Include="Menu\For Desktop and Mobile\BackgroundOverlay.png" />
     <Content Include="Menu\MenuIcon.png" />
+    <Content Include="Menu\Thumbnails\Primitives.jpg" />
     <Content Include="Menu\Thumbnails\UnderConstruction.jpg" />
     <Content Include="Other\AppTitleBanner.png" />
     <Content Include="Other\Assets\room\room-license.txt" />
@@ -204,6 +216,18 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Samples\Physics\Physics.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\Primives\Primitives.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Other\HeaderedContentControl3D.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\generic.xaml" />
   </ItemGroup>
 
 </Project>
