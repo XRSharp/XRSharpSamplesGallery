@@ -72,6 +72,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\Controls\Controls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Primitives\Primitives.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,6 +121,9 @@
     <Compile Include="Samples\Physics\Physics.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Samples\Controls\Controls.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Samples\Primitives\Primitives.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -130,9 +137,11 @@
     <EmbeddedResource Include="Other\Assets\room\room.glb" />
     <Content Include="Menu\For Desktop and Mobile\BackgroundOverlay.png" />
     <Content Include="Menu\MenuIcon.png" />
+    <Content Include="Menu\Thumbnails\Controls.jpg" />
     <Content Include="Menu\Thumbnails\Primitives.jpg" />
     <Content Include="Menu\Thumbnails\UnderConstruction.jpg" />
     <Content Include="Other\AppTitleBanner.png" />
+    <Content Include="Other\Assets\FakePerson.jpg" />
     <Content Include="Other\Assets\room\room-license.txt" />
     <Content Include="Other\Assets\picture-frame\license.txt" />
     <EmbeddedResource Include="Other\Assets\picture-frame\scene.bin" />
@@ -219,7 +228,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Samples\Primives\Primitives.xaml" />
+    <UpToDateCheckInput Remove="Samples\Primitives\Primitives.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -228,6 +237,14 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Themes\generic.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Samples\Controls\Controls.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Other\Assets\race-car\race-car.glb" />
   </ItemGroup>
 
 </Project>

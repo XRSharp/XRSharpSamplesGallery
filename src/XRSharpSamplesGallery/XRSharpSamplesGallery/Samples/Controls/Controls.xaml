@@ -1,0 +1,92 @@
+﻿<xr:UserControl3D
+    x:Class="XRSharpSamplesGallery.Samples.Controls"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:xr="http://xrsharp.io/xr"
+    xmlns:local="clr-namespace:XRSharpSamplesGallery.Samples"
+    xmlns:other="clr-namespace:XRSharpSamplesGallery.Other">
+
+    <xr:UserControl3D.Resources>
+        <Style x:Key="Button3D_Style" TargetType="xr:Button3D">
+            <Setter Property="SizeX" Value="0.03"/>
+            <Setter Property="SizeY" Value="0.03"/>
+            <Setter Property="SizeZ" Value="0.01"/>
+            <Setter Property="Background" Value="#FF3C3C3C"/>
+            <Setter Property="Foreground" Value="#FFBBBBBB"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Padding" Value="0.005"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="xr:Button3D">
+                        <xr:Grid3D>
+                            <xr:VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualState Name="Normal"/>
+                                    <VisualState Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="BackgroundBox" Storyboard.TargetProperty="Color"
+                                                        To="#3A3A50" Duration="00:00:00.2"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Scale">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="1 1 0.2"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </xr:VisualStateManager.VisualStateGroups>
+                            <xr:RoundedBox SizeX="{TemplateBinding SizeX}"
+                                       SizeY="{TemplateBinding SizeY}"
+                                       SizeZ="{TemplateBinding SizeZ}"
+                                       Name="BackgroundBox"       
+                                       Radius="0.02"
+                                       ReceiveShadows="False"
+                                       CastShadows="False"
+                                       Color="{TemplateBinding Background}"/>
+                            <xr:Viewbox3D SizeX="0.1"
+                                      SizeY="0.1"
+                                      SizeZ="0.001"
+                                      Margin="0 0 0 0 0 -0.001"
+                                      AlignmentX="Center"
+                                      AlignmentY="Center"
+                                      AlignmentZ="End">
+                                <xr:Text3D FontSize="0.01"
+                                       Thickness="0.001"
+                                       Color="White"
+                                       Text="{TemplateBinding Content}"/>
+                            </xr:Viewbox3D>
+                        </xr:Grid3D>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </xr:UserControl3D.Resources>
+    <xr:Canvas3D >
+        <xr:StackPanel3D Orientation="XAxis" xr:Canvas3D.Y="0" xr:Canvas3D.X="-0.4">
+            <xr:StackPanel3D.Resources>
+                <DataTemplate x:Key="HeaderDataTemplate">
+                    <xr:Text3D Text="{Binding}" Color="#404040" Margin="0 0 0 0 0.05 0"/>
+                </DataTemplate>
+            </xr:StackPanel3D.Resources>
+            <other:HeaderedContentControl3D Header="Button3D" HeaderTemplate="{StaticResource HeaderDataTemplate}" AlignmentY="Start" xr:Canvas3D.IsDraggable="True">
+                <xr:Button3D Content="Click me" FontSize="40" Background="Red" Style="{StaticResource Button3D_Style}" SizeY="0.15" SizeX="0.15" SizeZ="0.04"/>
+            </other:HeaderedContentControl3D>
+            <other:HeaderedContentControl3D Header="Image3D" HeaderTemplate="{StaticResource HeaderDataTemplate}" AlignmentY="Start" xr:Canvas3D.Y="0" xr:Canvas3D.IsDraggable="True">
+                <xr:Image3D SizeX="0.16" SizeY="0.16" Source="/Other/Assets/FakePerson.jpg"/>
+            </other:HeaderedContentControl3D>
+            <other:HeaderedContentControl3D Header="GLTF Model" HeaderTemplate="{StaticResource HeaderDataTemplate}" AlignmentY="Start" xr:Canvas3D.Y="0" xr:Canvas3D.IsDraggable="True">
+                <xr:Canvas3D SizeY="0.16" SizeX="0.16" SizeZ="0.16">
+                    <xr:GltfModel Source="/Other/Assets/race-car/race-car.glb" SizeY="0.16" SizeX="0.16" SizeZ="0.16" Scale="0.09 0.09 0.09" xr:Canvas3D.Y="-0.08" />
+                </xr:Canvas3D>
+            </other:HeaderedContentControl3D>
+            <other:HeaderedContentControl3D Header="Text3D" HeaderTemplate="{StaticResource HeaderDataTemplate}" AlignmentY="Start" xr:Canvas3D.IsDraggable="True">
+                <xr:Text3D Text="Hello" Color="Green" Thickness="0.01" SizeY="0.16"/>
+            </other:HeaderedContentControl3D>
+            <other:HeaderedContentControl3D Header="TextBlock3D" HeaderTemplate="{StaticResource HeaderDataTemplate}" AlignmentY="Start" xr:Canvas3D.IsDraggable="True">
+                <xr:TextBlock3D Text="Hello" Foreground="Blue"  FontSize="18" SizeY="0.16"/>
+            </other:HeaderedContentControl3D>
+        </xr:StackPanel3D>
+    </xr:Canvas3D>
+</xr:UserControl3D>

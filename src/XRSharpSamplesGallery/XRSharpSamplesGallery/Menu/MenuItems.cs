@@ -42,16 +42,33 @@ namespace XRSharpSamplesGallery.Menu
                 Title = "Primitives",
                 PageToNavigateTo = typeof(Primitives),
                 ThumbnailUri = "/Menu/Thumbnails/Primitives.jpg",
-                //CameraOptions = new CameraOptions
-                //{
-                //    Position = new Point3D(-0.3, 1.3, 0.3),
-                //    Rotation = new Point3D(-9.462, 0, 0),
-                //    TargetPoint = new Point3D(0, 0.9, -0.6),
-                //},
+                CameraOptions = new CameraOptions
+                {
+                    Position = new Point3D(0, 1, 0),
+                    Rotation = new Point3D(-9.463, 0, 0),
+                    TargetPoint = new Point3D(0, 0.9, -0.6),
+                },
                 ViewSourceFilesLocation = new[]
                 {
                     new ViewSourceFileInfo() { TabHeader = "Primitives.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Primitives/Primitives.xaml" },
                     new ViewSourceFileInfo() { TabHeader = "Primitives.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Primitives/Primitives.xaml.cs" }
+                }
+            });
+            this.Add(new()
+            {
+                Title = "Controls",
+                PageToNavigateTo = typeof(Controls),
+                ThumbnailUri = "/Menu/Thumbnails/Controls.jpg",
+                CameraOptions = new CameraOptions
+                {
+                    Position = new Point3D(0, 1, 0),
+                    Rotation = new Point3D(-9.464, 0, 0),
+                    TargetPoint = new Point3D(0, 0.9, -0.6),
+                },
+                ViewSourceFilesLocation = new[]
+                {
+                    new ViewSourceFileInfo() { TabHeader = "Controls.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Controls/Controls.xaml" },
+                    new ViewSourceFileInfo() { TabHeader = "Controls.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Controls/Controls.xaml.cs" }
                 }
             });
             //this.Add(new()
