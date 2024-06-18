@@ -71,6 +71,23 @@ namespace XRSharpSamplesGallery.Menu
                     new ViewSourceFileInfo() { TabHeader = "Controls.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Controls/Controls.xaml.cs" }
                 }
             });
+            this.Add(new()
+            {
+                Title = "ItemsControl3D",
+                PageToNavigateTo = typeof(ItemsControl3D),
+                ThumbnailUri = "/Menu/Thumbnails/ItemsControl3D.jpg",
+                CameraOptions = new CameraOptions
+                {
+                    Position = new Point3D(0, 1, 0),
+                    Rotation = new Point3D(-9.464, 0, 0),
+                    TargetPoint = new Point3D(0, 0.9, -0.6),
+                },
+                //ViewSourceFilesLocation = new[]
+                //{
+                //    new ViewSourceFileInfo() { TabHeader = "Controls.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Controls/Controls.xaml" },
+                //    new ViewSourceFileInfo() { TabHeader = "Controls.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Controls/Controls.xaml.cs" }
+                //}
+            });
             //this.Add(new()
             //{
             //    Title = "MVVM",
