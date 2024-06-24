@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XRSharp" Version="0.1.6-preview-2024-06-03-124659-4a2db51c" />
+    <PackageReference Include="XRSharp" Version="0.1.6-preview-2024-06-24-064915-7c7b9897" />
   </ItemGroup>
 
   <ItemGroup>
@@ -134,7 +134,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Other\Assets\room\room.glb" />
+    <Resource Include="Other\Assets\room\room.glb" />
     <Content Include="Menu\For Desktop and Mobile\BackgroundOverlay.png" />
     <Content Include="Menu\MenuIcon.png" />
     <Content Include="Menu\Thumbnails\Controls.jpg" />
@@ -144,8 +144,8 @@
     <Content Include="Other\Assets\FakePerson.jpg" />
     <Content Include="Other\Assets\room\room-license.txt" />
     <Content Include="Other\Assets\picture-frame\license.txt" />
-    <EmbeddedResource Include="Other\Assets\picture-frame\scene.bin" />
-    <EmbeddedResource Include="Other\Assets\picture-frame\scene.gltf" />
+    <Resource Include="Other\Assets\picture-frame\scene.bin" />
+    <Resource Include="Other\Assets\picture-frame\scene.gltf" />
     <Content Include="Other\ControlToViewSourceCode\CloseIcon.png" />
     <Content Include="Menu\Thumbnails\Calculator3D.jpg" />
     <Content Include="Menu\Thumbnails\Welcome.jpg" />    
@@ -244,7 +244,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Other\Assets\race-car\race-car.glb" />
+    <Resource Include="Other\Assets\race-car\race-car.glb" />
   </ItemGroup>
 
 </Project>
