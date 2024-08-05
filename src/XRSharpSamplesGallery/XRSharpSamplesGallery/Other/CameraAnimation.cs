@@ -82,7 +82,7 @@ round(camera.position.x) + '|' + round(camera.position.y) + '|' + round(camera.p
             // animate very small value in any case, so OnAnimationCompleted is called always
             if (_animateCameraPositionX.From == _animateCameraPositionX.To && double.TryParse(_animateCameraPositionX.To, out var value))
             {
-                _animateCameraPositionX.To = (value + 0.001).ToString();
+                _animateCameraPositionX.To = (value + 0.001).ToInvariantString();
             }
 
             _animateCameraPositionX.Play();
