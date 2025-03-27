@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <NoXamlPreprocessor>True</NoXamlPreprocessor>
-    <OpenSilverType>6</OpenSilverType>
+    <OpenSilverType>7</OpenSilverType>
     <PublishTrimmed>true</PublishTrimmed>
 	  <PublishIISAssets>true</PublishIISAssets>
 	  <WasmEnableSIMD>false</WasmEnableSIMD>
@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XRSharp" Version="0.1.7-preview-2024-07-19-075613-ad1fdb10" />
+    <PackageReference Include="OpenSilver.WebAssembly" Version="3.2.0-preview-2025-01-14-164821-2b7c5c48" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" PrivateAssets="all" />
   </ItemGroup>
