@@ -94,6 +94,25 @@ namespace XRSharpSamplesGallery.Menu
                 ]
             });
 
+            this.Add(new()
+            {
+                Title = "Maps3DSample",
+                PageToNavigateTo = typeof(Maps3D),
+                ThumbnailUri = "/Menu/Thumbnails/Controls.jpg",
+                CameraOptions = new CameraOptions
+                {
+                    Position = new Point3D(0, 1, 0),
+                    Rotation = new Point3D(-45, 0, 0),
+                    TargetPoint = new Point3D(0, 0.9, -0.6),
+                },
+                IsOrbitControlsEnabled = false,
+                IsRoomVisible = false,
+                ViewSourceFilesLocation = new[]
+                {
+                    new ViewSourceFileInfo() { TabHeader = "Maps3DSample.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Maps3D/Maps3D.xaml" },
+                    new ViewSourceFileInfo() { TabHeader = "Maps3DSample.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Maps3D/Maps3D.xaml.cs" }
+                }
+            });
             //this.Add(new()
             //{
             //    Title = "MVVM",
