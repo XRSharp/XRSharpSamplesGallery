@@ -11,7 +11,10 @@
 						<xr:ContentPresenter3D
 							Content="{TemplateBinding Content}"
 							ContentTemplate="{TemplateBinding ContentTemplate}"
-                            Margin="{TemplateBinding Padding}"/>
+                            Margin="{TemplateBinding Padding}"
+                            AlignmentX="{TemplateBinding ContentAlignmentX}"
+                            AlignmentY="{TemplateBinding ContentAlignmentY}"
+                            AlignmentZ="{TemplateBinding ContentAlignmentZ}"/>
                         <xr:ContentPresenter3D
 							Content="{TemplateBinding Header}"
 							ContentTemplate="{TemplateBinding HeaderTemplate}"

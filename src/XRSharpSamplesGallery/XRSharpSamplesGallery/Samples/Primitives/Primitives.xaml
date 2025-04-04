@@ -9,24 +9,33 @@
     <xr:Canvas3D >
         <xr:StackPanel3D Orientation="XAxis" xr:Canvas3D.Y="0" xr:Canvas3D.X="-0.4">
             <xr:StackPanel3D.Resources>
-                <DataTemplate x:Key="HeaderDataTemplate">
-                    <xr:Text3D Text="{Binding}" Color="#404040" Margin="0 0 0 0 0.05 0"/>
-                </DataTemplate>
+                <Style TargetType="other:HeaderedContentControl3D">
+                    <Setter Property="Margin" Value="0.03,0,0"/>
+                    <Setter Property="xr:Canvas3D.IsDraggable" Value="True"/>
+                    <Setter Property="HeaderTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <xr:Text3D Text="{Binding}" Color="#404040" Margin="0,0.02,0.1,0,0,0"/>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
             </xr:StackPanel3D.Resources>
-            <other:HeaderedContentControl3D Header="Box" HeaderTemplate="{StaticResource HeaderDataTemplate}" AlignmentY="Start" xr:Canvas3D.IsDraggable="True">
+            
+            <other:HeaderedContentControl3D Header="Box">
                 <xr:Box Color="Yellow" SizeY="0.15" SizeX="0.15" SizeZ="0.15"/>
             </other:HeaderedContentControl3D>
-            <other:HeaderedContentControl3D Header="RoundedBox" HeaderTemplate="{StaticResource HeaderDataTemplate}" AlignmentY="Start" xr:Canvas3D.IsDraggable="True">
+            <other:HeaderedContentControl3D Header="RoundedBox">
                 <xr:RoundedBox Color="Blue" Radius="0.02" SizeY="0.15" SizeX="0.15" SizeZ="0.15"/>
             </other:HeaderedContentControl3D>
-            <other:HeaderedContentControl3D Header="Sphere" HeaderTemplate="{StaticResource HeaderDataTemplate}" AlignmentY="Start" xr:Canvas3D.IsDraggable="True">
+            <other:HeaderedContentControl3D Header="Sphere">
                 <xr:Sphere Color="Green" Radius="0.08"/>
             </other:HeaderedContentControl3D>
-            <other:HeaderedContentControl3D Header="Cylinder" HeaderTemplate="{StaticResource HeaderDataTemplate}" AlignmentY="Start" xr:Canvas3D.Y="0" xr:Canvas3D.IsDraggable="True">
+            <other:HeaderedContentControl3D Header="Cylinder">
                 <xr:Cylinder Color="Red" SizeY="0.16" Radius="0.1"/>
             </other:HeaderedContentControl3D>
-            <other:HeaderedContentControl3D Header="Plane" HeaderTemplate="{StaticResource HeaderDataTemplate}" AlignmentY="Start" xr:Canvas3D.Y="0" xr:Canvas3D.IsDraggable="True">
-                <xr:Plane Color="Brown" SizeY="0.16" />
+            <other:HeaderedContentControl3D Header="Plane">
+                <xr:Plane Color="Brown" SizeX="0.2" SizeY="0.16"/>
             </other:HeaderedContentControl3D>
         </xr:StackPanel3D>
     </xr:Canvas3D>
