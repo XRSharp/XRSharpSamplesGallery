@@ -43,6 +43,16 @@ namespace XRSharpSamplesGallery
             if (!_inXRMode)
             {
                 ProgressiveShadows.Clear(Root3DInstance);
+
+                var currentShadowType = Renderer.GetShadowType(Root3DInstance);
+                if (currentShadowType == ShadowType.Progressive && menuItem.ShadowType == ShadowType.PCFSoft)
+                {
+                    EnableSoftShadows();
+                }
+                else if (currentShadowType == ShadowType.PCFSoft && menuItem.ShadowType == ShadowType.Progressive)
+                {
+                    EnableProgressiveShadows();
+                }
             }
         }
 

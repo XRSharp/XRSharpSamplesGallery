@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using XRSharp;
+using XRSharp.Core;
 using XRSharpSamplesGallery.Other;
 using XRSharpSamplesGallery.Samples;
 
@@ -83,6 +84,7 @@ namespace XRSharpSamplesGallery.Menu
                     Rotation = new Point3D(-9.464, 0, 0),
                     TargetPoint = new Point3D(0, 0.9, -0.6),
                 },
+                ShadowType = ShadowType.PCFSoft,
                 ViewSourceFilesLocation =
                 [
                     new ViewSourceFileInfo { TabHeader = "ItemsControl3DSample.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/ItemsControl3D/ItemsControl3DSample.xaml" },
