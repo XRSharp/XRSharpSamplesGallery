@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDefaultItems>false</EnableDefaultItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="XRSharp" Version="0.1.7-preview-2025-04-05-083328-71b8dece" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="App.xaml.cs" />
+    <Compile Include="EmployeesViewModel.cs" />
+    <Compile Include="EmployeeViewModel.cs" />
+    <Compile Include="MainPage.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\profile_girl1.png" />
+    <Content Include="Images\profile_girl2.png" />
+    <Content Include="Images\profile_man1.png" />
+    <Content Include="Images\profile_man2.png" />
+    <Content Include="Images\profile_man3.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\rechargebd.otf" />    
+  </ItemGroup>
+
+</Project>

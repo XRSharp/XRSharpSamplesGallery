@@ -18,6 +18,7 @@ public class Index : ComponentBase
         {
             await XRSharp.Root3D.Initialize();
             return new XRSharpSamplesGallery.App();
+            //return new My3dWebsite.App();
         });
     }
 }
