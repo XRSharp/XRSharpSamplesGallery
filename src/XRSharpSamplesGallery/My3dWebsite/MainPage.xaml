@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:My3dWebsite"
       xmlns:xr="http://xrsharp.io/xr"
       Foreground="#CCFFFFFF">
+    
     <Grid>
         <!-- The outer Scroll component -->
         <ScrollViewer x:Name="RootScrollViewer" Visibility="Visible" Padding="0">
@@ -58,7 +59,7 @@
         </ScrollViewer>
         
         <!-- The 3D stuff -->
-        <xr:Root3D x:Name="Root" Margin="0,0,22,0" IsEmbedded="True" CameraPosition="-0.2 0.2 0.3" CameraRotation="0 -45 0" xr:Renderer.ColorManagement="True">
+        <xr:Root3D x:Name="Root" Margin="0,0,22,0" IsEmbedded="True" CameraPosition="-0.15 0.2 0.3" CameraRotation="0 -45 0" xr:Renderer.ColorManagement="True">
 
             <xr:Canvas3D>
 
@@ -68,12 +69,12 @@
                 </xr:Canvas3D.DataContext>
 
                 <!-- The control that shows the employees -->
-                <xr:ItemsControl3D xr:Canvas3D.Y="0.1" ItemsSource="{Binding Employees}">
+                <xr:ItemsControl3D xr:Canvas3D.Y="0" ItemsSource="{Binding Employees}">
 
                     <!-- Set how the employees cards should be arranged -->
                     <xr:ItemsControl3D.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <xr:StackPanel3D Orientation="ZAxis"/>
+                            <xr:StackPanel3D Orientation="ZAxis" SizeY="0.2"/>
                         </ItemsPanelTemplate>
                     </xr:ItemsControl3D.ItemsPanel>
                     
@@ -123,10 +124,10 @@
                                 </i:Interaction.Triggers>
                                 
                                 <!-- The 3D elements that each employee card is made of -->
-                                <xr:Box x:Name="InvisibleItem" AlignmentX="Stretch" AlignmentY="Stretch" AlignmentZ="Stretch" SizeZ="0.005" Color="#0000FF" Opacity="0.001"/>
+                                <xr:Box x:Name="InvisibleItem" SizeX="0.1" SizeY="0.15" SizeZ="0.005" Color="#0000FF" Opacity="0.001"/>
                                 <xr:Box x:Name="CardBackground" SizeX="0.1" SizeY="0.1" SizeZ="0.01" AlignmentY="End" Color="#202020" />
-                                <xr:Image3D Source="{Binding ProfileImage}" SizeX="0.10" SizeY="0.10" AlignmentY="End"/>
-                                <xr:Text3D Text="{Binding FirstName}" AlignmentY="End" FontSize="0.015" Color="White" Thickness="0.002"/>
+                                <xr:Image3D Source="{Binding ProfileImage}" SizeX="0.10" SizeY="0.10" AlignmentY="End" Margin="0.05,0,0.001,0,-0.05,0"/>
+                                <xr:Text3D Text="{Binding FirstName}" AlignmentX="Center" AlignmentY="End" FontSize="0.015" Color="White" Thickness="0.002" Margin="0,0,0,0,-0.003,0"/>
 
                             </xr:StackPanel3D>
                         </DataTemplate>
