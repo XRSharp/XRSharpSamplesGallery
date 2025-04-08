@@ -56,6 +56,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Samples\ItemsControl3D\ItemsControl3DSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Samples\Maps3D\Maps3D.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -109,6 +113,11 @@
     <Compile Include="Samples\Charts3D\Charts.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Samples\ItemsControl3D\EmployeesViewModel.cs" />
+    <Compile Include="Samples\ItemsControl3D\EmployeeViewModel.cs" />
+    <Compile Include="Samples\ItemsControl3D\ItemsControl3DSample.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Samples\Maps3D\Maps3D.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -138,12 +147,18 @@
     <Content Include="Menu\For Desktop and Mobile\BackgroundOverlay.png" />
     <Content Include="Menu\MenuIcon.png" />
     <Content Include="Menu\Thumbnails\Controls.jpg" />
+    <Content Include="Menu\Thumbnails\ItemsControl3D.png" />
     <Content Include="Menu\Thumbnails\Primitives.jpg" />
     <Content Include="Menu\Thumbnails\UnderConstruction.jpg" />
     <Content Include="Other\AppTitleBanner.png" />
     <Content Include="Other\Assets\FakePerson.jpg" />
     <Content Include="Other\Assets\room\room-license.txt" />
     <Content Include="Other\Assets\picture-frame\license.txt" />
+    <Content Include="Samples\ItemsControl3D\Images\profile_girl1.png" />
+    <Content Include="Samples\ItemsControl3D\Images\profile_girl2.png" />
+    <Content Include="Samples\ItemsControl3D\Images\profile_man1.png" />
+    <Content Include="Samples\ItemsControl3D\Images\profile_man2.png" />
+    <Content Include="Samples\ItemsControl3D\Images\profile_man3.png" />
     <Resource Include="Other\Assets\picture-frame\scene.bin" />
     <Resource Include="Other\Assets\picture-frame\scene.gltf" />
     <Resource Include="Other\Assets\race-car\race-car.glb" />

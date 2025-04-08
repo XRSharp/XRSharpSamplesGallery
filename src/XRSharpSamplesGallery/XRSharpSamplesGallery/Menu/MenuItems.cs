@@ -71,6 +71,27 @@ namespace XRSharpSamplesGallery.Menu
                     new ViewSourceFileInfo() { TabHeader = "Controls.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Controls/Controls.xaml.cs" }
                 }
             });
+
+            Add(new()
+            {
+                Title = "ItemsControl3D",
+                PageToNavigateTo = typeof(ItemsControl3DSample),
+                ThumbnailUri = "/Menu/Thumbnails/ItemsControl3D.png",
+                CameraOptions = new CameraOptions
+                {
+                    Position = new Point3D(0, 1, 0),
+                    Rotation = new Point3D(-9.464, 0, 0),
+                    TargetPoint = new Point3D(0, 0.9, -0.6),
+                },
+                ViewSourceFilesLocation =
+                [
+                    new ViewSourceFileInfo { TabHeader = "ItemsControl3DSample.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/ItemsControl3D/ItemsControl3DSample.xaml" },
+                    new ViewSourceFileInfo { TabHeader = "ItemsControl3DSample.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/ItemsControl3D/ItemsControl3DSample.xaml.cs" },
+                    new ViewSourceFileInfo { TabHeader = "EmployeeViewModel.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/ItemsControl3D/EmployeeViewModel.cs" },
+                    new ViewSourceFileInfo { TabHeader = "EmployeesViewModel.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/ItemsControl3D/EmployeesViewModel.cs" }
+                ]
+            });
+
             //this.Add(new()
             //{
             //    Title = "MVVM",
