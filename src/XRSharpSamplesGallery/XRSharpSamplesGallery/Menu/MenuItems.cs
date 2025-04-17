@@ -98,12 +98,12 @@ namespace XRSharpSamplesGallery.Menu
             {
                 Title = "Maps3DSample",
                 PageToNavigateTo = typeof(Maps3D),
-                ThumbnailUri = "/Menu/Thumbnails/Controls.jpg",
+                ThumbnailUri = "/Menu/Thumbnails/Maps3D.png",
                 CameraOptions = new CameraOptions
                 {
-                    Position = new Point3D(0, 1, 0),
-                    Rotation = new Point3D(-45, 0, 0),
-                    TargetPoint = new Point3D(0, 0.9, -0.6),
+                    Position = new Point3D(0, 0, 0),
+                    Rotation = new Point3D(0, 0, 0),
+                    TargetPoint = new Point3D(0, 0, 0),
                 },
                 IsOrbitControlsEnabled = false,
                 IsRoomVisible = false,
