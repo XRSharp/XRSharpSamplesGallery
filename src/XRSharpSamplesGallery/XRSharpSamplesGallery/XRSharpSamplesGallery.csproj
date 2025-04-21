@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XRSharp" Version="0.1.7-preview-2025-04-05-083328-71b8dece" />
+    <PackageReference Include="XRSharp" Version="0.1.7-preview-2025-04-21-071931-e56db352" />
   </ItemGroup>
 
   <ItemGroup>
@@ -148,6 +148,7 @@
     <Content Include="Menu\MenuIcon.png" />
     <Content Include="Menu\Thumbnails\Controls.jpg" />
     <Content Include="Menu\Thumbnails\ItemsControl3D.png" />
+    <Content Include="Menu\Thumbnails\Maps3D.png" />
     <Content Include="Menu\Thumbnails\Primitives.jpg" />
     <Content Include="Menu\Thumbnails\UnderConstruction.jpg" />
     <Content Include="Other\AppTitleBanner.png" />

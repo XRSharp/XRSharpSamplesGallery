@@ -6,12 +6,6 @@
     xmlns:local="clr-namespace:XRSharpSamplesGallery.Samples">
     
     <xr:Canvas3D>
-        <xr:TextBlock3D
-            Text="Under-construction!"
-            Foreground="#317773"
-            Scale="3 3 3"
-            xr:Canvas3D.X="0"
-            xr:Canvas3D.Y="0.1"
-            xr:Canvas3D.Z="0"/>
+        <xr:Maps3D Name="map" ViewportCenter="36.8065, 10.1815" xr:Canvas3D.Z="-5" ServerURL="https://userwareapiproxy.azurewebsites.net/tiles/3dtiles/root.json"/>
     </xr:Canvas3D>
 </xr:UserControl3D>
