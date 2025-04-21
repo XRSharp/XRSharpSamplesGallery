@@ -1,7 +1,6 @@
 ﻿<xr:UserControl3D
     x:Class="XRSharpSamplesGallery.Samples.Welcome"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:ex="clr-namespace:XRSharp.Controls.Extras;assembly=XRSharp"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:xr="http://xrsharp.io/xr"
     xmlns:local="clr-namespace:XRSharpSamplesGallery.Samples">
