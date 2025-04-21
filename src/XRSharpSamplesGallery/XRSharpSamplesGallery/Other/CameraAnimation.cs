@@ -10,7 +10,7 @@ namespace XRSharpSamplesGallery.Other
         private const string CameraPath = "object3D.el.sceneEl.camera";
         private const AnimationEasing Easing = AnimationEasing.easeInOutCubic;
         private const int DurationMs = 1500;
-        private readonly bool _orbitControlsEnabled;
+        private bool _orbitControlsEnabled;
         private readonly Root3D _root3D;
 
         private readonly Animation _animateCameraPositionX = new() { Property = $"{CameraPath}.position.x", Enabled = false, Easing = Easing, DurationMs = DurationMs };
@@ -42,6 +42,8 @@ namespace XRSharpSamplesGallery.Other
         {
             if (_root3D.Content.JsElement == null)
                 return;
+
+            _orbitControlsEnabled = OrbitControls.GetEnabled(_root3D);
 
             var position = cameraOptions.Position;
             var rotation = cameraOptions.Rotation;
