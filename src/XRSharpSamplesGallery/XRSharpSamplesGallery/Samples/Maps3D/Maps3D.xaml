@@ -6,6 +6,6 @@
     xmlns:local="clr-namespace:XRSharpSamplesGallery.Samples">
     
     <xr:Canvas3D>
-        <xr:Maps3D Name="map" ViewportCenter="36.8065, 10.1815" xr:Canvas3D.Z="-5" ServerURL="https://userwareapiproxy.azurewebsites.net/tiles/3dtiles/root.json"/>
+        <xr:Maps3D Name="map" ViewportCenter="36.8065, 10.1815" xr:Canvas3D.Z="-3" ServerURL="https://userwareapiproxy.azurewebsites.net/tiles/3dtiles/root.json"/>
     </xr:Canvas3D>
 </xr:UserControl3D>
