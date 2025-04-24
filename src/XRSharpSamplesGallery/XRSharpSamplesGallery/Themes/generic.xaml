@@ -7,16 +7,24 @@
 		<Setter Property="Template">
 			<Setter.Value>
 				<ControlTemplate TargetType="local:HeaderedContentControl3D">
-					<xr:StackPanel3D Orientation="YAxis">
+					<xr:Grid3D>
+                        <xr:Grid3D.YSliceDefinitions>
+                            <xr:YSliceDefinition SizeY="*"/>
+                            <xr:YSliceDefinition SizeY="Auto"/>
+                        </xr:Grid3D.YSliceDefinitions>
 						<xr:ContentPresenter3D
 							Content="{TemplateBinding Content}"
 							ContentTemplate="{TemplateBinding ContentTemplate}"
-                            Margin="{TemplateBinding Padding}"/>
+                            Margin="{TemplateBinding Padding}"
+                            AlignmentX="{TemplateBinding ContentAlignmentX}"
+                            AlignmentY="{TemplateBinding ContentAlignmentY}"
+                            AlignmentZ="{TemplateBinding ContentAlignmentZ}"/>
                         <xr:ContentPresenter3D
+                            xr:Grid3D.YSlice="1"
 							Content="{TemplateBinding Header}"
 							ContentTemplate="{TemplateBinding HeaderTemplate}"
 							Margin="{TemplateBinding Padding}"/>
-                    </xr:StackPanel3D>
+                    </xr:Grid3D>
                 </ControlTemplate>
 			</Setter.Value>
 		</Setter>

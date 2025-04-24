@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using XRSharp;
+using XRSharp.Core;
 using XRSharpSamplesGallery.Other;
 using XRSharpSamplesGallery.Samples;
 
@@ -69,6 +70,47 @@ namespace XRSharpSamplesGallery.Menu
                 {
                     new ViewSourceFileInfo() { TabHeader = "Controls.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Controls/Controls.xaml" },
                     new ViewSourceFileInfo() { TabHeader = "Controls.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Controls/Controls.xaml.cs" }
+                }
+            });
+
+            Add(new()
+            {
+                Title = "ItemsControl3D",
+                PageToNavigateTo = typeof(ItemsControl3DSample),
+                ThumbnailUri = "/Menu/Thumbnails/ItemsControl3D.png",
+                CameraOptions = new CameraOptions
+                {
+                    Position = new Point3D(0, 1, 0),
+                    Rotation = new Point3D(-9.464, 0, 0),
+                    TargetPoint = new Point3D(0, 0.9, -0.6),
+                },
+                ShadowType = ShadowType.PCFSoft,
+                ViewSourceFilesLocation =
+                [
+                    new ViewSourceFileInfo { TabHeader = "ItemsControl3DSample.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/ItemsControl3D/ItemsControl3DSample.xaml" },
+                    new ViewSourceFileInfo { TabHeader = "ItemsControl3DSample.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/ItemsControl3D/ItemsControl3DSample.xaml.cs" },
+                    new ViewSourceFileInfo { TabHeader = "EmployeeViewModel.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/ItemsControl3D/EmployeeViewModel.cs" },
+                    new ViewSourceFileInfo { TabHeader = "EmployeesViewModel.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/ItemsControl3D/EmployeesViewModel.cs" }
+                ]
+            });
+
+            this.Add(new()
+            {
+                Title = "Maps3DSample",
+                PageToNavigateTo = typeof(Maps3D),
+                ThumbnailUri = "/Menu/Thumbnails/Maps3D.png",
+                CameraOptions = new CameraOptions
+                {
+                    Position = new Point3D(0, 0, 0),
+                    Rotation = new Point3D(0, 0, 0),
+                    TargetPoint = new Point3D(0, 0, 0),
+                },
+                IsOrbitControlsEnabled = false,
+                IsRoomVisible = false,
+                ViewSourceFilesLocation = new[]
+                {
+                    new ViewSourceFileInfo() { TabHeader = "Maps3DSample.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Maps3D/Maps3D.xaml" },
+                    new ViewSourceFileInfo() { TabHeader = "Maps3DSample.xaml.cs", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Maps3D/Maps3D.xaml.cs" }
                 }
             });
             //this.Add(new()

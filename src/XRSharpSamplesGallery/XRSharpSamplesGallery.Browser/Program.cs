@@ -1,32 +1,15 @@
 ﻿using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Net.Http;
 using System.Threading.Tasks;
-using System.Windows;
 
-namespace XRSharpSamplesGallery.Browser
+namespace XRSharpSamplesGallery.Browser;
+
+public class Program
 {
-    public class Program
+    public static async Task Main(string[] args)
     {
-        public static async Task Main(string[] args)
-        {
-            var builder = WebAssemblyHostBuilder.CreateDefault(args);
-            builder.RootComponents.Add<App>("#app");
-
-            builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-
-            var host = builder.Build();
-            await host.RunAsync();
-        }
-
-        public static void RunApplication()
-        {
-            Application.RunApplication(async () =>
-            {
-                await XRSharp.Root3D.Initialize();
-                var app = new XRSharpSamplesGallery.App();
-            });
-        }
+        var builder = WebAssemblyHostBuilder.CreateDefault(args);
+        builder.RootComponents.Add<App>("#app");
+        var host = builder.Build();
+        await host.RunAsync();
     }
 }

@@ -68,11 +68,11 @@
     </xr:UserControl3D.Resources>
 
     <xr:Canvas3D>
-        <xr:Grid3D xr:Canvas3D.X="0.065" xr:Canvas3D.Y="0.208" xr:Canvas3D.Z="0.004" Rotation="15 0 0">
+        <xr:Grid3D xr:Canvas3D.X="-0.00125" xr:Canvas3D.Y="0.2055" xr:Canvas3D.Z="0.004" Rotation="15 0 0">
             <xr:RoundedBox Color="#FF222222" SizeX="0.163" SizeY="0.041" SizeZ="0.008"
                            Radius="0.002" xr:StandardMaterial.Metalness="0.3" ReceiveShadows="False"/>
             <xr:Text3D Name="DisplayBox" Color="#FFBBBBBB" FontSize="0.012" Thickness="0.0005"
-                       Margin="0 0 0 0.01 0 -0.0002" AlignmentX="End" AlignmentZ="End"/>
+                       Margin="0 0 0 0.01 0 -0.0002" AlignmentX="End" AlignmentY="Center" AlignmentZ="End"/>
         </xr:Grid3D>
         <xr:Button3D Name="BC" xr:Canvas3D.Y="0.1725" Background="#FF125166" Click="OperBtn_Click" Content="C"/>
         <xr:Button3D Name="BCE" xr:Canvas3D.Y="0.14" Background="#FF2C2C2C" Click="OperBtn_Click" Content="CE"/>
@@ -85,17 +85,17 @@
         <xr:Button3D Name="B1" xr:Canvas3D.X="0.0325" xr:Canvas3D.Y="0.1075" Click="DigitBtn_Click" Content="1"/>
         <xr:Button3D Name="B2" xr:Canvas3D.X="0.065" xr:Canvas3D.Y="0.1075" Click="DigitBtn_Click" Content="2"/>
         <xr:Button3D Name="B3" xr:Canvas3D.X="0.0975" xr:Canvas3D.Y="0.1075" Click="DigitBtn_Click" Content="3"/>
-        <xr:Button3D Name="B0" xr:Canvas3D.X="0.049" xr:Canvas3D.Y="0.075" SizeX="0.063" Background="#FF3C3C3C" Click="DigitBtn_Click" Content="0"/>
+        <xr:Button3D Name="B0" xr:Canvas3D.X="0.0325" xr:Canvas3D.Y="0.075" SizeX="0.063" Background="#FF3C3C3C" Click="DigitBtn_Click" Content="0"/>
         <xr:Button3D Name="BPeriod" xr:Canvas3D.X="0.0975" xr:Canvas3D.Y="0.075" Background="#FF565656" Click="DigitBtn_Click" Content="."/>
         <xr:Button3D Name="BDivide" xr:Canvas3D.X="0.13" xr:Canvas3D.Y="0.1725" Background="#FF2C2C2C" Click="OperBtn_Click" Content="/"/>
         <xr:Button3D Name="BMultiply" xr:Canvas3D.X="0.13" xr:Canvas3D.Y="0.14" Background="#FF2C2C2C" Click="OperBtn_Click" Content="×"/>
         <xr:Button3D Name="BMinus" xr:Canvas3D.X="0.13" xr:Canvas3D.Y="0.1075" Background="#FF2C2C2C" Click="OperBtn_Click" Content="-"/>
         <xr:Button3D Name="BPlus" xr:Canvas3D.X="0.13" xr:Canvas3D.Y="0.075" Background="#FF2C2C2C" Click="OperBtn_Click" Content="+"/>
-        <xr:Button3D Name="BEqual" xr:Canvas3D.X="0.0813" xr:Canvas3D.Y="0.0425" SizeX="0.1275" Background="#FF125166" Click="OperBtn_Click" Content="=" FontSize="30"/>
+        <xr:Button3D Name="BEqual" xr:Canvas3D.X="0.0325" xr:Canvas3D.Y="0.0425" SizeX="0.1275" Background="#FF125166" Click="OperBtn_Click" Content="=" FontSize="30"/>
         <xr:Button3D Name="BSqrt" xr:Canvas3D.Y="0.1075" Background="#FF565656" Click="OperBtn_Click" Content="√"/>
         <xr:Button3D Name="BOneOver" xr:Canvas3D.Y="0.075" Background="#FF565656" Click="OperBtn_Click" Content="1/x"/>
         <xr:Button3D Name="BPM" xr:Canvas3D.Y="0.0425" Background="#FF565656" Click="OperBtn_Click" Content="+/-"/>
-        <xr:RoundedBox Color="#FF161616" SizeX="0.165" SizeY="0.165" SizeZ="0.0055" ReceiveShadows="False"
-                       xr:Canvas3D.X="0.065" xr:Canvas3D.Y="0.107" xr:Canvas3D.Z="-0.0025"/>
+        <xr:RoundedBox Color="#FF161616" SizeX="0.165" SizeY="0.165" SizeZ="0.0055" xr:StandardMaterial.Metalness="0.3" ReceiveShadows="False"
+                       xr:Canvas3D.X="-0.0025" xr:Canvas3D.Y="0.04" xr:Canvas3D.Z="-0.0025" Radius="0.002"/>
     </xr:Canvas3D>
 </xr:UserControl3D>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using XRSharp.Components;
 using XRSharp.Core;
 using XRSharp.Shadows;
 using XRSharpSamplesGallery.Menu;
@@ -32,6 +33,9 @@ namespace XRSharpSamplesGallery
 
         private void OnSelectionChanged(object sender, Menu.MenuItem menuItem)
         {
+            EnvironmentInstance.Visibility = menuItem.IsRoomVisible? Visibility.Visible: Visibility.Collapsed;
+            OrbitControls.SetEnabled(Root3DInstance, menuItem.IsOrbitControlsEnabled);
+
             // Hide the panel that shows the Source Code when navigating:
             ViewSourcePane.Collapse();
 
@@ -43,6 +47,16 @@ namespace XRSharpSamplesGallery
             if (!_inXRMode)
             {
                 ProgressiveShadows.Clear(Root3DInstance);
+
+                var currentShadowType = Renderer.GetShadowType(Root3DInstance);
+                if (currentShadowType == ShadowType.Progressive && menuItem.ShadowType == ShadowType.PCFSoft)
+                {
+                    EnableSoftShadows();
+                }
+                else if (currentShadowType == ShadowType.PCFSoft && menuItem.ShadowType == ShadowType.Progressive)
+                {
+                    EnableProgressiveShadows();
+                }
             }
         }
 

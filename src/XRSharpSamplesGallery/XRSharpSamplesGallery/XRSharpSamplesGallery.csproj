@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="XRSharp" Version="0.1.6-preview-2024-06-03-124659-4a2db51c" />
+    <PackageReference Include="XRSharp" Version="0.1.7-preview-2025-04-21-092547-ee279fa8" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,6 +53,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Samples\Charts3D\Charts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Samples\ItemsControl3D\ItemsControl3DSample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -109,6 +113,11 @@
     <Compile Include="Samples\Charts3D\Charts.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Samples\ItemsControl3D\EmployeesViewModel.cs" />
+    <Compile Include="Samples\ItemsControl3D\EmployeeViewModel.cs" />
+    <Compile Include="Samples\ItemsControl3D\ItemsControl3DSample.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Samples\Maps3D\Maps3D.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -134,117 +143,33 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Other\Assets\room\room.glb" />
+    <Resource Include="Other\Assets\room\room.glb" />
     <Content Include="Menu\For Desktop and Mobile\BackgroundOverlay.png" />
     <Content Include="Menu\MenuIcon.png" />
     <Content Include="Menu\Thumbnails\Controls.jpg" />
+    <Content Include="Menu\Thumbnails\ItemsControl3D.png" />
+    <Content Include="Menu\Thumbnails\Maps3D.png" />
     <Content Include="Menu\Thumbnails\Primitives.jpg" />
     <Content Include="Menu\Thumbnails\UnderConstruction.jpg" />
     <Content Include="Other\AppTitleBanner.png" />
     <Content Include="Other\Assets\FakePerson.jpg" />
     <Content Include="Other\Assets\room\room-license.txt" />
     <Content Include="Other\Assets\picture-frame\license.txt" />
-    <EmbeddedResource Include="Other\Assets\picture-frame\scene.bin" />
-    <EmbeddedResource Include="Other\Assets\picture-frame\scene.gltf" />
+    <Content Include="Samples\ItemsControl3D\Images\profile_girl1.png" />
+    <Content Include="Samples\ItemsControl3D\Images\profile_girl2.png" />
+    <Content Include="Samples\ItemsControl3D\Images\profile_man1.png" />
+    <Content Include="Samples\ItemsControl3D\Images\profile_man2.png" />
+    <Content Include="Samples\ItemsControl3D\Images\profile_man3.png" />
+    <Resource Include="Other\Assets\picture-frame\scene.bin" />
+    <Resource Include="Other\Assets\picture-frame\scene.gltf" />
+    <Resource Include="Other\Assets\race-car\race-car.glb" />
     <Content Include="Other\ControlToViewSourceCode\CloseIcon.png" />
     <Content Include="Menu\Thumbnails\Calculator3D.jpg" />
     <Content Include="Menu\Thumbnails\Welcome.jpg" />    
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Examples\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Menu\Menu2D_When_Desktop_Mobile.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Menu\Menu3D_When_VR_AR.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Menu\Menu2D_Styles.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Menu\For Desktop and Mobile\Menu2D.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Menu\For AR and VR\Menu3D.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Menu\For Desktop and Mobile\Menu2D_Styles.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Samples\Welcome.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Samples\Charts.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Other\ResponsivePane.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Other\ControlToViewSourceCode\ViewSourcePane.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="Other\ControlToViewSourceCode\embed.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Other\ControlToViewSourceCode\FlatButtonStyle.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Other\2D Styles\RoundedButtonStyle.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Other\2D Styles\TabControlStyle.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Samples\Maps3D\Maps3D.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Samples\MultiUser\MultiUser.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Samples\MVVM\MVVM.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Samples\Physics\Physics.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Samples\Primitives\Primitives.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Other\HeaderedContentControl3D.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\generic.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Samples\Controls\Controls.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Other\Assets\race-car\race-car.glb" />
   </ItemGroup>
 
 </Project>

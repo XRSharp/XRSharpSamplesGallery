@@ -52,7 +52,7 @@
                                       AlignmentX="Center"
                                       AlignmentY="Center"
                                       AlignmentZ="End">
-                                <xr:Text3D FontSize="0.01"
+                                <xr:Text3D FontSize="0.02"
                                        Thickness="0.001"
                                        Color="White"
                                        Text="{TemplateBinding Content}"/>
@@ -62,31 +62,63 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style x:Key="ControlSampleTemplate" TargetType="other:HeaderedContentControl3D">
+            <Setter Property="AlignmentY" Value="Start"/>
+            <Setter Property="xr:Canvas3D.IsDraggable" Value="True"/>
+            <Setter Property="Margin" Value="0.02,0,0"/>
+            <Setter Property="HeaderTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <xr:Text3D Text="{Binding}" Color="#404040" Margin="0,0.02,0.1,0,0,0"/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </xr:UserControl3D.Resources>
-    <xr:Canvas3D >
-        <xr:StackPanel3D Orientation="XAxis" xr:Canvas3D.Y="0" xr:Canvas3D.X="-0.4">
-            <xr:StackPanel3D.Resources>
-                <DataTemplate x:Key="HeaderDataTemplate">
-                    <xr:Text3D Text="{Binding}" Color="#404040" Margin="0 0 0 0 0.05 0"/>
-                </DataTemplate>
-            </xr:StackPanel3D.Resources>
-            <other:HeaderedContentControl3D Header="Button3D" HeaderTemplate="{StaticResource HeaderDataTemplate}" AlignmentY="Start" xr:Canvas3D.IsDraggable="True">
-                <xr:Button3D Content="Click me" FontSize="40" Background="Red" Style="{StaticResource Button3D_Style}" SizeY="0.15" SizeX="0.15" SizeZ="0.04"/>
+    
+    <xr:Canvas3D>
+        <xr:StackPanel3D Orientation="XAxis" xr:Canvas3D.X="-0.65" xr:Canvas3D.Z="-0.15">
+            <other:HeaderedContentControl3D Header="Button3D" Style="{StaticResource ControlSampleTemplate}">
+                <xr:Button3D Content="Click" Background="Red" Click="OnButton3DClick"
+                             Style="{StaticResource Button3D_Style}" SizeX="0.16" SizeY="0.16" SizeZ="0.04"/>
             </other:HeaderedContentControl3D>
-            <other:HeaderedContentControl3D Header="Image3D" HeaderTemplate="{StaticResource HeaderDataTemplate}" AlignmentY="Start" xr:Canvas3D.Y="0" xr:Canvas3D.IsDraggable="True">
-                <xr:Image3D SizeX="0.16" SizeY="0.16" Source="/Other/Assets/FakePerson.jpg"/>
+            
+            <other:HeaderedContentControl3D Header="RepeatButton3D" Style="{StaticResource ControlSampleTemplate}">
+                <xr:RepeatButton3D SizeX="0.16" SizeY="0.16" SizeZ="0.04" FontSize="0.02" ContentAlignmentZ="End" Content="Repeat" Click="OnRepeatButton3DClick"/>
             </other:HeaderedContentControl3D>
-            <other:HeaderedContentControl3D Header="GLTF Model" HeaderTemplate="{StaticResource HeaderDataTemplate}" AlignmentY="Start" xr:Canvas3D.Y="0" xr:Canvas3D.IsDraggable="True">
-                <xr:Canvas3D SizeY="0.16" SizeX="0.16" SizeZ="0.16">
-                    <xr:GltfModel Source="/Other/Assets/race-car/race-car.glb" SizeY="0.16" SizeX="0.16" SizeZ="0.16" Scale="0.09 0.09 0.09" xr:Canvas3D.Y="-0.08" />
+
+            <other:HeaderedContentControl3D Header="ToggleButton3D" Style="{StaticResource ControlSampleTemplate}">
+                <xr:ToggleButton3D SizeX="0.16" SizeY="0.16" SizeZ="0.04" FontSize="0.012" ContentAlignmentZ="End" IsThreeState="True"
+                                   Content="Toggle" Click="OnToggleButton3DClick"/>
+            </other:HeaderedContentControl3D>
+
+            <!--<other:HeaderedContentControl3D Header="CheckBox3D" Style="{StaticResource ControlSampleTemplate}">
+                <xr:CheckBox3D SizeX="0.16" SizeY="0.16" SizeZ="0.04" FontSize="0.012" ContentAlignmentZ="End" Content="CheckBox3D"/>
+            </other:HeaderedContentControl3D>-->
+
+            <other:HeaderedContentControl3D Header="Image3D" Style="{StaticResource ControlSampleTemplate}">
+                <xr:Image3D SizeX="0.16" SizeY="0.16" Source="/Other/Assets/FakePerson.jpg" Margin="0,0.1,0,-0.15,-0.1,0"/>
+            </other:HeaderedContentControl3D>
+            
+            <other:HeaderedContentControl3D Header="GLTF Model" Style="{StaticResource ControlSampleTemplate}">
+                <xr:Canvas3D SizeY="0.16" SizeZ="0.16">
+                    <xr:GltfModel Source="/Other/Assets/race-car/race-car.glb"
+                                  SizeY="0.16" SizeZ="0.16" Scale="0.09"/>
                 </xr:Canvas3D>
             </other:HeaderedContentControl3D>
-            <other:HeaderedContentControl3D Header="Text3D" HeaderTemplate="{StaticResource HeaderDataTemplate}" AlignmentY="Start" xr:Canvas3D.IsDraggable="True">
+            
+            <other:HeaderedContentControl3D Header="Text3D" Style="{StaticResource ControlSampleTemplate}">
                 <xr:Text3D Text="Hello" Color="Green" Thickness="0.01" SizeY="0.16"/>
             </other:HeaderedContentControl3D>
-            <other:HeaderedContentControl3D Header="TextBlock3D" HeaderTemplate="{StaticResource HeaderDataTemplate}" AlignmentY="Start" xr:Canvas3D.IsDraggable="True">
-                <xr:TextBlock3D Text="Hello" Foreground="Blue"  FontSize="18" SizeY="0.16"/>
+            
+            <other:HeaderedContentControl3D Header="TextBlock3D" Style="{StaticResource ControlSampleTemplate}">
+                <xr:TextBlock3D Text="Hello" Foreground="Blue" FontSize="18" SizeY="0.16"/>
             </other:HeaderedContentControl3D>
+            
+            <!--<other:HeaderedContentControl3D Header="TextBox3D" Style="{StaticResource ControlSampleTemplate}">
+                <xr:TextBox3D Text="Hello" Foreground="Blue" FontSize="0.16" SizeY="0.16"/>
+            </other:HeaderedContentControl3D>-->
         </xr:StackPanel3D>
     </xr:Canvas3D>
 </xr:UserControl3D>

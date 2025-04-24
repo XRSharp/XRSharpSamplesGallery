@@ -7,46 +7,62 @@
     <meta name="keywords" content="XR, WebXR, 3D, VR, AR, .NET, XAML, OpenSilver, C#, Spatial Computing, Virtual Reality, Augmented Reality, Oculus, Meta, Quest, Apple, Vision, Pro">
     <title>XR# Samples Gallery</title>
     <base href="/" />
+    <style>
+        :root {
+            --opensilver-loading-background-color: #fff;
+            --opensilver-loading-progress-bg: #f0f0f0;
+            --opensilver-loading-progress-bar-color: #696969;
+            --opensilver-loading-counter-color: #555;
+            --opensilver-loading-progress-border-color: #c0c0c0;
+        }
+    </style>
     <script>
         (function () {
             const style = document.createElement('link');
             style.setAttribute('rel', 'stylesheet');
             style.setAttribute('type', 'text/css');
-            style.setAttribute('href', 'loading-indicator.css?date=' + new Date().toISOString());
+            style.setAttribute('href', 'modern/loading-indicator.css?date=' + new Date().toISOString());
             document.head.appendChild(style);
+
             const script = document.createElement('script');
             script.setAttribute('type', 'application/javascript');
-            script.setAttribute('src', 'libs/opensilver.js?date=' + new Date().toISOString());
+            script.setAttribute('src', 'modern/loading-animation.js?date=' + new Date().toISOString());
             document.head.appendChild(script);
         })();
     </script>
 </head>
 <body>
     <div id="app">
-        <div class="loading-indicator-wrapper">
-            <div class="loading-indicator">
-                <div class="loading-indicator-ball"></div>
-                <div class="loading-indicator-ball"></div>
-                <div class="loading-indicator-ball"></div>
-                <div class="loading-indicator-ball"></div>
-                <div class="loading-indicator-ball"></div>
-                <div class="loading-indicator-ball"></div>
-                <div class="loading-indicator-ball"></div>
-                <div class="loading-indicator-ball"></div>
-                <div class="loading-indicator-ball"></div>
-                <div class="loading-indicator-ball"></div>
-                <div class="loading-indicator-ball"></div>
-                <div class="loading-indicator-ball"></div>
-                <div class="loading-indicator-ball"></div>
-                <div class="loading-indicator-ball"></div>
-                <div class="loading-indicator-ball"></div>
-                <div class="loading-indicator-ball"></div>
-                <div class="loading-indicator-text"></div>
+        <div class="opensilver-loading-indicator">
+            <div class="opensilver-loader-container">
+                <div class="opensilver-loader">
+                    <div class="opensilver-loader-progress">
+                        <div class="opensilver-loader-progress-bar"></div>
+                    </div>
+                </div>
+                <div class="opensilver-counter-container">
+                    <span class="opensilver-odometer"></span>
+                    <span class="opensilver-odometer"></span>
+                    <span class="opensilver-odometer"></span>
+                </div>
             </div>
         </div>
     </div>
     <div id="opensilver-root" style="position: relative; width: 100%; height: 100%; overflow-x: hidden; overflow-y: hidden"></div>
 
-    <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+        (function () {
+            const script = document.createElement('script');
+            script.setAttribute('type', 'application/javascript');
+            script.setAttribute('src', 'libs/opensilver.js?date=' + new Date().toISOString());
+            script.addEventListener('load', function () {
+                const scriptWebAssembly = document.createElement('script');
+                scriptWebAssembly.setAttribute('type', 'application/javascript');
+                scriptWebAssembly.setAttribute('src', '_framework/blazor.webassembly.js?date=' + new Date().toISOString());
+                document.body.appendChild(scriptWebAssembly);
+            });
+            document.body.appendChild(script);
+        })();
+    </script>
 </body>
 </html>

@@ -16,10 +16,13 @@ namespace XRSharpSamplesGallery.Menu
             get => _selectedMenuItem;
             set
             {
-                _selectedMenuItem = value;
-                OnPropertyChanged(nameof(SelectedMenuItem));
-                SelectionChanged?.Invoke(this, SelectedMenuItem);
-                CreateContent();
+                if (_selectedMenuItem != value)
+                {
+                    _selectedMenuItem = value;
+                    OnPropertyChanged(nameof(SelectedMenuItem));
+                    SelectionChanged?.Invoke(this, SelectedMenuItem);
+                    CreateContent();
+                }
             }
         }
 
