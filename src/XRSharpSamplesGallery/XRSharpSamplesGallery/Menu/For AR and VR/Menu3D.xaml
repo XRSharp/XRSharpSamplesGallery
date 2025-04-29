@@ -31,7 +31,7 @@
                           SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}">
                 <xr:ListBox3D.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <xr:WrapPanel3D Orientation="XY" RevertSecondDirection="True" SizeX="0.20" SizeY="0.2" SizeZ="0.1"/>
+                        <xr:WrapPanel3D Orientation="XY" RevertSecondDirection="True" SizeX="0.20" SizeY="0.2" SizeZ="0.002"/>
                     </ItemsPanelTemplate>
                 </xr:ListBox3D.ItemsPanel>
 
@@ -88,14 +88,18 @@
                                                              Content="{TemplateBinding Content}"
                                                              ContentTemplate="{TemplateBinding ContentTemplate}"
                                                              Foreground="{TemplateBinding Foreground}"/>
-                                        <xr:RoundedBox Name="BackgroundBox"
-                                                       xr:Canvas3D.Z="-0.002"
-                                                       Opacity="0.75"
-                                                       Radius="0.005"
-                                                       SizeX="{Binding ActualSizeX, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                                       SizeY="{Binding ActualSizeY, RelativeSource={RelativeSource Mode=TemplatedParent}}"
-                                                       SizeZ="0.003"
-                                                       Color="{TemplateBinding Background}"/>
+                                        <xr:Canvas3D>
+                                            <xr:RoundedBox Name="BackgroundBox"
+                                                           xr:Canvas3D.Z="-0.002"
+                                                           xr:Canvas3D.X="-0.035"
+                                                           xr:Canvas3D.Y="-0.025"
+                                                           Opacity="0.75"
+                                                           Radius="0.005"
+                                                           SizeX="{Binding ActualSizeX, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                                           SizeY="{Binding ActualSizeY, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                                                           SizeZ="0.003"
+                                                           Color="{TemplateBinding Background}"/>
+                                        </xr:Canvas3D>
                                     </xr:Grid3D>
                                 </ControlTemplate>
                             </Setter.Value>
