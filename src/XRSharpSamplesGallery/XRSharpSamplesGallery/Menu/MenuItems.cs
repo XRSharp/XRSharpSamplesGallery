@@ -101,9 +101,9 @@ namespace XRSharpSamplesGallery.Menu
                 ThumbnailUri = "/Menu/Thumbnails/Maps3D.png",
                 CameraOptions = new CameraOptions
                 {
-                    Position = new Point3D(0, 0, 0),
+                    Position = new Point3D(0, 1, 0),
                     Rotation = new Point3D(0, 0, 0),
-                    TargetPoint = new Point3D(0, 0, 0),
+                    TargetPoint = new Point3D(0, 0, -5),
                 },
                 IsOrbitControlsEnabled = false,
                 IsRoomVisible = false,
