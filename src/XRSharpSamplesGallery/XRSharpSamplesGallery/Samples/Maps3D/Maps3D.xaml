@@ -6,6 +6,16 @@
     xmlns:local="clr-namespace:XRSharpSamplesGallery.Samples">
     
     <xr:Canvas3D>
+
+        <xr:Grid3D xr:Canvas3D.Z="-1" xr:Canvas3D.X="-1" xr:Canvas3D.Y="1">
+            <xr:RoundedBox Color="Black" Opacity="0.5"/>
+            <xr:StackPanel3D Orientation="YAxis" Margin="0.075">
+                <xr:Text3D Text="   - Right Stick to Zoom In/Out"/>
+                <xr:Text3D Text="   - Right Grab to Rotate the globe"/>
+                <xr:Text3D Text="   - Right Trigger to Orbit around the globe"/>
+                <xr:Text3D Text="VR Contols:"/>
+            </xr:StackPanel3D>
+        </xr:Grid3D>
         <xr:Maps3D Name="map" ViewportCenter="36.8065, 10.1815" xr:Canvas3D.Z="-3" ServerURL="https://userwareapiproxy.azurewebsites.net/tiles/3dtiles/root.json"/>
     </xr:Canvas3D>
 </xr:UserControl3D>
