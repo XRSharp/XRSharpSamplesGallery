@@ -34,6 +34,11 @@ namespace XRSharpSamplesGallery
 
         private void OnSelectionChanged(object sender, Menu.MenuItem menuItem)
         {
+            if(_inXRMode)
+                EnvironmentInstance.Visibility = menuItem.IsRoomVisible && Root3DInstance.IsInVRMode ? Visibility.Visible: Visibility.Collapsed;
+            else
+                EnvironmentInstance.Visibility = menuItem.IsRoomVisible ? Visibility.Visible: Visibility.Collapsed;
+                OrbitControls.SetEnabled(Root3DInstance, menuItem.IsOrbitControlsEnabled);
             if (menuItem.IsRoomVisible)
             {
                 EnvironmentInstance.Visibility = Visibility.Visible;
