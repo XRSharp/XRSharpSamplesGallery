@@ -37,6 +37,8 @@ namespace XRSharpSamplesGallery
                 EnvironmentInstance.Visibility = menuItem.IsRoomVisible && Root3DInstance.IsInVRMode ? Visibility.Visible: Visibility.Collapsed;
             else
                 EnvironmentInstance.Visibility = menuItem.IsRoomVisible ? Visibility.Visible: Visibility.Collapsed;
+
+            EnvironmentInstance.IsHitTestVisible = EnvironmentInstance.Visibility == Visibility.Collapsed? false : true;
                 OrbitControls.SetEnabled(Root3DInstance, menuItem.IsOrbitControlsEnabled);
 
             // Hide the panel that shows the Source Code when navigating:
