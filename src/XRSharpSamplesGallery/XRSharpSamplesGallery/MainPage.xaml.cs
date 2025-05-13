@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenSilver;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using XRSharp.Components;
@@ -33,7 +34,17 @@ namespace XRSharpSamplesGallery
 
         private void OnSelectionChanged(object sender, Menu.MenuItem menuItem)
         {
-            EnvironmentInstance.Visibility = menuItem.IsRoomVisible? Visibility.Visible: Visibility.Collapsed;
+            if (menuItem.IsRoomVisible)
+            {
+                EnvironmentInstance.Visibility = Visibility.Visible;
+                Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.setAttribute('interactable', '')");
+            }
+            else
+            {
+                EnvironmentInstance.Visibility = Visibility.Collapsed;
+                Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.removeAttribute('interactable')");
+            }
+
             OrbitControls.SetEnabled(Root3DInstance, menuItem.IsOrbitControlsEnabled);
 
             // Hide the panel that shows the Source Code when navigating:
