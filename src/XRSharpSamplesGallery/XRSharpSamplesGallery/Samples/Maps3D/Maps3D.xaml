@@ -3,11 +3,12 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:xr="http://xrsharp.io/xr"
-    xmlns:local="clr-namespace:XRSharpSamplesGallery.Samples">
+    xmlns:local="clr-namespace:XRSharpSamplesGallery.Samples"
+    >
     
     <xr:Canvas3D>
 
-        <xr:Grid3D xr:Canvas3D.Z="-1" xr:Canvas3D.X="-1" xr:Canvas3D.Y="1">
+        <xr:Grid3D Name="infoPanel" xr:Canvas3D.Z="-1" xr:Canvas3D.X="-1" xr:Canvas3D.Y="1">
             <xr:RoundedBox Color="Black" Opacity="0.5"/>
             <xr:StackPanel3D Orientation="YAxis" Margin="0.075">
                 <xr:Text3D Text="   - Right Stick to Zoom In/Out"/>
