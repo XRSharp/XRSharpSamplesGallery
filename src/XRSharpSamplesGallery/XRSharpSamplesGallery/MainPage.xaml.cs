@@ -40,7 +40,6 @@ namespace XRSharpSamplesGallery
                 EnvironmentInstance.Visibility = menuItem.IsRoomVisible ? Visibility.Visible: Visibility.Collapsed;
 
             EnvironmentInstance.IsHitTestVisible = EnvironmentInstance.Visibility == Visibility.Collapsed? false : true;
-                OrbitControls.SetEnabled(Root3DInstance, menuItem.IsOrbitControlsEnabled);
             if (menuItem.IsRoomVisible)
             {
                 EnvironmentInstance.Visibility = Visibility.Visible;
