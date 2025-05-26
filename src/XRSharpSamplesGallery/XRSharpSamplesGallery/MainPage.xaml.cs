@@ -34,22 +34,17 @@ namespace XRSharpSamplesGallery
 
         private void OnSelectionChanged(object sender, Menu.MenuItem menuItem)
         {
-            if(_inXRMode)
-                EnvironmentInstance.Visibility = menuItem.IsRoomVisible && Root3DInstance.IsInVRMode ? Visibility.Visible: Visibility.Collapsed;
+            if (Root3DInstance.IsInARMode)
+                EnvironmentInstance.Visibility = Visibility.Collapsed;
             else
                 EnvironmentInstance.Visibility = menuItem.IsRoomVisible ? Visibility.Visible: Visibility.Collapsed;
-
+            Console.WriteLine("AR "+ Root3DInstance.IsInARMode);
+            Console.WriteLine("VR "+ Root3DInstance.IsInVRMode);
             EnvironmentInstance.IsHitTestVisible = EnvironmentInstance.Visibility == Visibility.Collapsed? false : true;
-            if (menuItem.IsRoomVisible)
-            {
-                EnvironmentInstance.Visibility = Visibility.Visible;
+            if (EnvironmentInstance.Visibility == Visibility.Visible)
                 Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.setAttribute('interactable', '')");
-            }
-            else
-            {
-                EnvironmentInstance.Visibility = Visibility.Collapsed;
+            else if (EnvironmentInstance.Visibility == Visibility.Collapsed)
                 Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.removeAttribute('interactable')");
-            }
 
             OrbitControls.SetEnabled(Root3DInstance, menuItem.IsOrbitControlsEnabled);
 
