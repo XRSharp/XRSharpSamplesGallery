@@ -37,13 +37,12 @@ namespace XRSharpSamplesGallery
             if (Root3DInstance.IsInARMode)
                 EnvironmentInstance.Visibility = Visibility.Collapsed;
             else
-                EnvironmentInstance.Visibility = menuItem.IsRoomVisible ? Visibility.Visible: Visibility.Collapsed;
-            Console.WriteLine("AR "+ Root3DInstance.IsInARMode);
-            Console.WriteLine("VR "+ Root3DInstance.IsInVRMode);
-            EnvironmentInstance.IsHitTestVisible = EnvironmentInstance.Visibility == Visibility.Collapsed? false : true;
+                EnvironmentInstance.Visibility = menuItem.IsRoomVisible ? Visibility.Visible : Visibility.Collapsed;
+
+            EnvironmentInstance.IsHitTestVisible = EnvironmentInstance.Visibility == Visibility.Visible;
             if (EnvironmentInstance.Visibility == Visibility.Visible)
                 Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.setAttribute('interactable', '')");
-            else if (EnvironmentInstance.Visibility == Visibility.Collapsed)
+            else
                 Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.removeAttribute('interactable')");
 
             OrbitControls.SetEnabled(Root3DInstance, menuItem.IsOrbitControlsEnabled);
