@@ -12,6 +12,7 @@ namespace XRSharpSamplesGallery.Menu
         public string ThumbnailUri { get; set; }
         public bool IsRoomVisible { get; set; } = true;
         public bool IsOrbitControlsEnabled { get; set; } = true;
+        public bool EnableShadows { get; set; } = true;
 
         public Type PageToNavigateTo { get; set; }
 
