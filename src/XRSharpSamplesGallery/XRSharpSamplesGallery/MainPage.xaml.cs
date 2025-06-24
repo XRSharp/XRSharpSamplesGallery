@@ -36,13 +36,12 @@ namespace XRSharpSamplesGallery
         private void OnSelectionChanged(object sender, Menu.MenuItem menuItem)
         {
             _selectedItem = menuItem;
-            if (Root3DInstance.IsInARMode)  
+            if (Root3DInstance.IsInARMode)
                 EnvironmentInstance.Visibility = Visibility.Collapsed;
             else
                 EnvironmentInstance.Visibility = menuItem.IsRoomVisible ? Visibility.Visible : Visibility.Collapsed;
 
-                MainDirectionalLight.CastShadows = menuItem.EnableShadows;
-
+            MainDirectionalLight.CastShadows = menuItem.EnableShadows;
 
             EnvironmentInstance.IsHitTestVisible = EnvironmentInstance.Visibility == Visibility.Visible;
             if (EnvironmentInstance.Visibility == Visibility.Visible)
@@ -50,8 +49,9 @@ namespace XRSharpSamplesGallery
             else
                 Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.removeAttribute('interactable')");
 
+            Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.setAttribute('visible', {menuItem.IsRoomVisible.ToString().ToLower()})");
+
             OrbitControls.SetEnabled(Root3DInstance, menuItem.IsOrbitControlsEnabled);
-            Console.WriteLine("show room: " + _selectedItem.IsRoomVisible);
 
             // Hide the panel that shows the Source Code when navigating:
             ViewSourcePane.Collapse();
@@ -82,20 +82,6 @@ namespace XRSharpSamplesGallery
             _inXRMode = true;
             Menu3DInstance.Visibility = Visibility.Visible;
 
-
-            if (Root3DInstance.IsInARMode)
-                EnvironmentInstance.Visibility = Visibility.Collapsed;
-            else
-                EnvironmentInstance.Visibility = _selectedItem.IsRoomVisible ? Visibility.Visible : Visibility.Collapsed;
-
-            EnvironmentInstance.IsHitTestVisible = EnvironmentInstance.Visibility == Visibility.Visible;
-            if (EnvironmentInstance.Visibility == Visibility.Visible)
-                Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.setAttribute('interactable', '')");
-            else
-                Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.removeAttribute('interactable')");
-
-            Console.WriteLine("show room: " + _selectedItem.IsRoomVisible);
-
             EnableSoftShadows();
             MainDirectionalLight.CastShadows = _selectedItem.EnableShadows;
         }
@@ -104,16 +90,6 @@ namespace XRSharpSamplesGallery
         {
             _inXRMode = false;
             Menu3DInstance.Visibility = Visibility.Collapsed;
-
-                EnvironmentInstance.Visibility = _selectedItem.IsRoomVisible ? Visibility.Visible : Visibility.Collapsed;
-
-            EnvironmentInstance.IsHitTestVisible = EnvironmentInstance.Visibility == Visibility.Visible;
-            if (EnvironmentInstance.Visibility == Visibility.Visible)
-                Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.setAttribute('interactable', '')");
-            else
-                Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.removeAttribute('interactable')");
-
-            Console.WriteLine("show room: " + _selectedItem.IsRoomVisible);
 
             EnableProgressiveShadows();
             MainDirectionalLight.CastShadows = _selectedItem.EnableShadows;
