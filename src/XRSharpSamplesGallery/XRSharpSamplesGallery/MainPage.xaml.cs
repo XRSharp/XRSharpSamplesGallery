@@ -43,6 +43,8 @@ namespace XRSharpSamplesGallery
 
             MainDirectionalLight.CastShadows = menuItem.EnableShadows;
 
+            Renderer.SetEnableShadows(Root3DInstance, menuItem.EnableShadows);
+
             EnvironmentInstance.IsHitTestVisible = EnvironmentInstance.Visibility == Visibility.Visible;
             if (EnvironmentInstance.Visibility == Visibility.Visible)
                 Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.setAttribute('interactable', '')");
@@ -81,9 +83,17 @@ namespace XRSharpSamplesGallery
         {
             _inXRMode = true;
             Menu3DInstance.Visibility = Visibility.Visible;
-
-            EnableSoftShadows();
-            MainDirectionalLight.CastShadows = _selectedItem.EnableShadows;
+            bool shadow = _selectedItem?.EnableShadows ?? true;
+            if (shadow)
+            {
+                EnableSoftShadows();
+                Renderer.SetEnableShadows(Root3DInstance, true);
+            }
+            else
+            {
+                MainDirectionalLight.CastShadows = false;
+                Renderer.SetEnableShadows(Root3DInstance, false);
+            }
         }
 
         private void OnExitXR(object sender, EventArgs e)
@@ -91,8 +101,17 @@ namespace XRSharpSamplesGallery
             _inXRMode = false;
             Menu3DInstance.Visibility = Visibility.Collapsed;
 
-            EnableProgressiveShadows();
-            MainDirectionalLight.CastShadows = _selectedItem.EnableShadows;
+            bool shadow = _selectedItem?.EnableShadows ?? true;
+            if (shadow)
+            {
+                EnableProgressiveShadows();
+                Renderer.SetEnableShadows(Root3DInstance, true);
+            }
+            else
+            {
+                MainDirectionalLight.CastShadows = false;
+                Renderer.SetEnableShadows(Root3DInstance, false);
+            }
         }
 
         private void OnAllNodesLoaded(object sender, EventArgs e)

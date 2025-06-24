@@ -43,6 +43,7 @@ namespace XRSharpSamplesGallery.Menu
                 Title = "Primitives",
                 PageToNavigateTo = typeof(Primitives),
                 ThumbnailUri = "/Menu/Thumbnails/Primitives.jpg",
+                EnableShadows = false,
                 CameraOptions = new CameraOptions
                 {
                     Position = new Point3D(0, 1, 0),
@@ -107,6 +108,7 @@ namespace XRSharpSamplesGallery.Menu
                 },
                 IsOrbitControlsEnabled = false,
                 IsRoomVisible = false,
+                EnableShadows = false,
                 ViewSourceFilesLocation = new[]
                 {
                     new ViewSourceFileInfo() { TabHeader = "Maps3DSample.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Maps3D/Maps3D.xaml" },
