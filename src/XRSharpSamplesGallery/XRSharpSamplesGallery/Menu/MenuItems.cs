@@ -101,12 +101,13 @@ namespace XRSharpSamplesGallery.Menu
                 ThumbnailUri = "/Menu/Thumbnails/Maps3D.png",
                 CameraOptions = new CameraOptions
                 {
-                    Position = new Point3D(0, 0, 0),
+                    Position = new Point3D(0, 1, 0),
                     Rotation = new Point3D(0, 0, 0),
-                    TargetPoint = new Point3D(0, 0, 0),
+                    TargetPoint = new Point3D(0, 0, -5),
                 },
                 IsOrbitControlsEnabled = false,
                 IsRoomVisible = false,
+                EnableShadows = false,
                 ViewSourceFilesLocation = new[]
                 {
                     new ViewSourceFileInfo() { TabHeader = "Maps3DSample.xaml", FilePathOnGitHub = "github/XRSharp/XRSharpSamplesGallery/blob/main/src/XRSharpSamplesGallery/XRSharpSamplesGallery/Samples/Maps3D/Maps3D.xaml" },

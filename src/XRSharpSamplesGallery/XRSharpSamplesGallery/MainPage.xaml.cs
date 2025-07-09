@@ -1,7 +1,7 @@
-﻿using OpenSilver;
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using XRSharp;
 using XRSharp.Components;
 using XRSharp.Core;
 using XRSharp.Shadows;
@@ -28,13 +28,15 @@ namespace XRSharpSamplesGallery
 
             _cameraAnimation = new CameraAnimation(Root3DInstance);
 
-            EnvironmentInstance.RoomModel.ModelLoaded += (_, __) => ProgressiveShadows.Update(Root3DInstance);
+            EnvironmentInstance.RoomModel.ModelLoaded += (_, __) => UpdateProgressiveShadows();
             _cameraAnimation.AnimationCompleted += OnAnimationCompleted;
         }
 
         private void OnSelectionChanged(object sender, Menu.MenuItem menuItem)
         {
-            if (menuItem.IsRoomVisible)
+            var isRoomVisible = !Root3DInstance.IsInARMode && menuItem.IsRoomVisible;
+
+            if (isRoomVisible)
             {
                 EnvironmentInstance.Visibility = Visibility.Visible;
                 Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.setAttribute('interactable', '')");
@@ -44,6 +46,8 @@ namespace XRSharpSamplesGallery
                 EnvironmentInstance.Visibility = Visibility.Collapsed;
                 Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.removeAttribute('interactable')");
             }
+
+            Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.setAttribute('visible', {isRoomVisible.ToLowerString()})");
 
             OrbitControls.SetEnabled(Root3DInstance, menuItem.IsOrbitControlsEnabled);
 
@@ -58,15 +62,19 @@ namespace XRSharpSamplesGallery
             if (!_inXRMode)
             {
                 ProgressiveShadows.Clear(Root3DInstance);
+                Renderer.SetEnableShadows(Root3DInstance, menuItem.EnableShadows);
 
-                var currentShadowType = Renderer.GetShadowType(Root3DInstance);
-                if (currentShadowType == ShadowType.Progressive && menuItem.ShadowType == ShadowType.PCFSoft)
+                if (menuItem.EnableShadows)
                 {
-                    EnableSoftShadows();
-                }
-                else if (currentShadowType == ShadowType.PCFSoft && menuItem.ShadowType == ShadowType.Progressive)
-                {
-                    EnableProgressiveShadows();
+                    var currentShadowType = Renderer.GetShadowType(Root3DInstance);
+                    if (currentShadowType != ShadowType.PCFSoft && menuItem.ShadowType == ShadowType.PCFSoft)
+                    {
+                        EnableSoftShadows();
+                    }
+                    else if (currentShadowType != ShadowType.Progressive && menuItem.ShadowType == ShadowType.Progressive)
+                    {
+                        MainDirectionalLight.CastShadows = false;
+                    }
                 }
             }
         }
@@ -75,14 +83,18 @@ namespace XRSharpSamplesGallery
         {
             _inXRMode = true;
             Menu3DInstance.Visibility = Visibility.Visible;
-            EnableSoftShadows();
+
+            var currentShadowType = Renderer.GetShadowType(Root3DInstance);
+            if (currentShadowType == ShadowType.Progressive && _menuViewModel.SelectedMenuItem.EnableShadows)
+            {
+                EnableSoftShadows();
+            }
         }
 
         private void OnExitXR(object sender, EventArgs e)
         {
             _inXRMode = false;
             Menu3DInstance.Visibility = Visibility.Collapsed;
-            EnableProgressiveShadows();
         }
 
         private void OnAllNodesLoaded(object sender, EventArgs e)
@@ -103,20 +115,21 @@ namespace XRSharpSamplesGallery
         {
             MainDirectionalLight.CastShadows = true;
             Renderer.SetShadowType(Root3DInstance, ShadowType.PCFSoft);
-            _cameraAnimation.AnimationCompleted -= OnAnimationCompleted;
-        }
-
-        private void EnableProgressiveShadows()
-        {
-            MainDirectionalLight.CastShadows = false;
-            Renderer.SetShadowType(Root3DInstance, ShadowType.Progressive);
-            ProgressiveShadows.Update(Root3DInstance);
-            _cameraAnimation.AnimationCompleted += OnAnimationCompleted;
         }
 
         private void OnAnimationCompleted(object sender, EventArgs e)
         {
-            ProgressiveShadows.Update(Root3DInstance);
+            UpdateProgressiveShadows();
+        }
+
+        private void UpdateProgressiveShadows()
+        {
+            var menuItem = _menuViewModel.SelectedMenuItem;
+            if (!_inXRMode && menuItem.EnableShadows && menuItem.ShadowType == ShadowType.Progressive)
+            {
+                Renderer.SetShadowType(Root3DInstance, ShadowType.Progressive);
+                ProgressiveShadows.Update(Root3DInstance);
+            }
         }
     }
 }
