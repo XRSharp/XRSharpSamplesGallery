@@ -43,7 +43,6 @@ namespace XRSharpSamplesGallery.Menu
                 Title = "Primitives",
                 PageToNavigateTo = typeof(Primitives),
                 ThumbnailUri = "/Menu/Thumbnails/Primitives.jpg",
-                EnableShadows = false,
                 CameraOptions = new CameraOptions
                 {
                     Position = new Point3D(0, 1, 0),
