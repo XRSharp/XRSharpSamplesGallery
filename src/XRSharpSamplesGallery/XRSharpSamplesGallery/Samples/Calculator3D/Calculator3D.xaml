@@ -31,7 +31,7 @@
                                     <VisualState Name="Pressed">
                                         <Storyboard>
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Scale">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="1 1 0.2"/>
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="1 1 0.4"/>
                                             </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
@@ -68,7 +68,7 @@
     </xr:UserControl3D.Resources>
 
     <xr:Canvas3D>
-        <xr:Grid3D xr:Canvas3D.X="-0.00125" xr:Canvas3D.Y="0.2055" xr:Canvas3D.Z="0.004" Rotation="15 0 0">
+        <xr:Grid3D xr:Canvas3D.X="-0.00125" xr:Canvas3D.Y="0.2045" xr:Canvas3D.Z="-0.0025" Rotation="15 0 0">
             <xr:RoundedBox Color="#FF222222" SizeX="0.163" SizeY="0.041" SizeZ="0.008"
                            Radius="0.002" xr:StandardMaterial.Metalness="0.3" ReceiveShadows="False"/>
             <xr:Text3D Name="DisplayBox" Color="#FFBBBBBB" FontSize="0.012" Thickness="0.0005"
