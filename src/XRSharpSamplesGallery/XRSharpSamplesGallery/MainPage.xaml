@@ -18,7 +18,8 @@
                    xr:OrbitControls.Enabled="True" xr:OrbitControls.Target="0.1 1.1 -0.6" xr:OrbitControls.DisplayTarget="False">
             <xr:Root3D.Lights>
                 <xr:AmbientLight Intensity="0.9"/>
-                <xr:DirectionalLight Name="MainDirectionalLight" Intensity="0.4" ShadowMapWidth="256" ShadowMapHeight="256" ShadowCameraFar="10" xr:Canvas3D.Y="3"/>
+                <xr:DirectionalLight Name="MainDirectionalLight" Intensity="0.4" ShadowMapWidth="256" ShadowMapHeight="256" ShadowCameraFar="10"
+                                     xr:Canvas3D.X="0" xr:Canvas3D.Y="3" xr:Canvas3D.Z="0"/>
             </xr:Root3D.Lights>
             <xr:ProgressiveShadows.Plane>
                 <other:TableShadowPlane/>
