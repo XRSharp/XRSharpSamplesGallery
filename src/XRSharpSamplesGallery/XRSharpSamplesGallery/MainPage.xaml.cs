@@ -35,17 +35,7 @@ namespace XRSharpSamplesGallery
         private void OnSelectionChanged(object sender, Menu.MenuItem menuItem)
         {
             var isRoomVisible = !Root3DInstance.IsInARMode && menuItem.IsRoomVisible;
-
-            if (isRoomVisible)
-            {
-                EnvironmentInstance.Visibility = Visibility.Visible;
-                Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.setAttribute('interactable', '')");
-            }
-            else
-            {
-                EnvironmentInstance.Visibility = Visibility.Collapsed;
-                Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.removeAttribute('interactable')");
-            }
+            EnvironmentInstance.Visibility = isRoomVisible ? Visibility.Visible : Visibility.Collapsed;
 
             Interop.ExecuteJavaScriptVoid($"{EnvironmentInstance.JsElement}.firstChild.setAttribute('visible', {isRoomVisible.ToLowerString()})");
 
