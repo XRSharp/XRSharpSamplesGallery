@@ -96,7 +96,7 @@ namespace XRSharpSamplesGallery.Menu
 
             this.Add(new()
             {
-                Title = "Maps3DSample",
+                Title = "Maps3D",
                 PageToNavigateTo = typeof(Maps3D),
                 ThumbnailUri = "/Menu/Thumbnails/Maps3D.png",
                 CameraOptions = new CameraOptions

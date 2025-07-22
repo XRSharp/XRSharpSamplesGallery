@@ -26,7 +26,8 @@
                         SizeY="0.016"
                         Source="/Other/AppTitleBanner.png"/>
 
-            <xr:ListBox3D xr:Canvas3D.Z="-0.02"
+            <xr:ListBox3D xr:Canvas3D.X="0.01"
+                          xr:Canvas3D.Z="-0.02"                          
                           ItemsSource="{Binding MenuItems}"
                           SelectedItem="{Binding SelectedMenuItem, Mode=TwoWay}">
                 <xr:ListBox3D.ItemsPanel>
@@ -41,20 +42,20 @@
                             <xr:Image3D SizeX="0.07"
                                         SizeY="0.05"
                                         Source="{Binding ThumbnailUri}"
-                                        Stretch="UniformToFill"/>
-                            <xr:TextBlock3D xr:Canvas3D.X="-0.037"
-                                            xr:Canvas3D.Y="-0.035"
-                                            Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=xr:ContentControl3D, Mode=FindAncestor}}"
-                                            Scale="0.04"
-                                            Text="{Binding Title}"/>
+                                        Stretch="Fill"/>
+                            <xr:Text3D Margin="-0.034,0.019,0,0,0,0"
+                                       FontSize="0.006"
+                                       Text="{Binding Title}"
+                                       Thickness="0.001"
+                                       Color="{Binding Foreground, RelativeSource={RelativeSource AncestorType=xr:ContentControl3D, Mode=FindAncestor}}"/>
                         </xr:Grid3D>
                     </DataTemplate>
                 </xr:ListBox3D.ItemTemplate>
 
                 <xr:ListBox3D.ItemContainerStyle>
                     <Style TargetType="xr:ListBoxItem3D">
-                        <Setter Property="Padding" Value="0.003"/>
-                        <Setter Property="Margin" Value="0.01"/>
+                        <Setter Property="Padding" Value="0.002"/>
+                        <Setter Property="Margin" Value="0.005"/>
                         <Setter Property="Background" Value="#FF909192"/>
                         <Setter Property="Foreground" Value="#FF626262"/>
                         <Setter Property="Template">
