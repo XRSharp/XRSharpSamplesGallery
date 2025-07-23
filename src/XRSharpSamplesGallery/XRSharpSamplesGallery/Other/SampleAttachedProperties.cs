@@ -1,60 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using System.Windows;
-using XRSharp;
 
 namespace XRSharpSamplesGallery
 {
     public static class SampleAttachedProperties
     {
-        public static double GetBorderRadius(DependencyObject obj)
-        {
-            return (double)obj.GetValue(BorderRadiusProperty);
-        }
-
-        public static void SetBorderRadius(DependencyObject obj, double value)
-        {
-            obj.SetValue(BorderRadiusProperty, value);
-        }
-
-        public static readonly DependencyProperty BorderRadiusProperty =
-            DependencyProperty.RegisterAttached(
-                name: "BorderRadius",
-                propertyType: typeof(double),
-                ownerType: typeof(SampleAttachedProperties),
-                defaultMetadata: new PropertyMetadata(defaultValue: 0d)
-                {
-                    MethodToUpdateDom = BorderRadius_MethodToUpdateDom
-                });
-
-
-        /// <summary>
-        /// This method is called when the DOM tree is rendered.
-        /// </summary>
-        /// <param name="d">The dependency object to which the property is attached</param>
-        /// <param name="newValue">The new value of the attached property</param>
-        public static void BorderRadius_MethodToUpdateDom(DependencyObject d, object newValue)
-        {
-            if (d is FrameworkElement)
-            {
-                // Get a reference to the <div> DOM element used to render the UI element:
-                object div = OpenSilver.Interop.GetDiv((FrameworkElement)d);
-
-                // Set the "BorderRadius" attribute on the <div> via a JavaScript interop call:
-                OpenSilver.Interop.ExecuteJavaScript("$0.style.borderRadius = $1", div, newValue.ToString() + "px");
-
-                //Note: for documentation related to the commands above, please refer to:
-                // https://doc.opensilver.net/documentation/general/javascript-interop-and-libraries.html
-                // and
-                // https://doc.opensilver.net/documentation/in-depth-topics/call-javascript-from-csharp.html
-            }
-        }
-
         public static double GetImageBorderRadius(DependencyObject obj)
         {
             return (double)obj.GetValue(ImageBorderRadiusProperty);
@@ -82,13 +32,18 @@ namespace XRSharpSamplesGallery
         /// <param name="newValue">The new value of the attached property</param>
         public static void ImageBorderRadius_MethodToUpdateDom(DependencyObject d, object newValue)
         {
-            if (d is FrameworkElement)
+            if (d is FrameworkElement element)
             {
                 // Get a reference to the <div> DOM element used to render the UI element:
-                object div = OpenSilver.Interop.GetDiv((FrameworkElement)d);
+                object div = OpenSilver.Interop.GetDiv(element);
 
                 // Set the "BorderRadius" attribute on the <div> via a JavaScript interop call:
-                OpenSilver.Interop.ExecuteJavaScript("$0.firstChild.style.borderRadius = $1", div, newValue.ToString() + "px");
+                var parent = element.Parent as FrameworkElement;
+                var margin = element.Margin;
+                OpenSilver.Interop.ExecuteJavaScript(
+                    "$0.style.clipPath = $1",
+                    div,
+                    $"rect(auto {parent.Width - margin.Left - margin.Right}px {parent.Height - margin.Top - margin.Bottom}px auto round {newValue}px)");
 
                 //Note: for documentation related to the commands above, please refer to:
                 // https://doc.opensilver.net/documentation/general/javascript-interop-and-libraries.html
